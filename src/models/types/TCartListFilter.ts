@@ -1,0 +1,1 @@
+export type TCartListFilter = 'inStock';
