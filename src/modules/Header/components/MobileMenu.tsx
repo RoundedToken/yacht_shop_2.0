@@ -10,9 +10,9 @@ import PageTitle from '../../SearchBar/components/PageTitle';
 import Breadcrumbs from './Breadcrumbs';
 import { setMobileModalType } from '../../../redux/modalSlice/modalSlice';
 import { switchMobileModalDisplay } from '../../../redux/stylesSlice/stylesSlice';
-import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next-intl/client';
 
 const MobileMenu: FC<IMobileMenu> = ({ styles }) => {
     const dispatch = useDispatch();

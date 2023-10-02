@@ -1,3 +1,4 @@
+import { sideBarSliceReducer } from './sideBarSlice/sideBarSlice';
 import { navSliceReducer } from './navSlice/navSlice';
 import { cartSliceReducer } from './cartSlice/cartSlice';
 import { stylesSliceReducer } from './stylesSlice/stylesSlice';
@@ -15,6 +16,7 @@ export const reducer = combineReducers({
     stylesSliceReducer,
     cartSliceReducer,
     navSliceReducer,
+    sideBarSliceReducer,
 });
 
 export type RootState = ReturnType<typeof reducer>;

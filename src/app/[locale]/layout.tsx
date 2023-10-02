@@ -5,6 +5,7 @@ import Header from '../../modules/Header/Header';
 import { Providers } from '../../redux/Providers';
 import { NextIntlClientProvider, createTranslator } from 'next-intl';
 import { notFound } from 'next/navigation';
+import SearchBar from '../../modules/SearchBar/SearchBar';
 
 const nunito = Nunito({ subsets: ['latin', 'cyrillic'] });
 
@@ -44,6 +45,8 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
                 <NextIntlClientProvider locale={locale} messages={messages}>
                     <body className={nunito.className}>
                         <Header />
+
+                        <SearchBar />
 
                         {children}
                     </body>

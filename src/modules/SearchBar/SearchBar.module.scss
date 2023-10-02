@@ -1,0 +1,234 @@
+@import '../../styles/index.scss';
+@import './variables.scss';
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: calc($_search_heightImg * 0.27 + 20px);
+    background-color: $aqua;
+    height: calc($_search_heightImg * 0.27 + 10px);
+    padding-block: 5px;
+    width: calc(100% - $_search_paddingDouble * 2);
+    padding-inline: $_search_paddingDouble;
+    z-index: 3;
+    gap: $_search_paddingDouble * 2;
+    box-shadow: 0px 2px 5px rgba(2, 31, 128, 0.792);
+
+    @media (max-width: $breakPointL) {
+        width: calc(100% - $_search_paddingDoubleL * 2 - 2px);
+        padding-block: 4px;
+        height: calc($_search_heightImgL * 0.27 + 8px);
+        top: calc($_search_heightImgL * 0.27 + 16px);
+        padding-right: $_search_paddingDoubleL;
+        gap: 15px;
+        padding-left: 18px;
+    }
+
+    @media (max-width: $breakPointM) {
+        width: calc(100% - $_search_paddingDoubleM * 2);
+        padding-block: 3px;
+        height: calc($_search_heightImgM * 0.27 + 6px);
+        top: calc($_search_heightImgM * 0.27 + 20px);
+        padding-inline: $_search_paddingDoubleM;
+    }
+
+    @media (max-width: $breakPointM) {
+        display: none;
+    }
+
+    .searchContainer {
+        @include flexCenterCenter;
+        height: 100%;
+        position: relative;
+        min-width: $_search_imgWidth;
+        z-index: 5;
+
+        @media (max-width: $breakPointL) {
+            min-width: $_search_imgWidthL;
+        }
+
+        .submit {
+            width: 28px;
+            height: 28px;
+            position: absolute;
+            filter: $yellowFilter;
+            left: 2px;
+            cursor: pointer;
+            padding-left: 0;
+            padding-right: 0;
+
+            @media (max-width: $breakPointL) {
+                width: 24px;
+            }
+        }
+
+        input {
+            width: $_search_imgWidth - 15px - 33px;
+            height: 70%;
+            left: 0;
+            border-radius: 20px;
+            position: absolute;
+            padding-left: 33px;
+            padding-right: 10px;
+            color: $blue;
+            font-size: 16px;
+
+            @media (max-width: $breakPointL) {
+                width: $_search_imgWidthL - 15px - 27px;
+                padding-left: 27px;
+            }
+
+            &:focus {
+                width: 210px;
+                padding-left: 10px;
+                padding-right: 30px;
+                position: absolute;
+
+                & + .submit {
+                    left: calc(100% + 65px);
+
+                    @media (max-width: $breakPointL) {
+                        left: calc(100% + 45px);
+                    }
+                }
+
+                @media (max-width: $breakPointL) {
+                    width: 160px;
+                }
+            }
+        }
+    }
+
+    .pageTitle {
+        @include flexStartCenter;
+        font-size: 24px;
+        font-weight: 500;
+        color: $white;
+
+        width: calc(100%);
+        margin-left: 5px;
+    }
+
+    .breadcrumbs {
+        display: flex;
+        align-items: center;
+        @include fontDesktopS($white);
+        gap: 5px;
+        width: fit-content;
+        overflow-y: visible;
+        margin-left: 5px;
+        height: 100%;
+
+        .arrow {
+            float: right;
+            width: 14px;
+            min-width: 14px;
+            height: 14px;
+            border-radius: 100%;
+            border: 1px solid $skyBlue;
+            background-color: $skyBlue;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                filter: $blueFilter;
+                transition: transform 0.25s ease-in-out;
+            }
+
+            &Last {
+                justify-self: flex-end;
+                align-self: flex-end;
+            }
+        }
+
+        .breadcrumbsItem {
+            font-size: 13px;
+            font-weight: 700;
+            position: relative;
+            min-height: 100%;
+            overflow: visible;
+            display: flex;
+            align-items: center;
+
+            @media (hover: hover) and (pointer: fine) {
+                &:hover {
+                    .dropdown {
+                        display: flex;
+                    }
+
+                    + .arrow {
+                        img {
+                            transform: rotate(90deg);
+                        }
+                    }
+                }
+            }
+
+            &Link {
+                @include hoverColor($yellow);
+                @include activeColor($blue);
+                color: $lightBlue;
+                font-size: 13px;
+                font-weight: 700;
+                line-height: 14px;
+                width: fit-content;
+                text-align: center;
+                letter-spacing: -0.5px;
+                min-height: 100%;
+
+                @media (max-width: $breakPointL) {
+                    font-size: 12px;
+                    line-height: 12px;
+                    letter-spacing: -0.8px;
+                    font-weight: 700;
+                }
+            }
+
+            .dropdown {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 225px;
+                display: none;
+                flex-direction: column;
+                z-index: 0;
+                background-color: $skyBlue;
+                gap: 8px;
+                overflow-y: scroll;
+                max-height: 65vh;
+                border-radius: 15px 0 15px 15px;
+                padding-top: 10px;
+                padding-bottom: 5px;
+                padding-right: 10px;
+                padding-left: 10px;
+                transition: display 0.5s;
+
+                @media (max-width: $breakPointL) {
+                    width: 186px;
+                }
+
+                &Item {
+                    display: flex;
+                    gap: 3px;
+                    width: 100%;
+                    height: fit-content;
+                    white-space: initial;
+                    line-height: 14px;
+                    font-size: 13px;
+                    font-weight: 600;
+                    color: $lightBlue;
+
+                    .symbol {
+                        font-size: 10px;
+                    }
+
+                    &:hover {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}

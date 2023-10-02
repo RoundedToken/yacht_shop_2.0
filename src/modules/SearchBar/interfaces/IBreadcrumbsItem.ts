@@ -5,5 +5,4 @@ export interface IBreadcrumbsItem {
     id: number;
     name: string;
     hasChildren: boolean;
-    isLast: boolean;
 }

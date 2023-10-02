@@ -2,14 +2,15 @@ import React, { FC } from 'react';
 import { routeConstants } from '../../../models/enums/EConstants';
 import { IPageTitle } from '../interfaces/IPageTitle';
 import SearchTitle from './SearchTitle';
-import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
+import { usePathname } from 'next-intl/client';
 
 const PageTitle: FC<IPageTitle> = ({ styles }) => {
     const t = useTranslations('Index');
     const location = usePathname().split('/');
     const locationPath = '/' + location[1];
     const searchStr = locationPath === routeConstants.SEARCH_ROUTE ? decodeURI(location[2]) : '';
+    console.log(locationPath);
 
     return (
         <div className={styles.pageTitle}>

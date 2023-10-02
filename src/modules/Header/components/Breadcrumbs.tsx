@@ -2,13 +2,13 @@ import React, { FC, useEffect } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import { useDispatch, useSelector } from 'react-redux';
 import { IBreadcrumbs } from '../interfaces/IBreadcrumbs';
-import { usePathname } from 'next/navigation';
 import { setMobileModalType } from '../../../redux/modalSlice/modalSlice';
 import { switchMobileModalDisplay } from '../../../redux/stylesSlice/stylesSlice';
 import { navProductApi } from '../../../redux/services/navProductService';
 import { RootState } from '../../../redux/rootReducer';
 import { useLocale } from 'next-intl';
 import { TLang } from '../../../models/types/TLang';
+import { usePathname } from 'next-intl/client';
 
 const Breadcrumbs: FC<IBreadcrumbs> = ({ styles }) => {
     const location = usePathname().split('/');

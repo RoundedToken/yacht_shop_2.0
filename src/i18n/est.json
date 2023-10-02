@@ -8,6 +8,9 @@
         "main": "Avaleht",
         "search": "Otsing"
     },
+    "LocaleLayout": {
+        "title": "Яхтшоп"
+    },
     "Header": {
         "name": "Kõik paatide ja meremeeste jaoks"
     }

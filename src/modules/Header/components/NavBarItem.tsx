@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { routeConstants } from '../../../models/enums/EConstants';
 import { INavBarItem } from '../interfaces/INavBarItem';
-import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next-intl/client';
 
 const NavBarItem: FC<INavBarItem> = ({ className, src, route, children, switcher, styles }) => {
     const location = '/' + usePathname().split('/')[1];

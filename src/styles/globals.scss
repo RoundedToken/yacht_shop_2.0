@@ -1,7 +1,6 @@
 @import './index.scss';
 
 * {
-    // box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
@@ -21,4 +20,30 @@ body {
 a {
     color: inherit;
     text-decoration: none;
+}
+input {
+    outline: none;
+    border: 0;
+    font-family: $fontFamilyRounded;
+}
+select {
+    font-family: $fontFamilyRounded;
+}
+button {
+    border: 0;
+    background: transparent;
+}
+table {
+    border-spacing: 0;
+}
+textarea {
+    outline: none;
+    font-family: $fontFamilyRounded;
+}
+img {
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
