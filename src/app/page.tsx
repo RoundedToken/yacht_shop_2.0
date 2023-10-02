@@ -1,13 +1,5 @@
-'use client';
+import { redirect } from 'next/navigation';
 
-import { useEffect } from 'react';
-import { useFetchAllIdQuery } from '../redux/services/navTree';
-
-export default function Home() {
-    const { data } = useFetchAllIdQuery('rus');
-
-    useEffect(() => {
-        console.log(data);
-    }, [data]);
-    return <main></main>;
+export default function RootPage() {
+    redirect('/en');
 }

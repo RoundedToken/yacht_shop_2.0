@@ -1,0 +1,183 @@
+/* FLEX */
+@mixin flexCenterCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flexEndNormal {
+    display: flex;
+    justify-content: flex-end;
+    align-items: normal;
+}
+@mixin flexStartNormal {
+    display: flex;
+    justify-content: flex-start;
+    align-items: normal;
+}
+@mixin flexBetweenCenter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin flexStartEnd {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+@mixin flexBetweenEnd {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+@mixin flexAroundNormal {
+    display: flex;
+    justify-content: space-around;
+    align-items: normal;
+}
+@mixin flexStartCenter {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+@mixin flexAroundCenter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+@mixin columnBetweenEnd {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+@mixin columnStartStart {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+@mixin columnBetweenNormal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: normal;
+}
+@mixin columnCenterCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@mixin columnCenterStart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+@mixin columnBetweenCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* FONTS */
+@mixin fontDesktopXXL($color) {
+    font-size: $fontSizeDesktopXXL;
+    font-weight: $fontWeightXXL;
+    color: $color;
+}
+@mixin fontDesktopXL($color) {
+    font-size: $fontSizeDesktopXL;
+    font-weight: $fontWeightXL;
+    color: $color;
+}
+@mixin fontDesktopL($color) {
+    font-size: $fontSizeDesktopL;
+    font-weight: $fontWeightL;
+    color: $color;
+}
+@mixin fontDesktopXM($color) {
+    font-size: $fontSizeDesktopXM;
+    font-weight: $fontWeightXM;
+    color: $color;
+}
+@mixin fontDesktopM($color) {
+    font-size: $fontSizeDesktopM;
+    font-weight: $fontWeightM;
+    color: $color;
+}
+@mixin fontDesktopS($color) {
+    font-size: $fontSizeDesktopS;
+    font-weight: $fontWeightS;
+    color: $color;
+}
+@mixin fontDesktopXS($color) {
+    font-size: $fontSizeDesktopXS;
+    font-weight: $fontWeightXS;
+    color: $color;
+}
+
+/* IMAGES */
+@mixin productImgInList {
+    width: 100px;
+    height: 100px;
+}
+@mixin menuControlImg {
+    width: 40px;
+    height: 40px;
+}
+
+@mixin activeColor($color) {
+    cursor: pointer;
+    &:active {
+        color: $color;
+    }
+}
+//HOVER
+@mixin hover {
+    @media (hover: hover) and (pointer: fine) {
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+@mixin hoverMini {
+    @media (hover: hover) and (pointer: fine) {
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.03);
+        }
+    }
+}
+@mixin hoverColor($color) {
+    @media (hover: hover) and (pointer: fine) {
+        cursor: pointer;
+        &:hover {
+            color: $color;
+        }
+    }
+}
+@mixin hoverBackColor($color) {
+    @media (hover: hover) and (pointer: fine) {
+        cursor: pointer;
+        &:hover {
+            background-color: $color;
+        }
+    }
+}
+@mixin hoverFilter($filter) {
+    @media (hover: hover) and (pointer: fine) {
+        cursor: pointer;
+        &:hover {
+            filter: $filter;
+        }
+    }
+}
+@mixin checkbox {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}

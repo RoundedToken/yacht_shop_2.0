@@ -1,0 +1,14 @@
+{
+    "Index": {
+        "contacts": "Kontaktid",
+        "cart": "Ostukorv",
+        "catalog": "Kataloog",
+        "rope_crimping": "Trossi pressimine",
+        "favorites": "Lemmikud",
+        "main": "Avaleht",
+        "search": "Otsing"
+    },
+    "Header": {
+        "name": "Kõik paatide ja meremeeste jaoks"
+    }
+}

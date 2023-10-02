@@ -1,0 +1,17 @@
+{
+    "Index": {
+        "contacts": "Контакты",
+        "cart": "Корзина",
+        "catalog": "Каталог",
+        "rope_crimping": "Обжим тросов",
+        "favorites": "Избранное",
+        "main": "Главная",
+        "search": "Поиск"
+    },
+    "LocaleLayout": {
+        "title": "Яхтшоп"
+    },
+    "Header": {
+        "name": "Всё для яхт и яхтсменов"
+    }
+}

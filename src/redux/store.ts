@@ -8,4 +8,5 @@ export const reduxStore = configureStore({
     middleware: (getDefaultMiddleware) => {
         return getDefaultMiddleware().concat(middleware);
     },
+    devTools: process.env.NODE_ENV !== 'production',
 });

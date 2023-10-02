@@ -1,0 +1,426 @@
+@import '../../styles/index.scss';
+@import './variables.scss';
+
+.logo {
+    position: absolute;
+    z-index: 5;
+    top: 29px;
+    left: $_header_paddingDouble;
+    height: $_header_heightImg;
+    width: auto;
+
+    @media (max-width: $breakPointL) {
+        top: $_header_paddingL;
+        left: $_header_paddingDoubleL;
+        height: $_header_heightImgL;
+        top: 24px;
+    }
+
+    @media (max-width: $breakPointM) {
+        display: none;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.topContainer {
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: $_header_padding;
+    padding-left: $_header_paddingDouble * 3 + $_header_imgWidth;
+    padding-right: $_header_paddingDouble;
+    background-image: $headerGradient;
+    width: calc(100% - ($_header_paddingDouble * 4 + $_header_imgWidth));
+    height: calc($_header_heightImg * 0.83 - $_header_padding - 30px);
+
+    @media (max-width: $breakPointL) {
+        padding-top: 25px;
+        padding-bottom: $_header_paddingL;
+        padding-left: $_header_imgWidthL + $_header_paddingDoubleL * 2;
+        padding-right: $_header_paddingDoubleL;
+        height: calc($_header_heightImgL * 0.83 - $_header_paddingL - 25px);
+        width: calc(100% - ($_header_paddingDoubleL * 3 + $_header_imgWidthL));
+    }
+
+    @media (max-width: $breakPointM) {
+        @include flexBetweenCenter;
+        position: fixed;
+        top: 0;
+        z-index: 3;
+        opacity: 1 !important;
+        width: calc(100% - 60px);
+        height: 40px;
+        padding-block: 0;
+        background-image: none;
+        background-color: $aqua;
+        padding-inline: 30px;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.527);
+    }
+
+    @media (max-width: $breakPointS) {
+        padding-inline: 20px;
+        width: calc(100% - 40px);
+    }
+
+    ._mobileMenu {
+        display: none;
+
+        @media (max-width: $breakPointM) {
+            @include flexBetweenCenter;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            // padding-left: 70%;
+        }
+
+        @media (max-width: $breakPointS) {
+            // padding-left: 60%;
+        }
+
+        .pageTitle {
+            display: flex;
+            font-size: 16px;
+            font-weight: 500;
+            color: $white;
+            margin-left: 20px;
+            width: 65%;
+
+            @media (max-width: $breakPointS) {
+                width: 55%;
+            }
+        }
+
+        .breadcrumbs {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            font-size: 12px;
+            font-weight: 500;
+            color: $white;
+            margin-left: 20px;
+            width: 65%;
+            line-height: 0.8;
+            cursor: pointer;
+            @include hoverColor($yellow);
+
+            @media (max-width: $breakPointS) {
+                width: 55%;
+            }
+
+            &Name {
+            }
+
+            .symbolLast {
+                font-size: 13px;
+
+                justify-self: center;
+                align-self: center;
+            }
+        }
+
+        .favicon {
+            position: absolute;
+            left: -15px;
+            cursor: pointer;
+
+            img {
+                height: 20px;
+                width: 20px;
+            }
+        }
+
+        ._mobileSearch {
+            filter: $yellowFilter;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+        }
+        ._mobileLang {
+            width: 29px;
+            height: 29px;
+            filter: $blueFilter;
+            cursor: pointer;
+        }
+        ._mobileContacts {
+            width: 27px;
+            height: 27px;
+            filter: $blueFilter;
+            cursor: pointer;
+        }
+    }
+
+    .name {
+        color: $yellow;
+        font-size: $_header_fontSizeName;
+        font-weight: $_header_fontWeightName;
+        margin-left: 5px;
+
+        @media (max-width: $breakPointL) {
+            font-size: $_header_fontSizeNameL;
+            font-weight: $_header_fontWeightNameL;
+        }
+
+        @media (max-width: $breakPointM) {
+            display: none;
+        }
+
+        div {
+            padding-top: 10px;
+        }
+    }
+
+    .contacts {
+        display: flex;
+        margin-left: auto;
+
+        a {
+            display: flex;
+            color: $yellow;
+            padding-top: 12px;
+
+            @media (max-width: $breakPointL) {
+                font-size: 14px;
+            }
+
+            @media (max-width: $breakPointM) {
+                display: none;
+            }
+
+            img {
+                width: 28px;
+                height: 28px;
+                padding-top: 3px;
+                filter: $whiteFilter;
+
+                @media (max-width: $breakPointL) {
+                    width: 26px;
+                }
+
+                @media (max-width: $breakPointM) {
+                    width: 24px;
+                }
+            }
+        }
+    }
+
+    .lang {
+        margin-left: $_header_paddingDouble * 2;
+        margin-top: -7px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.5;
+        color: $white;
+
+        @media (max-width: $breakPointL) {
+            margin-left: $_header_paddingDoubleL * 2;
+            font-size: 14px;
+            font-weight: 400;
+            margin-top: -15px;
+        }
+
+        @media (max-width: $breakPointM) {
+            display: none;
+        }
+
+        &__item {
+            cursor: pointer;
+        }
+
+        &__active {
+            color: $yellow;
+        }
+    }
+}
+
+.bottomContainer {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    padding-block: 5px;
+    background-color: $white;
+    padding-left: $_header_paddingDouble * 3 + $_header_imgWidth;
+    padding-right: $_header_paddingDouble + 5px;
+    width: calc(100% - ($_header_paddingDouble * 4 + $_header_imgWidth + 5px));
+    height: calc($_header_heightImg * 0.27 + 10px);
+
+    @media (max-width: $breakPointL) {
+        padding-bottom: $_header_paddingL;
+        padding-block: 4px;
+        height: calc($_header_heightImgL * 0.27 + 8px);
+        padding-left: $_header_paddingDoubleL + $_header_imgWidthL + $_header_paddingDoubleL;
+        padding-right: $_header_paddingDoubleL;
+        width: calc(100% - ($_header_paddingDoubleL * 3 + $_header_imgWidthL));
+    }
+
+    @media (max-width: $breakPointM) {
+        width: calc(100% - $_header_paddingDoubleM * 2);
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        height: 65px;
+        padding-block: 3px;
+        padding-inline: $_header_paddingDoubleM;
+        background-color: $aqua !important;
+    }
+
+    .miniLogo {
+        display: none;
+        position: absolute;
+        height: 120px;
+        top: 13px;
+        left: 20px;
+        filter: $blueFilter;
+        cursor: pointer;
+
+        @media (max-width: $breakPointL) {
+            left: 16px;
+            height: 100px;
+            top: 11px;
+        }
+
+        @media (max-width: $breakPointM) {
+            display: none !important;
+        }
+    }
+
+    .navBar {
+        @include flexBetweenCenter;
+        height: 100%;
+        position: relative;
+
+        img {
+            width: 25px;
+            height: 25px;
+            filter: $blueFilter;
+        }
+
+        &__item {
+            @include flexCenterCenter;
+
+            gap: 5px;
+
+            @media (max-width: $breakPointL) {
+                gap: 4px;
+            }
+
+            @media (max-width: $breakPointM) {
+                @include columnCenterCenter;
+                gap: 6px;
+            }
+
+            a {
+                @include flexCenterCenter;
+                color: $blue;
+                height: min-content;
+                font-size: 19px;
+                font-weight: 500;
+
+                @media (max-width: $breakPointL) {
+                    font-size: 17px;
+                    font-weight: 400;
+                }
+
+                @media (max-width: $breakPointM) {
+                    font-size: 15px;
+                }
+
+                @media (max-width: $breakPointS) {
+                    font-size: 14px;
+                    font-weight: 300;
+                }
+
+                div {
+                    height: min-content;
+                }
+            }
+        }
+
+        .catalog {
+            position: relative;
+            z-index: 5;
+
+            @media (max-width: $breakPointM) {
+                gap: 0;
+            }
+
+            input {
+                @include checkbox;
+
+                &:checked + img {
+                    filter: $yellowFilter;
+                }
+            }
+
+            .dropdownSwitcher {
+                @include flexCenterCenter;
+
+                cursor: pointer;
+
+                img {
+                    @include hoverFilter($yellowFilter);
+                    width: 26px;
+                    height: 26px;
+                }
+
+                @media (max-width: $breakPointL) or (max-height: 800px) {
+                    display: none;
+                }
+            }
+
+            img {
+                width: 36px;
+                height: 36px;
+
+                @media (max-width: $breakPointM) {
+                    width: 31px;
+                    height: 31px;
+                }
+            }
+        }
+
+        .cart {
+            .cartCounter {
+                @include fontDesktopS($white);
+                border-radius: 30%;
+                background-color: $lightBlue;
+                padding-inline: 5px;
+                padding-top: 1px;
+                margin-left: 3px;
+                font-weight: 500;
+
+                @media (max-width: $breakPointM) {
+                    background-color: $blue;
+                    color: $aqua;
+                }
+            }
+        }
+
+        .crimping {
+            img {
+                @media (max-width: $breakPointM) {
+                    margin-top: 3px;
+                    height: 23px;
+                    width: 23px;
+                }
+            }
+        }
+
+        .activeRoute {
+            a {
+                // color: $yellow;
+                font-weight: 900;
+
+                img {
+                    // filter: $yellowFilter;
+                }
+
+                .cartCounter {
+                    // background-color: $yellow;
+                }
+            }
+        }
+    }
+}
