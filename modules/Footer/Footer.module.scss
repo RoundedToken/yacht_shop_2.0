@@ -1,0 +1,168 @@
+@import '../../styles/index.scss';
+
+.footer {
+    @include fontDesktopM($footerColor);
+    margin-top: auto;
+    width: 100%;
+
+    @media (max-width: $breakPointM) {
+        margin-bottom: 70px;
+    }
+
+    .footerContainer {
+        @include flexCenterCenter;
+        position: relative;
+        width: calc(100% - 40px);
+        background-image: $footerGradient;
+        padding-block: 20px;
+        padding-inline: 20px;
+        z-index: 2;
+
+        .waves {
+            .wave {
+                position: absolute;
+                top: -30px;
+                left: 0;
+                width: 100%;
+                height: 30px;
+                background: url('../../public/assets/images/wave.png');
+                background-size: 40vw 30px;
+                filter: $waveFilter;
+            }
+
+            .wave1 {
+                z-index: 2;
+                opacity: 1;
+                animation: animateWaves 8s linear infinite;
+            }
+
+            .wave2 {
+                z-index: 1;
+                opacity: 0.5;
+                animation: animate 8s linear infinite !important;
+            }
+
+            .wave3 {
+                z-index: 2;
+                opacity: 0.2;
+                animation: animateWaves 6s linear infinite;
+            }
+
+            .wave4 {
+                z-index: 1;
+                opacity: 0.7;
+                animation: animate 6s linear infinite;
+            }
+
+            @keyframes animateWaves {
+                0% {
+                    background-position-x: 40vw;
+                }
+                100% {
+                    background-position-x: 0vw;
+                }
+            }
+
+            @keyframes animate {
+                0% {
+                    background-position-x: -40vw;
+                }
+                100% {
+                    background-position-x: 0vw;
+                }
+            }
+        }
+
+        .grid {
+            flex-grow: 1;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+
+            @media (max-width: $breakPointM) {
+                grid-template-columns: 1fr 1fr;
+                row-gap: 20px;
+            }
+
+            img {
+                filter: $footerFilter;
+            }
+
+            .address {
+                @include columnCenterCenter;
+                gap: 10px;
+                color: $footerColor;
+
+                @media (hover: hover) and (pointer: fine) {
+                    &:hover {
+                        color: $yellow;
+                        img {
+                            filter: $yellowFilter;
+                        }
+                    }
+                }
+
+                img {
+                    width: 38px;
+                }
+
+                &Text {
+                    text-align: center;
+                    font-size: 14px;
+                }
+            }
+
+            .workingMode {
+                @include columnCenterCenter;
+                font-size: 13px;
+                line-height: 20px;
+                text-align: center;
+
+                img {
+                    &:nth-child(1) {
+                        width: 28px;
+                    }
+
+                    &:nth-child(4) {
+                        width: 25px;
+                        margin-top: 7px;
+                        margin-bottom: 3px;
+                        transform: rotate(0deg);
+                    }
+                }
+            }
+
+            .contacts {
+                @include columnCenterCenter;
+                font-size: 14px;
+                line-height: 26px;
+
+                img {
+                    width: 36px;
+                    margin-bottom: 10px;
+                }
+
+                a {
+                    @include hoverColor($yellow);
+                    color: $footerColor;
+                }
+            }
+            .email {
+                @include columnCenterCenter;
+                gap: 5px;
+                font-size: 14px;
+
+                a {
+                    @include hoverColor($yellow);
+                    color: $footerColor;
+                }
+
+                img {
+                    transform: rotate(-20deg);
+                    width: 70px;
+                    margin-left: 8px;
+                }
+            }
+        }
+    }
+}

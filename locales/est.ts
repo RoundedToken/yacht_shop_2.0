@@ -1,0 +1,18 @@
+export default {
+    contacts: 'Kontaktid',
+    cart: 'Ostukorv',
+    catalog: 'Kataloog',
+    rope_crimping: 'Trossi pressimine',
+    favorites: 'Lemmikud',
+    main: 'Avaleht',
+    search: 'Otsing',
+    our_whats_app: 'Meie WhatsApp',
+    wed: 'K',
+    sat: 'L',
+    sun: 'P',
+    mon: 'E',
+    tue: 'T',
+    closed: 'suletud',
+    title: 'Яхтшоп',
+    name: 'Kõik paatide ja meremeeste jaoks',
+} as const;

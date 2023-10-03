@@ -1,0 +1,18 @@
+export default {
+    contacts: 'Contacts',
+    cart: 'Cart',
+    catalog: 'Catalog',
+    rope_crimping: 'Rope crimping',
+    favorites: 'Favorites',
+    main: 'Main',
+    search: 'Search',
+    our_whats_app: 'Our WhatsApp',
+    wed: 'Wed',
+    sat: 'Sat',
+    sun: 'Sun',
+    mon: 'Mon',
+    tue: 'Tue',
+    closed: 'closed',
+    title: 'Parnu YachtShop',
+    name: 'All for boats and sailors',
+} as const;

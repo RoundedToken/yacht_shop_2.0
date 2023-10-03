@@ -1,0 +1,48 @@
+@import './index.scss';
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    max-width: 100vw;
+    @include columnStartStart;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: $lightGray;
+    margin-inline: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+input {
+    outline: none;
+    border: 0;
+    font-family: $fontFamilyRounded;
+}
+select {
+    font-family: $fontFamilyRounded;
+}
+button {
+    border: 0;
+    background: transparent;
+}
+table {
+    border-spacing: 0;
+}
+textarea {
+    outline: none;
+    font-family: $fontFamilyRounded;
+}
+img {
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
