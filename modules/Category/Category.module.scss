@@ -1,0 +1,69 @@
+@import '../../styles/index.scss';
+
+.categoryListContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
+
+    @media (max-width: 1600px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media (max-width: 1250px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 950px) {
+        grid-template-columns: 1fr;
+    }
+
+    .categoryItem {
+        @include hoverMini;
+        @include flexStartCenter;
+        width: calc(100% - 2vw);
+        min-width: calc(100% - 2vw);
+        font-size: 17px;
+        font-weight: 800;
+        color: $blue;
+        gap: 20px;
+        border-radius: 0 20px 20px 20px;
+        padding-top: 10px;
+        padding-bottom: 15px;
+        padding-inline: 1vw;
+        background-color: $white;
+
+        .imageContainer {
+            min-width: 120px;
+            width: 120px;
+            height: 120px;
+            position: relative;
+
+            .mask {
+                width: calc(100% - 32px);
+                height: calc(100% - 32px);
+                border: 16px solid $darkAqua;
+                box-shadow:
+                    4px 4px 4px gray,
+                    4px 4px 4px rgba(2, 31, 128, 0.471) inset;
+                border-radius: 100%;
+                position: absolute;
+                z-index: 1;
+            }
+
+            img {
+                position: absolute;
+                width: calc(100% - 30px);
+                height: calc(100% - 30px);
+                top: 16px;
+                left: 16px;
+                border-radius: 100%;
+                object-fit: contain;
+            }
+
+            .defaultProductPic {
+                opacity: 0.4;
+            }
+        }
+    }
+}

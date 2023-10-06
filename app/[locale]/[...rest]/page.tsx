@@ -1,5 +1,3 @@
-import { notFound } from 'next/navigation';
-
 export default function CatchAllPage() {
-    notFound();
+    return <h1>Not Found</h1>;
 }

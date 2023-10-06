@@ -46,3 +46,10 @@ img {
     -webkit-user-select: none;
     -o-user-select: none;
 }
+
+.skeleton {
+    flex: 1;
+    width: 100%;
+    display: block;
+    line-height: 1;
+}

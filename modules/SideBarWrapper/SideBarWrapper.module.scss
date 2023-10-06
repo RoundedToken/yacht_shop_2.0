@@ -1,0 +1,139 @@
+@import '../../styles/index.scss';
+@import '../../modules/Header/variables.scss';
+
+.body {
+    width: calc(100%);
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 55px;
+    margin-top: 20px;
+
+    @media (max-width: $breakPointM) {
+        width: calc(100% - 20px);
+        margin-left: 20px;
+        gap: 0;
+    }
+
+    @media (max-width: $breakPointM) {
+        margin-top: 50px;
+        margin-bottom: 71px;
+    }
+
+    @media (max-width: $breakPointS) {
+        width: calc(100% - 10px);
+        margin-left: 10px;
+    }
+
+    .filterButton {
+        display: none;
+        opacity: 0.8;
+
+        @media (max-width: $breakPointM) {
+            top: 40px;
+            left: 60px;
+            display: block;
+            position: fixed;
+            z-index: 2;
+            width: 0;
+            cursor: pointer;
+            border-top: 40px solid $middleBlue;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+        }
+
+        @media (max-width: $breakPointS) {
+            left: 46px;
+        }
+    }
+
+    .filterImg {
+        display: none;
+        opacity: 0.8;
+
+        @media (max-width: $breakPointM) {
+            top: 45px;
+            left: 77px;
+            display: block;
+            position: fixed;
+            z-index: 2;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            filter: $yellowFilter;
+        }
+
+        @media (max-width: $breakPointS) {
+            left: 64px;
+        }
+    }
+
+    .filterActive {
+        filter: $yellowFilter !important;
+    }
+
+    .contentContainer {
+        width: calc(100% - 20px);
+        padding-right: 20px;
+
+        @media (max-width: $breakPointS) {
+            width: calc(100% - 10px);
+            padding-right: 10px;
+        }
+    }
+}
+
+.sideBar {
+    position: sticky;
+    z-index: 1;
+    top: 124px;
+    width: 200px;
+
+    @media (max-width: $breakPointL) {
+        width: 140px;
+        top: 106px;
+    }
+
+    @media (max-width: $breakPointM) {
+        display: none;
+    }
+
+    .switchContainer {
+        @include flexCenterCenter;
+        gap: 15px;
+        width: calc(100% - 50px);
+        margin-left: 20px;
+        margin-bottom: 20px;
+
+        @media (max-width: $breakPointL) {
+            width: calc(100% - 30px);
+        }
+
+        .active {
+            background-color: $yellow;
+        }
+
+        label {
+            @include flexCenterCenter;
+            @include hoverBackColor($yellowLight);
+            width: 43px;
+            height: 43px;
+            position: relative;
+            cursor: pointer;
+            background-color: $darkAqua;
+            border-radius: 100%;
+        }
+
+        input {
+            width: 0;
+            height: 0;
+            position: absolute;
+        }
+
+        img {
+            width: 28px;
+            filter: $blueFilter;
+        }
+    }
+}

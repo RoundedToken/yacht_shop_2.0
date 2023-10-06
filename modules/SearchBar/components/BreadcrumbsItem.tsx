@@ -1,17 +1,17 @@
 import React, { FC } from 'react';
 import { routeConstants } from '../../../models/enums/EConstants';
 import { IBreadcrumbsItem } from '../interfaces/IBreadcrumbsItem';
-import { useSelector } from 'react-redux';
 import BreadcrumbsDropdown from './BreadcrumbsDropdown';
 import arrowImg from '../../../public/assets/images/arrow.png';
-import { RootState } from '../../../redux/rootReducer';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useCurrentLocale } from '../../../locales/client';
+import { useFetchAllIdQuery } from '../../../redux/services/navTree';
 
 const BreadcrumbsItem: FC<IBreadcrumbsItem> = ({ styles, id, name, hasChildren }) => {
-    const children = useSelector((state: RootState) => state.navSliceReducer.categoryList).find(
-        (product) => product.id === id,
-    )?.children;
+    const lang = useCurrentLocale();
+    const { data } = useFetchAllIdQuery(lang);
+    const children = data?.flatTree[`${id}`].children;
 
     return (
         <>

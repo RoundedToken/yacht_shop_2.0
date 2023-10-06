@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
 import { I18nProviderClient } from '../../locales/client';
 
 const SearchBar = () => {
-    const location = usePathname().split('/')[1];
+    const location = usePathname().split('/')[2];
     const breadcrumbsPaths = ['category', 'product_list', 'product'];
 
     return (

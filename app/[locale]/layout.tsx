@@ -4,8 +4,8 @@ import React, { ReactNode } from 'react';
 import Header from '../../modules/Header/Header';
 import { Providers } from '../../redux/Providers';
 import SearchBar from '../../modules/SearchBar/SearchBar';
-import Footer from '../../modules/Footer/Footer';
-import { getI18n } from '../../locales/server';
+import { getI18n, getStaticParams } from '../../locales/server';
+import { setStaticParamsLocale } from 'next-international/server';
 
 const nunito = Nunito({ subsets: ['latin', 'cyrillic'] });
 
@@ -15,15 +15,17 @@ type Props = {
 };
 
 export async function generateMetadata() {
-    const t = await getI18n();
-
     return {
-        title: t('title'),
+        title: 'Parnu Yacht Shop',
     };
 }
 
+// export function generateStaticParams() {
+//     return getStaticParams();
+// }
+
 export default async function LocaleLayout({ children, params: { locale } }: Props) {
-    const t = await getI18n();
+    // setStaticParamsLocale(locale);
 
     return (
         <Providers>
@@ -34,8 +36,6 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
                     <SearchBar />
 
                     {children}
-
-                    <Footer t={t} />
                 </body>
             </html>
         </Providers>

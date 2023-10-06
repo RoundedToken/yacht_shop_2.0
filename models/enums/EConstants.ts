@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 export enum routeConstants {
     CATEGORIES_ROUTE = '/category',
-    MAIN_ROUTE = '/',
+    MAIN_ROUTE = '/main',
     CART_ROUTE = '/cart',
     CRIMPING_ROUTE = '/rope_crimping',
     PRODUCT_LIST_ROUTE = '/product_list',

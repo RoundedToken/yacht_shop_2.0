@@ -5,12 +5,12 @@ import { TLang } from '../../models/types/TLang';
 export const navTreeApi = createApi({
     reducerPath: 'navTreeApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: process.env.NEXT_PUBLIC_API_URL,
+        baseUrl: 'http://localhost:3000/api',
     }),
     endpoints: (build) => ({
-        fetchAllId: build.query<INavTreeItem[], TLang>({
+        fetchAllId: build.query<{ tree: INavTreeItem[]; flatTree: Record<string, INavTreeItem> }, TLang>({
             query: (lang) => ({
-                url: '/nav_tree',
+                url: '/navTree',
                 params: { lang },
             }),
         }),

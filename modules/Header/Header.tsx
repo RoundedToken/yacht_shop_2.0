@@ -70,7 +70,14 @@ const Header = () => {
 
             <div ref={bottomContainerRef} className={styles.bottomContainer}>
                 <Link href={routeConstants.MAIN_ROUTE}>
-                    <Image ref={miniLogoRef} className={styles.miniLogo} src={miniLogoImg} alt="" />
+                    <Image
+                        ref={miniLogoRef}
+                        className={styles.miniLogo}
+                        src={miniLogoImg}
+                        alt=""
+                        width={153}
+                        height={120}
+                    />
                 </Link>
 
                 <NavBar styles={styles} />
