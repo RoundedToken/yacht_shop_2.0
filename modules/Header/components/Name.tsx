@@ -9,7 +9,7 @@ const Name: FC<IName> = ({ styles }) => {
 
     return (
         <Link href={routeConstants.MAIN_ROUTE} className={styles.name}>
-            {t('name')}
+            {t('mainTitle')}
         </Link>
     );
 };

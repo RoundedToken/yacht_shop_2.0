@@ -14,7 +14,7 @@ export async function generateMetadata({ params: { id } }: Props): Promise<Metad
     const categoryName = await getCategoryName({ id, lang });
 
     return {
-        title: categoryName,
+        title: categoryName ?? 'Catalog',
     };
 }
 

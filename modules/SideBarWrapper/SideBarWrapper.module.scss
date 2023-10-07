@@ -89,6 +89,7 @@
     z-index: 1;
     top: 124px;
     width: 200px;
+    min-width: 200px;
 
     @media (max-width: $breakPointL) {
         width: 140px;
