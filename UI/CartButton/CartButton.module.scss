@@ -1,0 +1,13 @@
+@import '../../styles/index.scss';
+
+.addToCart,
+.remove {
+    @include flexCenterCenter;
+    @include hoverFilter($yellowFilter);
+    width: min-content;
+
+    img {
+        width: 32px;
+        filter: $lightBlueFilter;
+    }
+}

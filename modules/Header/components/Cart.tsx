@@ -5,12 +5,12 @@ import emptyChestImg from '../../../public/assets/images/emptyChest.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import NavBarItem from './NavBarItem';
 import { ICart } from '../interfaces/ICart';
-import { getProductCount } from '../../../redux/cartSlice/selectors';
+import { getCartProductsCount } from '../../../redux/cartSlice/selectors';
 import { setProductListFromStorage } from '../../../redux/cartSlice/cartSlice';
 import { useI18n } from '../../../locales/client';
 
 const Cart: FC<ICart> = ({ styles }) => {
-    const productCount = useSelector(getProductCount);
+    const productCount = useSelector(getCartProductsCount);
     const dispatch = useDispatch();
     const isCartEmpty = productCount === 0;
     const t = useI18n();

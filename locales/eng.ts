@@ -21,4 +21,8 @@ export default {
     sorting: 'Sorting',
     in_stock: 'In stock',
     filter: 'Filter',
+    product: 'Product',
+    code: 'Code',
+    no: 'No',
+    yes: 'Yes',
 } as const;

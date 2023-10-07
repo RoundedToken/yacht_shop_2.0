@@ -1,32 +1,21 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import Skeleton from 'react-loading-skeleton';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { IBreadcrumbs } from '../interfaces/IBreadcrumbs';
 import { setMobileModalType } from '../../../redux/modalSlice/modalSlice';
 import { switchMobileModalDisplay } from '../../../redux/stylesSlice/stylesSlice';
-import { navProductApi } from '../../../redux/services/navProductService';
-import { RootState } from '../../../redux/rootReducer';
 import { TLang } from '../../../models/types/TLang';
 import { usePathname } from 'next/navigation';
 import { useCurrentLocale } from '../../../locales/client';
+import { useFetchAllIdQuery } from '../../../redux/services/navTree';
 
 const Breadcrumbs: FC<IBreadcrumbs> = ({ styles }) => {
     const location = usePathname().split('/');
-    const isLocation = location[1] === 'product';
     const lang = useCurrentLocale() as TLang;
     const id = Number(location[2]);
-    const [updateProduct, { data: product, isFetching }] = navProductApi.useLazyFetchProductQuery();
-    const category = useSelector((state: RootState) => state.navSliceReducer.categoryList).find((category) =>
-        isLocation ? category.id === product?.parentId : category.id === id,
-    );
+    const { data, isFetching } = useFetchAllIdQuery(lang);
+    const category = data?.flatTree[`${id}`];
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        if (isLocation) {
-            updateProduct({ id, lang });
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [id]);
 
     const handleOnClick = () => {
         document.body.style.overflow = 'hidden';

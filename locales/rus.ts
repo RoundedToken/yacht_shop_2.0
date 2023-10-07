@@ -21,4 +21,8 @@ export default {
     sorting: 'Сортировка',
     in_stock: 'В наличии',
     filter: 'Фильтр',
+    product: 'Товар',
+    code: 'Код',
+    no: 'Нет',
+    yes: 'Да',
 } as const;

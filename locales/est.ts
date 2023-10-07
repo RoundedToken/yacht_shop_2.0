@@ -21,4 +21,8 @@ export default {
     sorting: 'Sorteerimine',
     in_stock: 'Laos',
     filter: 'Filter',
+    product: 'Toode',
+    code: 'Kood',
+    no: 'Ei',
+    yes: 'Jah',
 } as const;

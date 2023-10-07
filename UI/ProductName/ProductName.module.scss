@@ -1,0 +1,6 @@
+@import '../../styles/index.scss';
+
+.productName {
+    @include hoverColor($yellow);
+    color: inherit;
+}

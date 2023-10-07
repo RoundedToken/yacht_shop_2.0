@@ -1,0 +1,17 @@
+@import '../../styles/index.scss';
+
+.productPic {
+    @include hover;
+
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.defaultProductPic {
+    filter: $lightGrayFilter;
+    height: 75%;
+    width: 100%;
+    object-fit: contain;
+    margin-top: 10px;
+}

@@ -1,0 +1,306 @@
+@import '../../styles/index.scss';
+@import './variables.scss';
+
+.skeleton {
+    flex: 1;
+    width: 100%;
+    display: block;
+    line-height: 1;
+}
+
+.rootContainer {
+    container-name: card;
+    container-type: inline-size;
+    @include flexStartNormal;
+    border-radius: 0 10px 10px 10px;
+    background-color: $white;
+    max-width: $_card_widthCardMax;
+    gap: $_card_paddingDouble;
+    width: calc(100% - $_card_padding - $_card_paddingDouble);
+    // height: $_card_heightCard;
+    height: max-content;
+    padding-left: $_card_padding;
+    padding-right: $_card_paddingDouble;
+    padding-block: $_card_paddingDouble;
+
+    // @container card (max-width: 540px) {
+    //     gap: $_card_paddingDoubleS;
+    //     width: calc(100% - $_card_paddingDoubleS * 2);
+    //     height: $_card_heightCardS;
+    //     padding-inline: $_card_paddingDoubleS;
+    //     padding-top: $_card_paddingDoubleS;
+    //     padding-bottom: $_card_paddingS;
+    // }
+
+    @media (max-width: $breakPointS) {
+        gap: $_card_paddingDoubleS;
+        width: calc(100% - $_card_paddingDoubleS * 2);
+        height: $_card_heightCardS;
+        padding-inline: $_card_paddingDoubleS;
+        padding-top: $_card_paddingDoubleS;
+        padding-bottom: $_card_paddingS;
+    }
+
+    .skeleton {
+        flex: 1;
+    }
+
+    .leftContainer {
+        display: flex;
+        min-width: $_card_heightCard;
+        width: $_card_heightCard;
+        height: $_card_heightCard;
+        position: relative;
+
+        @container card (max-width: 540px) {
+            min-width: $_card_heightCard;
+            width: $_card_heightCard;
+            height: $_card_heightCard;
+        }
+
+        @media (max-width: $breakPointS) {
+            min-width: $_card_heightCard;
+            width: $_card_heightCard;
+            height: $_card_heightCard;
+        }
+    }
+
+    .rightContainer {
+        width: 100%;
+        height: 100%;
+
+        .topContainer {
+            @include flexCenterCenter;
+            gap: $_card_padding;
+            width: 100%;
+            height: calc($_card_heightCard / 2 - $_card_padding / 2);
+
+            .name {
+                width: 100%;
+                height: 100%;
+                color: $lightBlue;
+
+                line-height: 100%;
+                font-size: $_card_fontSizeName;
+                font-weight: $_card_fontWeightName;
+
+                @container card (max-width: 700px) {
+                    font-size: $_card_fontSizeNameM;
+                    font-weight: $_card_fontWeightNameM;
+                }
+
+                @container card (max-width: 540px) {
+                    font-size: $_card_fontSizeNameS;
+                    font-weight: $_card_fontWeightNameS;
+                }
+
+                @media (max-width: $breakPointM) {
+                    font-size: $_card_fontSizeNameM;
+                    font-weight: $_card_fontWeightNameM;
+                }
+
+                @media (max-width: $breakPointS) {
+                    color: $blue;
+                    font-size: $_card_fontSizeNameS;
+                    font-weight: $_card_fontWeightNameS;
+                }
+            }
+
+            .price {
+                @include columnBetweenEnd;
+                color: $blue;
+                height: 100%;
+
+                min-width: $_card_widthCardPrice;
+                font-size: $_card_fontSizePrice;
+                font-weight: $_card_fontWeightPrice;
+
+                @container card (max-width: 700px) {
+                    min-width: $_card_widthCardPriceM;
+                    font-size: $_card_fontSizePriceM;
+                    font-weight: $_card_fontWeightPriceM;
+                }
+
+                @container card (max-width: 540px) {
+                    display: none;
+                }
+
+                @media (max-width: $breakPointM) {
+                    min-width: $_card_widthCardPriceM;
+                    font-size: $_card_fontSizePriceM;
+                    font-weight: $_card_fontWeightPriceM;
+                }
+
+                @media (max-width: $breakPointS) {
+                    display: none;
+                }
+
+                &__single {
+                    @include fontDesktopS(gray);
+                    width: 100%;
+                    text-align: end;
+                }
+            }
+        }
+
+        .bottomContainer {
+            @include flexBetweenCenter;
+            gap: $_card_padding;
+            width: 100%;
+            height: calc($_card_heightCard / 2 - $_card_padding / 2);
+            margin-top: $_card_padding;
+
+            @container card (max-width: 540px) {
+                display: grid;
+                grid-template-columns: auto auto;
+                row-gap: $_card_paddingS;
+                column-gap: 0;
+                height: fit-content;
+            }
+
+            @media (max-width: $breakPointS) {
+                display: grid;
+                grid-template-columns: auto auto;
+                row-gap: $_card_paddingS;
+                column-gap: 0;
+            }
+
+            .details {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                min-width: 170px;
+                height: 45px;
+                font-size: $_card_fontSizeDetails;
+                font-weight: $_card_fontWeightDetails;
+
+                @container card (max-width: 540px) {
+                    width: 100%;
+                    grid-column: 1/3;
+                }
+
+                @media (max-width: $breakPointS) {
+                    width: 100%;
+                    grid-column: 1/3;
+                }
+
+                &__item {
+                    display: flex;
+                    gap: $_card_padding;
+
+                    &__title {
+                        color: $lightBlue;
+                    }
+
+                    &__content {
+                        color: $blue;
+                    }
+                }
+
+                .brand,
+                .inStock {
+                    .details__item__content {
+                        font-weight: $_card_fontWeightBrand;
+                    }
+                }
+            }
+
+            ._mobilePrice {
+                display: none;
+
+                @container card (max-width: 540px) {
+                    width: $_card_heightCard;
+                    display: block;
+                    font-size: $_card_fontSizePriceS;
+                    font-weight: $_card_fontWeightPriceS;
+                    color: $blue;
+                    height: 100%;
+                    margin-left: -$_card_heightCard - 20px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    text-align: center;
+                }
+
+                @media (max-width: $breakPointS) {
+                    width: $_card_heightCard;
+                    display: block;
+                    font-size: $_card_fontSizePriceS;
+                    font-weight: $_card_fontWeightPriceS;
+                    color: $blue;
+                    height: 100%;
+                    margin-left: -$_card_heightCard - 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    text-align: center;
+                }
+
+                &__single {
+                    @include fontDesktopS(gray);
+                    text-align: center;
+                }
+            }
+
+            .menuSkeleton {
+                display: flex;
+                height: 45px;
+                width: $_card_menuWidth;
+
+                @container card (max-width: 700px) {
+                    width: $_card_menuWidthM;
+                }
+
+                @container card (max-width: 540px) {
+                    width: $_card_menuWidthM;
+                    height: 42px;
+                }
+
+                @media (max-width: $breakPointM) {
+                    width: $_card_menuWidthM;
+                }
+
+                @media (max-width: $breakPointS) {
+                    width: $_card_menuWidthM;
+                    height: 42px;
+                }
+            }
+
+            .menu {
+                display: flex;
+                justify-content: flex-end;
+                gap: 22px;
+                height: 100%;
+                width: $_card_menuWidth;
+
+                &__item {
+                    @include flexStartEnd;
+                }
+
+                @container card (max-width: 700px) {
+                    width: $_card_menuWidthM;
+                }
+
+                @container card (max-width: 540px) {
+                    width: $_card_menuWidthM;
+                    justify-self: flex-end;
+                    height: 42px;
+                }
+
+                @media (max-width: $breakPointM) {
+                    width: $_card_menuWidthM;
+                }
+
+                @media (max-width: $breakPointS) {
+                    width: $_card_menuWidthM;
+                    justify-self: flex-end;
+                    height: 42px;
+                }
+
+                .favoritesButton {
+                    padding-bottom: 3px;
+                }
+            }
+        }
+    }
+}
