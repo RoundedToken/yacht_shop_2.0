@@ -10,9 +10,9 @@ import { getListMode } from '../../../redux/sideBarSlice/selectors';
 import { useFetchProductListQuery } from '../../../redux/services/webSearch';
 
 const SearchProductList: FC<ISearchProductList> = ({ styles, brands, lang }) => {
-    const searchStr = useParams<TSearchQuery>().query || '';
+    const searchStr = useParams<TSearchQuery>().searchStr || '';
     const listMode = useSelector(getListMode);
-    const { data: productList, isFetching, error } = useFetchProductListQuery({ searchStr, lang });
+    const { data: productList, isFetching, error } = useFetchProductListQuery({ searchStr: decodeURI(searchStr), lang });
 
     return (
         <>

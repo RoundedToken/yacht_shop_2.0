@@ -14,7 +14,7 @@ export async function GET(req: NextRequest) {
 
     const condition = searchStr
         ?.split(' ')
-        .map((str) => `goods.${name} LIKE '%${str}%'`)
+        .map((str) => `goods.${nameFromLang} LIKE '%${str}%'`)
         .join(' AND ');
 
     const data = (

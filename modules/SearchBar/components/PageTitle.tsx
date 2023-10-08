@@ -9,7 +9,7 @@ const PageTitle: FC<IPageTitle> = ({ styles }) => {
     const t = useI18n();
     const location = usePathname().split('/');
     const locationPath = '/' + (location[2] ?? '');
-    const searchStr = locationPath === routeConstants.SEARCH_ROUTE ? decodeURI(location[2]) : '';
+    const searchStr = locationPath === routeConstants.SEARCH_ROUTE ? decodeURI(location[3]) : '';
 
     return (
         <div className={styles.pageTitle}>

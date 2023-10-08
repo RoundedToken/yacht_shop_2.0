@@ -1,4 +1,10 @@
 export default {
+    tuesday: 'Tuesday',
+    monday: 'Monday',
+    sunday: 'Sunday',
+    saturday: 'Saturday',
+    wednesday: 'Wednesday',
+    open: 'Open',
     related_products: 'Related products',
     product_not_found: 'Product not found',
     product_description: 'Product description',

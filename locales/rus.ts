@@ -1,4 +1,10 @@
 export default {
+    tuesday: 'Вторник',
+    monday: 'Понедельник',
+    sunday: 'Воскресенье',
+    saturday: 'Суббота',
+    wednesday: 'Среда',
+    open: 'Открыто',
     related_products: 'Сопутствующие товары',
     product_not_found: 'Товар не найден',
     product_description: 'Описание товара',

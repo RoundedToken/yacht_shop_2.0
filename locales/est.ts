@@ -1,4 +1,10 @@
 export default {
+    tuesday: 'Teisipäev',
+    monday: 'Esmaspäev',
+    sunday: 'Pühapäev',
+    saturday: 'Laupäev',
+    wednesday: 'Kolmapäev',
+    open: 'Avatud',
     related_products: 'Seotud tooted',
     product_not_found: 'Toodet ei leitud',
     product_description: 'Tootekirjeldus',
