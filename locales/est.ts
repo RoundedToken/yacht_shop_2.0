@@ -1,4 +1,7 @@
 export default {
+    related_products: 'Seotud tooted',
+    product_not_found: 'Toodet ei leitud',
+    product_description: 'Tootekirjeldus',
     contacts: 'Kontaktid',
     cart: 'Ostukorv',
     catalog: 'Kataloog',
@@ -25,4 +28,5 @@ export default {
     code: 'Kood',
     no: 'Ei',
     yes: 'Jah',
+    quantity_in_stock: 'Kogus laos',
 } as const;

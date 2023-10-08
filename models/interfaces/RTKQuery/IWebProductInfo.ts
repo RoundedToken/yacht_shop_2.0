@@ -1,3 +1,3 @@
 export interface IWebProductInfoReq {
-    tovar: number;
+    id: number;
 }

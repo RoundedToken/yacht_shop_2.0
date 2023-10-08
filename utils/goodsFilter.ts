@@ -67,6 +67,7 @@ export type TWebCartProductListFormattedData = {
     isDecimals: boolean;
     inStock?: boolean;
     featurename?: string;
+    relatedCount?: number;
 };
 
 export type TWebCartProductListData = {

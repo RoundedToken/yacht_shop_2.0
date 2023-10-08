@@ -6,6 +6,7 @@ import { Providers } from '../../redux/Providers';
 import SearchBar from '../../modules/SearchBar/SearchBar';
 import { getI18n, getStaticParams } from '../../locales/server';
 import { setStaticParamsLocale } from 'next-international/server';
+import MainWrapper from '../../UI/MainWrapper/MainWrapper';
 
 const nunito = Nunito({ subsets: ['latin', 'cyrillic'] });
 
@@ -31,11 +32,13 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
         <Providers>
             <html lang={locale}>
                 <body className={nunito.className}>
-                    <Header />
+                    <MainWrapper>
+                        <Header />
 
-                    <SearchBar />
+                        <SearchBar />
 
-                    {children}
+                        {children}
+                    </MainWrapper>
                 </body>
             </html>
         </Providers>

@@ -16,7 +16,7 @@ import { usePathname } from 'next/navigation';
 
 const MobileMenu: FC<IMobileMenu> = ({ styles }) => {
     const dispatch = useDispatch();
-    const location = usePathname().split('/')[1];
+    const location = usePathname().split('/')[2];
     const breadcrumbsPaths = ['category', 'product_list', 'product'];
 
     const langOnClick = () => {

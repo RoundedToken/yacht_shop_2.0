@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import { useDispatch } from 'react-redux';
 import { IBreadcrumbs } from '../interfaces/IBreadcrumbs';
@@ -8,20 +8,29 @@ import { TLang } from '../../../models/types/TLang';
 import { usePathname } from 'next/navigation';
 import { useCurrentLocale } from '../../../locales/client';
 import { useFetchAllIdQuery } from '../../../redux/services/navTree';
+import { useLazyFetchProductQuery } from '../../../redux/services/navProductService';
 
 const Breadcrumbs: FC<IBreadcrumbs> = ({ styles }) => {
-    const location = usePathname().split('/');
+    const pathname = usePathname().split('/');
+    const isProduct = pathname[2] === 'product';
     const lang = useCurrentLocale() as TLang;
-    const id = Number(location[2]);
+    const id = Number(pathname[3]);
     const { data, isFetching } = useFetchAllIdQuery(lang);
-    const category = data?.flatTree[`${id}`];
     const dispatch = useDispatch();
+    const [updateProduct, { data: product }] = useLazyFetchProductQuery();
+    const category = data?.flatTree[`${isProduct ? product?.parentId : id}`];
 
     const handleOnClick = () => {
         document.body.style.overflow = 'hidden';
         dispatch(setMobileModalType('breadcrumbs'));
         dispatch(switchMobileModalDisplay());
     };
+
+    useEffect(() => {
+        if (isProduct) {
+            updateProduct({ id, lang });
+        }
+    }, [id, lang, updateProduct, isProduct]);
 
     if (isFetching) {
         return (

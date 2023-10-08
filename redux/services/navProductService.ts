@@ -4,14 +4,16 @@ import { INavProductReq, INavProductRes } from '../../models/interfaces/RTKQuery
 export const navProductApi = createApi({
     reducerPath: 'navProductApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: process.env.REACT_APP_SERVER_URL,
+        baseUrl: process.env.NEXT_PUBLIC_API_URL,
     }),
     endpoints: (build) => ({
         fetchProduct: build.query<INavProductRes, INavProductReq>({
             query: ({ id, lang }) => ({
-                url: '/nav_show_tovar',
+                url: '/navShowTovar',
                 params: { id, lang },
             }),
         }),
     }),
 });
+
+export const { useFetchProductQuery, useLazyFetchProductQuery } = navProductApi;

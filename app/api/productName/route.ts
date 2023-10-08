@@ -15,8 +15,8 @@ export async function GET(req: NextRequest) {
         await query(`
             SELECT
             ${nameFromLang} as name
-            FROM nav
-            WHERE id = ${id}
+            FROM goods
+            WHERE tovar = ${id}
     `)
     ).recordset[0];
 

@@ -20,7 +20,6 @@ const Header = () => {
     const bottomContainerRef = useRef<HTMLDivElement>(null);
     const topContainerRef = useRef<HTMLDivElement>(null);
     const miniLogoRef = useRef<HTMLImageElement>(null);
-    // const t = useTranslations('Index');
     const t = useI18n();
 
     useEffect(() => {

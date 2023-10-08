@@ -1,4 +1,7 @@
 export default {
+    related_products: 'Сопутствующие товары',
+    product_not_found: 'Товар не найден',
+    product_description: 'Описание товара',
     contacts: 'Контакты',
     cart: 'Корзина',
     catalog: 'Каталог',
@@ -25,4 +28,5 @@ export default {
     code: 'Код',
     no: 'Нет',
     yes: 'Да',
+    quantity_in_stock: 'Количество в наличии',
 } as const;

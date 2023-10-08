@@ -1,18 +1,27 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { ISearchBreadcrumbs } from '../interfaces/ISearchBreadcrumbs';
 import BreadcrumbsItem from './BreadcrumbsItem';
 import { TLang } from '../../../models/types/TLang';
 import { usePathname } from 'next/navigation';
 import { useCurrentLocale } from '../../../locales/client';
 import { useFetchAllIdQuery } from '../../../redux/services/navTree';
+import { useLazyFetchProductQuery } from '../../../redux/services/navProductService';
 
 const SearchBreadcrumbs: FC<ISearchBreadcrumbs> = ({ styles }) => {
-    const location = usePathname().split('/');
+    const pathname = usePathname().split('/');
+    const isProduct = pathname[2] === 'product';
     const lang = useCurrentLocale() as TLang;
-    const id = Number(location[3]);
+    const id = Number(pathname[3]);
     const { data } = useFetchAllIdQuery(lang);
-    const category = data?.flatTree[`${id}`];
+    const [updateProduct, { data: product }] = useLazyFetchProductQuery();
+    const category = data?.flatTree[`${isProduct ? product?.parentId : id}`];
+
+    useEffect(() => {
+        if (isProduct) {
+            updateProduct({ id, lang });
+        }
+    }, [id, lang, updateProduct, isProduct]);
 
     return (
         <div className={styles.breadcrumbs}>

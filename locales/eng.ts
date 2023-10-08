@@ -1,4 +1,7 @@
 export default {
+    related_products: 'Related products',
+    product_not_found: 'Product not found',
+    product_description: 'Product description',
     contacts: 'Contacts',
     cart: 'Cart',
     catalog: 'Catalog',
@@ -25,4 +28,5 @@ export default {
     code: 'Code',
     no: 'No',
     yes: 'Yes',
+    quantity_in_stock: 'Quantity in stock',
 } as const;
