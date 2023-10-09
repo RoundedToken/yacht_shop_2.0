@@ -1,3 +1,4 @@
+import { crimpingSliceReducer } from './crimpingSlice/crimpingSlice';
 import { favoritesSliceReducer } from './favoritesSlice/favoritesSlice';
 import { sideBarSliceReducer } from './sideBarSlice/sideBarSlice';
 import { cartSliceReducer } from './cartSlice/cartSlice';
@@ -12,6 +13,7 @@ import { navProductListApi } from './services/navProductListService';
 import { webProductInfoApi } from './services/webProductInfo';
 import { webRelatedProductsApi } from './services/webRelatedProducts';
 import { webNewsApi } from './services/webNews';
+import { webCrimpingApi } from './services/webCrimping';
 
 export const reducer = combineReducers({
     [navTreeApi.reducerPath]: navTreeApi.reducer,
@@ -22,11 +24,13 @@ export const reducer = combineReducers({
     [webProductInfoApi.reducerPath]: webProductInfoApi.reducer,
     [webRelatedProductsApi.reducerPath]: webRelatedProductsApi.reducer,
     [webNewsApi.reducerPath]: webNewsApi.reducer,
+    [webCrimpingApi.reducerPath]: webCrimpingApi.reducer,
     modalSliceReducer,
     stylesSliceReducer,
     cartSliceReducer,
     sideBarSliceReducer,
     favoritesSliceReducer,
+    crimpingSliceReducer,
 });
 
 export type RootState = ReturnType<typeof reducer>;

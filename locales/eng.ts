@@ -1,4 +1,11 @@
 export default {
+    add_to_cart_crimping: 'Add\nto cart',
+    sum: 'Sum',
+    total: 'Total',
+    amount: 'Amount',
+    calculation: 'Calculation',
+    to_count: 'Count',
+    cable: 'Cable',
     tuesday: 'Tuesday',
     monday: 'Monday',
     sunday: 'Sunday',
@@ -35,4 +42,30 @@ export default {
     no: 'No',
     yes: 'Yes',
     quantity_in_stock: 'Quantity in stock',
+    crimping_text_1: `We provide services for cable crimping, manufacturing of shrouds, handrails and similar products. The store offers a selection of stainless steel cables with a thickness of 2.5 to 8 mm and tips\u{00A0}— Eye, Fork, Toggle, T-terminal, Thread right, Thread left, Turnbuckle, Turnbuckle-toggle.
+    It is possible to use customer's materials.
+    If it is necessary to deliver the order, the cost of transport services will be added:
+    \u{2003}\u{2022} Pärnus County from 20€;
+    \u{2003}\u{2022} in Estonia from 30€.`,
+    crimping_text_2: 'Crimping is performed on a WireTekhnik machine (Sweden).',
+    crimping_text_3: 'Rope crimp calculator',
+    crimping_text_4: 'Select rope diameter and length',
+    crimping_text_5: 'Select cable attachments',
+    rope_diametr: `Rope
+    diameter\u{2002}(mm)`,
+    tips: 'Tips',
+    eye: 'Eye',
+    fork: 'Fork',
+    toggle: 'Toggle',
+    t_terminal: 'T-terminal',
+    thread_right: 'Thread right',
+    thread_left: 'Thread left',
+    turnbuckle: 'Turnbuckle',
+    turnbuckle_toggle: 'Turnbuckle-toggle',
+    end_1: 'I end',
+    end_2: 'II end',
+    rope_length: 'Rope length',
+    m: 'm',
+    cm: 'cm',
+    crimping_error: 'The service is temporarily unavailable',
 } as const;

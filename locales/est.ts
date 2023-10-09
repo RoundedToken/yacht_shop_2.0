@@ -1,4 +1,11 @@
 export default {
+    add_to_cart_crimping: 'Lisa\nostukorvi',
+    sum: 'Summa',
+    total: 'Kokku',
+    amount: 'Kogus',
+    calculation: 'Arvutus',
+    to_count: 'Loendama',
+    cable: 'Kaabel',
     tuesday: 'Teisipäev',
     monday: 'Esmaspäev',
     sunday: 'Pühapäev',
@@ -35,4 +42,31 @@ export default {
     no: 'Ei',
     yes: 'Jah',
     quantity_in_stock: 'Kogus laos',
+    crimping_text_1: `Otsikute pressimine trossidele labimooduga 2.5 kuni 8 mm.
+    Kaupluses on valikus roostevabast terasest trossid paksusega 2,5 kuni 8 mm ja otstega\u{00A0}— Aas, Kahvel, Kahvel toggle, T-terminaal, Parempoolne niit, Vasak niit, Talrep, Talrep-toggle.
+    Samuti pressime kasutades kliendi materjale.
+    Vajadusel soidame kliendi juurde, sellel juhul lisandub transporditeenuse maksumus:
+    \u{2003}\u{2022} Parnumaa al. 20€;
+    \u{2003}\u{2022} Eestis al. 30€.`,
+    crimping_text_2: 'Pressimine toimub WireTekhniku ​​masinal (Rootsi).',
+    crimping_text_3: 'Trossi kokkupressimise kalkulaator',
+    crimping_text_4: 'Valige trossi läbimõõt ja pikkus',
+    crimping_text_5: 'Valige kaabli kinnitused',
+    rope_diametr: `Trossi
+    läbimõõt\u{2002}(mm)`,
+    tips: 'Näpunäiteid',
+    eye: 'Aas',
+    fork: 'Kahvel',
+    toggle: 'Kahvel toggle',
+    t_terminal: 'T-terminaal',
+    thread_right: 'Parempoolne niit',
+    thread_left: 'Vasak niit',
+    turnbuckle: 'Talrep',
+    turnbuckle_toggle: 'Talrep-toggle',
+    end_1: 'I ots',
+    end_2: 'II ots',
+    rope_length: 'Trossi pikkus',
+    m: 'm',
+    cm: 'cm',
+    crimping_error: 'Teenus ei ole ajutiselt saadaval',
 } as const;
