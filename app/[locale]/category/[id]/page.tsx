@@ -9,6 +9,11 @@ interface Props {
     };
 }
 
+// export async function generateStaticParams({params}: Props) {
+//     const lang = getCurrentLocale();
+//     const categoryName = await getCategoryName({ id, lang });
+// }
+
 export async function generateMetadata({ params: { id } }: Props): Promise<Metadata> {
     const lang = getCurrentLocale();
     const categoryName = await getCategoryName({ id, lang });

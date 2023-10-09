@@ -2,6 +2,7 @@ import { navProductListApi } from './services/navProductListService';
 import { navProductApi } from './services/navProductService';
 import { navTreeApi } from './services/navTree';
 import { webCartProductList } from './services/webCartProductList';
+import { webNewsApi } from './services/webNews';
 import { webProductInfoApi } from './services/webProductInfo';
 import { webRelatedProductsApi } from './services/webRelatedProducts';
 import { webSearchApi } from './services/webSearch';
@@ -14,6 +15,7 @@ const middleware = [
     navProductListApi.middleware,
     webProductInfoApi.middleware,
     webRelatedProductsApi.middleware,
+    webNewsApi.middleware,
 ];
 
 export { middleware };

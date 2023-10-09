@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 const NavBarItem: FC<INavBarItem> = ({ className, src, route, children, switcher, styles }) => {
-    const location = '/' + usePathname().split('/')[1];
+    const location = '/' + usePathname().split('/')[2];
     const newRoute =
         location === routeConstants.CATEGORIES_ROUTE ||
         location === routeConstants.PRODUCT_LIST_ROUTE ||

@@ -8,6 +8,8 @@ export const getCategoryName = async ({ lang, id }: { lang: TLang; id: number })
 
         return data.name;
     } catch (error) {
+        console.log(error);
+
         notFound();
     }
 };

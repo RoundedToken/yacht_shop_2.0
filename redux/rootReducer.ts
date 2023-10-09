@@ -11,6 +11,7 @@ import { webCartProductList } from './services/webCartProductList';
 import { navProductListApi } from './services/navProductListService';
 import { webProductInfoApi } from './services/webProductInfo';
 import { webRelatedProductsApi } from './services/webRelatedProducts';
+import { webNewsApi } from './services/webNews';
 
 export const reducer = combineReducers({
     [navTreeApi.reducerPath]: navTreeApi.reducer,
@@ -20,6 +21,7 @@ export const reducer = combineReducers({
     [navProductListApi.reducerPath]: navProductListApi.reducer,
     [webProductInfoApi.reducerPath]: webProductInfoApi.reducer,
     [webRelatedProductsApi.reducerPath]: webRelatedProductsApi.reducer,
+    [webNewsApi.reducerPath]: webNewsApi.reducer,
     modalSliceReducer,
     stylesSliceReducer,
     cartSliceReducer,
