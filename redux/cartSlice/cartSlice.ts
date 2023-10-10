@@ -16,7 +16,8 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         setProductListFromStorage(state) {
-            state.productList = JSON.parse(localStorage.cartProductList || '[]');
+            state.productList = JSON.parse(localStorage.cartProductList ?? '[]');
+            state.update = localStorage.cartUpdate === 'true' ? true : false;
         },
         addToCart(state, action: PayloadAction<ICartProduct>) {
             const item = action.payload;
@@ -48,13 +49,6 @@ export const cartSlice = createSlice({
             const index = state.productList.findIndex((product) => product.id === action.payload.id);
             state.productList[index].count = action.payload.count;
             localStorage.cartProductList = JSON.stringify(state.productList);
-        },
-
-        setCartFromStorage(state, action: PayloadAction<ICartProduct[]>) {
-            if (localStorage.cartProductList) {
-                state.productList = action.payload;
-                state.update = localStorage.cartUpdate === 'true' ? true : false;
-            }
         },
 
         emptyCart(state) {
@@ -100,7 +94,6 @@ export const {
     incrementCount,
     decrementCount,
     setCount,
-    setCartFromStorage,
     emptyCart,
     restoreCart,
     copyCart,

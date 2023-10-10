@@ -124,6 +124,7 @@
         cursor: default;
         width: 115px;
         line-height: 20px;
+        display: none;
 
         @media (max-width: $breakPointL) {
             margin-left: 12px;

@@ -8,17 +8,7 @@ import Details from './components/Details';
 import Menu from './components/Menu';
 import { IProductCard } from './interfaces/IProductCard';
 
-const ProductCard: FC<IProductCard> = ({
-    id,
-    src,
-    name,
-    price,
-    count,
-    brand,
-    code,
-    inStock,
-    isDecimals,
-}) => {
+const ProductCard: FC<IProductCard> = ({ id, src, name, price, count, brand, code, inStock, isDecimals }) => {
     return (
         <div className={styles.rootContainer}>
             <div className={styles.leftContainer}>
@@ -39,13 +29,7 @@ const ProductCard: FC<IProductCard> = ({
 
                     <MobilePrice styles={styles} count={count} price={price} />
 
-                    <Menu
-                        styles={styles}
-                        id={id}
-                        brand={brand}
-                        price={price}
-                        isDecimals={isDecimals}
-                    />
+                    <Menu styles={styles} id={id} brand={brand} price={price} isDecimals={isDecimals} />
                 </div>
             </div>
         </div>

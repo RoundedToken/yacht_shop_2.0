@@ -69,4 +69,7 @@ export default {
     m: 'm',
     cm: 'cm',
     crimping_error: 'Teenus ei ole ajutiselt saadaval',
+    to_the_goods: 'Kauba juurde',
+    favorites_text_1: 'Te pole veel ühtegi toodet valinud...',
+    favorites_text_2: 'Lisage tooteid oma lemmikute hulka',
 } as const;

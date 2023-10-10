@@ -4,9 +4,8 @@ import React, { ReactNode } from 'react';
 import Header from '../../modules/Header/Header';
 import { Providers } from '../../redux/Providers';
 import SearchBar from '../../modules/SearchBar/SearchBar';
-import { getI18n, getStaticParams } from '../../locales/server';
-import { setStaticParamsLocale } from 'next-international/server';
 import MainWrapper from '../../UI/MainWrapper/MainWrapper';
+import LocalStorageWrapper from '../../hooks/LocalStorageWrapper';
 
 const nunito = Nunito({ subsets: ['latin', 'cyrillic'] });
 
@@ -21,26 +20,22 @@ export async function generateMetadata() {
     };
 }
 
-// export function generateStaticParams() {
-//     return getStaticParams();
-// }
-
 export default async function LocaleLayout({ children, params: { locale } }: Props) {
-    // setStaticParamsLocale(locale);
-
     return (
         <Providers>
-            <html lang={locale}>
-                <body className={nunito.className}>
-                    <MainWrapper>
-                        <Header />
+            <LocalStorageWrapper>
+                <html lang={locale}>
+                    <body className={nunito.className}>
+                        <MainWrapper>
+                            <Header />
 
-                        <SearchBar />
+                            <SearchBar />
 
-                        {children}
-                    </MainWrapper>
-                </body>
-            </html>
+                            {children}
+                        </MainWrapper>
+                    </body>
+                </html>
+            </LocalStorageWrapper>
         </Providers>
     );
 }

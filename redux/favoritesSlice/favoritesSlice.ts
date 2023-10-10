@@ -11,6 +11,13 @@ export const favoritesSlice = createSlice({
     name: 'favorites',
     initialState,
     reducers: {
+        setFavoritesListFromStorage(state) {
+            state.favoritesList = JSON.parse(localStorage.favoritesList ?? '[]');
+            state.update = localStorage.favoritesUpdate === 'true' ? true : false;
+        },
+        setFavoritesUpdateFromStorage(state) {
+            state.update = JSON.parse(localStorage.favoritesUpdate ?? 'false');
+        },
         addFavoritesItem(state, action: PayloadAction<number>) {
             state.favoritesList.push(action.payload);
             localStorage.favoritesList = JSON.stringify(state.favoritesList);
@@ -21,12 +28,6 @@ export const favoritesSlice = createSlice({
                 1,
             );
             localStorage.favoritesList = JSON.stringify(state.favoritesList);
-        },
-        setFavoritesFromStorage(state) {
-            if (localStorage.favoritesList) {
-                state.favoritesList = JSON.parse(localStorage.favoritesList);
-                state.update = localStorage.favoritesUpdate === 'true' ? true : false;
-            }
         },
         toTrueTheUpdate(state) {
             state.update = true;
@@ -39,7 +40,13 @@ export const favoritesSlice = createSlice({
     },
 });
 
-export const { addFavoritesItem, removeFavoritesItem, setFavoritesFromStorage, toTrueTheUpdate, toFalseTheUpdate } =
-    favoritesSlice.actions;
+export const {
+    addFavoritesItem,
+    removeFavoritesItem,
+    toTrueTheUpdate,
+    toFalseTheUpdate,
+    setFavoritesListFromStorage,
+    setFavoritesUpdateFromStorage,
+} = favoritesSlice.actions;
 
 export const favoritesSliceReducer = favoritesSlice.reducer;

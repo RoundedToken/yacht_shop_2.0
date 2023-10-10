@@ -68,4 +68,7 @@ export default {
     m: 'm',
     cm: 'cm',
     crimping_error: 'The service is temporarily unavailable',
+    to_the_goods: 'To the goods',
+    favorites_text_1: "You haven't chosen any products yet...",
+    favorites_text_2: 'Add products to your favorites',
 } as const;

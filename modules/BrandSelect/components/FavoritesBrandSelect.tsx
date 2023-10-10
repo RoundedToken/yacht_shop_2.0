@@ -19,7 +19,7 @@ const FavoritesBrandSelect: FC<IFavoritesBrandSelect> = ({
     const [updateFavorites, { data: favoritesList, isFetching, error }] = useLazyFetchCartProductListQuery();
 
     useEffect(() => {
-        if (locationPath === routeConstants.FAVORITES_ROUTE) {
+        if (locationPath === routeConstants.FAVORITES_ROUTE && favoritesIdList.length > 0) {
             updateFavorites({ idList: favoritesIdList, lang });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps

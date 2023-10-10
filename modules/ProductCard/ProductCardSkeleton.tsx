@@ -2,12 +2,8 @@ import React from 'react';
 import styles from './ProductCard.module.scss';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
-import { routeConstants } from '../../models/enums/EConstants';
-import { usePathname } from 'next/navigation';
 
 const ProductCardSkeleton = () => {
-    const isCartLocation = '/' + usePathname().split('/')[2] === routeConstants.CART_ROUTE;
-
     return (
         <div className={styles.rootContainer}>
             <div className={styles.leftContainer}>
@@ -23,7 +19,7 @@ const ProductCardSkeleton = () => {
 
                     <div className={styles.price}>
                         <Skeleton containerClassName={styles.skeleton} />
-                        <div style={isCartLocation ? {} : { display: 'none' }} className={styles.price__single}>
+                        <div className={styles.price__single}>
                             <Skeleton containerClassName={styles.skeleton} />
                         </div>
                     </div>

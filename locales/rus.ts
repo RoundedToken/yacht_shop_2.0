@@ -68,4 +68,7 @@ export default {
     m: 'м',
     cm: 'см',
     crimping_error: 'Сервис временно не работает',
+    to_the_goods: 'К товарам',
+    favorites_text_1: 'Вы еще не выбрали товары...',
+    favorites_text_2: 'Добавьте товары в избранное',
 } as const;

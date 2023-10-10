@@ -12,6 +12,10 @@ export async function GET(req: NextRequest) {
     const lang = params.get('lang') as TLang;
     const nameFromLang = getNameFromLang(lang);
 
+    if (!idList) {
+        return NextResponse.json([]);
+    }
+
     const data = (
         await query(
             `SELECT DISTINCT
