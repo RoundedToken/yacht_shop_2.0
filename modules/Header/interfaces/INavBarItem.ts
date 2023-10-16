@@ -10,4 +10,5 @@ export interface INavBarItem {
     styles: {
         readonly [key: string]: string;
     };
+    location: string;
 }

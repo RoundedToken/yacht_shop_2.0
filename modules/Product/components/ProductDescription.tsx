@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { IProductDescription } from '../interfaces/IProductDescription';
 import ProductSwiper from './ProductSwiper';
-import defaultBrandImg from '../../../public/assets/images/defaultBrand.png';
+import defaultBrandImg from '../../../public/assets/images/defaultBrand.webp';
 import OnImgErrorHOC from '../../../hooks/OnImgErrorHOC';
 import { useI18n } from '../../../locales/client';
 

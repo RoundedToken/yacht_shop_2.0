@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 import RadioButton from '../../../UI/RadioButton/RadioButton';
-import eyeImg from '../../../public/assets/images/eye.jpg';
-import forkImg from '../../../public/assets/images/fork.jpg';
-import toggleImg from '../../../public/assets/images/toggle.jpg';
-import tImg from '../../../public/assets/images/t.jpg';
-import threadImg from '../../../public/assets/images/thread.jpg';
-import turnbuckleImg from '../../../public/assets/images/turnbuckle.jpg';
+import eyeImg from '../../../public/assets/images/eye.webp';
+import forkImg from '../../../public/assets/images/fork.webp';
+import toggleImg from '../../../public/assets/images/toggle.webp';
+import tImg from '../../../public/assets/images/t.webp';
+import threadImg from '../../../public/assets/images/thread.webp';
+import turnbuckleImg from '../../../public/assets/images/turnbuckle.webp';
 import { IRopeEnds } from '../interfaces/IRopeEnds';
-import turnbuckleToggleImg from '../../../public/assets/images/turnbuckleToggle.jpg';
+import turnbuckleToggleImg from '../../../public/assets/images/turnbuckleToggle.webp';
 import Image from 'next/image';
 
 const RopeEnds: FC<IRopeEnds> = ({ styles, t }) => {

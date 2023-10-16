@@ -1,15 +1,13 @@
+'use client';
+
 import React, { FC, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import lifebuoyImg from '../../../public/assets/images/lifebuoy.svg';
 import { routeConstants } from '../../../models/enums/EConstants';
 import { ISearchInput } from '../interfaces/ISearchInput';
 import { clearBrands } from '../../../redux/sideBarSlice/sideBarSlice';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
-import { useI18n } from '../../../locales/client';
 
-const SearchInput: FC<ISearchInput> = ({ styles }) => {
-    const t = useI18n();
+const SearchInput: FC<ISearchInput> = ({ styles, children, placeholder }) => {
     const formRef = useRef<HTMLFormElement>(null);
     const router = useRouter();
     const [searchValue, setSearchValue] = useState('');
@@ -20,7 +18,7 @@ const SearchInput: FC<ISearchInput> = ({ styles }) => {
         //@ts-ignore
         document.activeElement.blur();
         router.push(routeConstants.SEARCH_ROUTE + `/${searchValue}`);
-        dispatch(clearBrands());
+        dispatch(clearBrands('/search'));
     };
     const searchOnFocus = (e: React.FocusEvent<HTMLInputElement>) => {
         e.target.select();
@@ -29,7 +27,7 @@ const SearchInput: FC<ISearchInput> = ({ styles }) => {
     return (
         <form ref={formRef} className={styles.searchContainer} onSubmit={(e) => navigateOnSubmit(e)}>
             <input
-                placeholder={t('search')}
+                placeholder={placeholder}
                 name="search"
                 autoComplete="on"
                 value={searchValue}
@@ -44,7 +42,7 @@ const SearchInput: FC<ISearchInput> = ({ styles }) => {
                 required
             />
 
-            <Image className={styles.submit} src={lifebuoyImg} alt="" width={50} height={50} />
+            {children}
         </form>
     );
 };

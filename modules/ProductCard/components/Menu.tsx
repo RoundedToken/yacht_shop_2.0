@@ -20,7 +20,7 @@ const Menu: FC<IMenu> = ({ styles, id, brand, price, isDecimals }) => {
             </div>
 
             <div className={`${styles.favoritesButton} ${styles.menu__item}`}>
-                <FavoritesButton id={id} />
+                <FavoritesButton id={id} favorite={{ brand }} />
             </div>
         </div>
     );

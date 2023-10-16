@@ -4,6 +4,9 @@ import Favorites from '../../../modules/Favorites/Favorites';
 import { setStaticParamsLocale } from 'next-international/server';
 import SideBarWrapper from '../../../modules/SideBarWrapper/SideBarWrapper';
 import Footer from '../../../modules/Footer/Footer';
+import { routeConstants } from '../../../models/enums/EConstants';
+import Header from '../../../modules/Header/Header';
+import SearchBar from '../../../modules/SearchBar/SearchBar';
 
 type Props = {
     params: { locale: string };
@@ -24,10 +27,15 @@ export function generateStaticParams() {
 export default async function FavoritesPage({ params: { locale } }: Props) {
     setStaticParamsLocale(locale);
     const t = await getI18n();
+    const location = routeConstants.FAVORITES_ROUTE;
 
     return (
         <>
-            <SideBarWrapper offListMode>
+            <Header t={t} location={location} />
+
+            <SearchBar t={t} location={location} />
+
+            <SideBarWrapper t={t} offListMode>
                 <Favorites t={t} />
             </SideBarWrapper>
 

@@ -1,19 +1,19 @@
 import React from 'react';
 import styles from './Main.module.scss';
 import SingleNews from './components/SingleNews';
-import topImg from '../../public/assets/images/mainTopImg.jpg';
+import topImg from '../../public/assets/images/mainTopImg.webp';
 import AutoSwiper from './components/AutoSwiper';
-import bottomImg from '../../public/assets/images/mainBottomImg.jpg';
-import bellImg from '../../public/assets/images/bell.jpg';
-import wheelImg from '../../public/assets/images/wheel.jpg';
+import bottomImg from '../../public/assets/images/mainBottomImg.webp';
+import bellImg from '../../public/assets/images/bell.webp';
+import wheelImg from '../../public/assets/images/wheel.webp';
 import NewsImg from './components/NewsImg';
-import newsImg2 from '../../public/assets/images/newsImg2.jpg';
-import newsImg3 from '../../public/assets/images/newsImg3.jpg';
-import newsImg1 from '../../public/assets/images/newImg1.jpg';
-import img1 from '../../public/assets/images/swiperImg1.jpg';
-import img2 from '../../public/assets/images/swiperImg2.jpg';
-import img3 from '../../public/assets/images/swiperImg3.jpg';
-import img4 from '../../public/assets/images/swiperImg4.jpg';
+import newsImg2 from '../../public/assets/images/newsImg2.webp';
+import newsImg3 from '../../public/assets/images/newsImg3.webp';
+import newsImg1 from '../../public/assets/images/newImg1.webp';
+import img1 from '../../public/assets/images/swiperImg1.webp';
+import img2 from '../../public/assets/images/swiperImg2.webp';
+import img3 from '../../public/assets/images/swiperImg3.webp';
+import img4 from '../../public/assets/images/swiperImg4.webp';
 import Image from 'next/image';
 import News from './components/News';
 
@@ -36,7 +36,7 @@ const Main = () => {
 
             <div className={styles.content}>
                 <div className={styles.topImg}>
-                    <Image src={topImg} alt="" priority width={800} height={550} />
+                    <Image src={topImg} alt="" priority width={745} />
                 </div>
 
                 <div className={styles.swiperContainer}>
@@ -50,11 +50,11 @@ const Main = () => {
                 </div>
 
                 <div className={styles.bottomImg}>
-                    <Image src={bottomImg} alt="" width={742} height={498} />
+                    <Image src={bottomImg} alt="" width={636} height={498} />
                 </div>
 
                 <div className={styles.bellImg}>
-                    <Image src={bellImg} alt="" width={484} height={484} />
+                    <Image src={bellImg} alt="" width={375} height={375} />
                 </div>
 
                 <div className={styles.wheelImg}>

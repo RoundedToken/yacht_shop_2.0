@@ -11,7 +11,7 @@ const ProductMenu: FC<IProductName> = ({ styles, price, brand, id, isDecimals })
             <div className={styles.price}>{getEurPrice(price)}</div>
 
             <div className={styles.favorites}>
-                <FavoritesButton id={id} />
+                <FavoritesButton id={id} favorite={{ brand }} />
             </div>
 
             <div className={styles.cart}>

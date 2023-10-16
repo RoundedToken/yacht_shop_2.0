@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { ICategoryItem } from '../interfaces/ICategoryItem';
 import { routeConstants } from '../../../models/enums/EConstants';
-import categoryDefaultImg from '../../../public/assets/images/categoryDefault.png';
+import categoryDefaultImg from '../../../public/assets/images/categoryDefault.webp';
 import Link from 'next/link';
 import Image from 'next/image';
 

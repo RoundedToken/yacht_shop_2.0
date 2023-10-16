@@ -21,8 +21,8 @@
     }
 
     img {
-        width: 100%;
         height: 100%;
+        width: 100%;
     }
 }
 
@@ -108,9 +108,6 @@
 
             @media (max-width: $breakPointS) {
                 width: 55%;
-            }
-
-            &Name {
             }
 
             .symbolLast {
@@ -274,6 +271,7 @@
         left: 20px;
         filter: $blueFilter;
         cursor: pointer;
+        user-select: none;
 
         @media (max-width: $breakPointL) {
             left: 16px;

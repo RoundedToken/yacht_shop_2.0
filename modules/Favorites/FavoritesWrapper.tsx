@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getFavoritesIdList, getFavoritesUpdate } from '../../redux/favoritesSlice/selectors';
 import { I18nProviderClient, useCurrentLocale } from '../../locales/client';
 import { useLazyFetchCartProductListQuery } from '../../redux/services/webCartProductList';
-import { getFavoritesBrands } from '../../redux/sideBarSlice/selectors';
+import { getFavoritesSelectedBrands } from '../../redux/sideBarSlice/selectors';
 import { toFalseTheUpdate } from '../../redux/favoritesSlice/favoritesSlice';
 import styles from './FavoritesList.module.scss';
 import FavoritesList from './components/FavoritesList';
@@ -20,7 +20,7 @@ const FavoritesWrapper = ({
     const favoritesIdList = useSelector(getFavoritesIdList);
     const lang = useCurrentLocale();
     const favoritesUpdate = useSelector(getFavoritesUpdate);
-    const brands = useSelector(getFavoritesBrands);
+    const brands = useSelector(getFavoritesSelectedBrands);
     const [update, { data, isFetching, error }] = useLazyFetchCartProductListQuery();
     const [isFirst, setIsFirst] = useState(true);
     const dispatch = useDispatch();

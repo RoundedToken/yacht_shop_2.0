@@ -45,7 +45,7 @@ const ProductListItem: FC<IProductListItem> = ({ product, styles }) => {
 
                     <CountControl id={product.id} isDecimals={product.isDecimals} />
 
-                    <FavoritesButton id={product.id} />
+                    <FavoritesButton id={product.id} favorite={{ brand: product.brand }} />
                 </div>
             </td>
         </tr>

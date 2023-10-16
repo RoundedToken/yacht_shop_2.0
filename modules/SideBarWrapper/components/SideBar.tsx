@@ -1,25 +1,24 @@
-'use client';
-
 import React from 'react';
 import { TSideBarProps } from '../interfaces/TSideBarProps';
 import BrandSelect from '../../BrandSelect/BrandSelect';
-import { I18nProviderClient } from '../../../locales/client';
 import Sorting from '../../Sorting/Sorting';
 import Filter from '../../Filter/Filter';
 import ListModeSwitch from './ListModeSwitch';
 
-const SideBar = ({ styles, offFilter = false, offListMode = false }: TSideBarProps) => {
+const SideBar = ({ styles, offFilter = false, offListMode = false, t }: TSideBarProps) => {
+    const brandsTitle = t('brands');
+    const sortingTitle = t('sorting');
+    const filterTitle = t('filter');
+
     return (
         <div className={styles.sideBar}>
-            <I18nProviderClient>
-                {!offListMode && <ListModeSwitch styles={styles} />}
+            {!offListMode && <ListModeSwitch styles={styles} />}
 
-                <BrandSelect />
+            <BrandSelect title={brandsTitle} />
 
-                <Sorting />
+            <Sorting title={sortingTitle} />
 
-                {!offFilter && <Filter />}
-            </I18nProviderClient>
+            {!offFilter && <Filter title={filterTitle} />}
         </div>
     );
 };

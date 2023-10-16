@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './Crimping.module.scss';
 import Form from './components/Form';
-import crimpingImg from '../../public/assets/images/crimpingImg.jpg';
+import crimpingImg from '../../public/assets/images/crimpingImg.webp';
 import wireImg from '../../public/assets/images/tros.svg';
 import Image from 'next/image';
 import Calculation from './components/Calculation';
 import { TGetI18n } from '../../locales/server';
 
-const Crimping = ({t} : {t: TGetI18n}) => {
+const Crimping = ({ t }: { t: TGetI18n }) => {
     return (
         <div className={styles.rootContainer}>
             <div className={styles.crimpingImg}>

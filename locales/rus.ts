@@ -28,7 +28,7 @@ export default {
     sun: 'Вс',
     mon: 'Пн',
     tue: 'Вт',
-    closed: 'закрыто',
+    closed: 'Закрыто',
     mainTitle: 'Всё для яхт и яхтсменов',
     brands: 'Бренды',
     name: 'Название',

@@ -8,12 +8,12 @@ import CategoryProductList from './components/CategoryProductList';
 import SearchProductList from './components/SearchProductList';
 import { usePathname } from 'next/navigation';
 import { I18nProviderClient, useCurrentLocale } from '../../locales/client';
-import { getBrands } from '../../redux/sideBarSlice/selectors';
+import { getSelectedBrands } from '../../redux/sideBarSlice/selectors';
 
 const ProductList = () => {
     const location = '/' + usePathname().split('/')[2];
     const lang = useCurrentLocale();
-    const brands = useSelector(getBrands);
+    const brands = useSelector(getSelectedBrands);
 
     return (
         <div className={styles.productListContainer}>

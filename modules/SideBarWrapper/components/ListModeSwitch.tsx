@@ -1,3 +1,5 @@
+'use client';
+
 import React, { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { TListMode } from '../../../models/types/TListMode';

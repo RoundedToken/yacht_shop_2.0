@@ -9,6 +9,7 @@ const SideBarWrapper = ({
     offSideBar = false,
     offFilter = false,
     offListMode = false,
+    t,
 }: TSideBarWrapperProps) => {
     return (
         <div className={styles.body}>
@@ -16,7 +17,7 @@ const SideBarWrapper = ({
                 <>
                     <MobileToggle styles={styles} />
 
-                    <SideBar styles={styles} offFilter={offFilter} offListMode={offListMode} />
+                    <SideBar t={t} styles={styles} offFilter={offFilter} offListMode={offListMode} />
                 </>
             )}
 

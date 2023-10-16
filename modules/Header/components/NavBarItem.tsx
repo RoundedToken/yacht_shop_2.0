@@ -3,10 +3,8 @@ import { routeConstants } from '../../../models/enums/EConstants';
 import { INavBarItem } from '../interfaces/INavBarItem';
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
 
-const NavBarItem: FC<INavBarItem> = ({ className, src, route, children, switcher, styles }) => {
-    const location = '/' + usePathname().split('/')[2];
+const NavBarItem: FC<INavBarItem> = ({ location, className, src, route, children, switcher, styles }) => {
     const newRoute =
         location === routeConstants.CATEGORIES_ROUTE ||
         location === routeConstants.PRODUCT_LIST_ROUTE ||

@@ -1,3 +1,4 @@
+import { categoriesSliceReducer } from './categoriesSlice/categoriesSlice';
 import { crimpingSliceReducer } from './crimpingSlice/crimpingSlice';
 import { favoritesSliceReducer } from './favoritesSlice/favoritesSlice';
 import { sideBarSliceReducer } from './sideBarSlice/sideBarSlice';
@@ -31,6 +32,7 @@ export const reducer = combineReducers({
     sideBarSliceReducer,
     favoritesSliceReducer,
     crimpingSliceReducer,
+    categoriesSliceReducer,
 });
 
 export type RootState = ReturnType<typeof reducer>;

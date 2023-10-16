@@ -6,7 +6,7 @@ import ProductNotFound from './components/ProductNotFound';
 import styles from './Product.module.scss';
 import ProductInfo from './components/ProductInfo';
 import RelatedProducts from './components/RelatedProducts';
-import defaultBrandImg from '../../public/assets/images/defaultBrand.png';
+import defaultBrandImg from '../../public/assets/images/defaultBrand.webp';
 import ProductMenu from './components/ProductMenu';
 import ProductDescription from './components/ProductDescription';
 import ProductSkeleton from './components/ProductSkeleton';

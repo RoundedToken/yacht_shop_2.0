@@ -3,6 +3,5 @@ export interface IBrandSelectItem {
         readonly [key: string]: string;
     };
     selectedBrands: string[];
-    brandOnChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     brand: string;
 }

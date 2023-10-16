@@ -1,9 +1,7 @@
 import '../../styles/globals.scss';
 import { Nunito } from 'next/font/google';
 import React, { ReactNode } from 'react';
-import Header from '../../modules/Header/Header';
 import { Providers } from '../../redux/Providers';
-import SearchBar from '../../modules/SearchBar/SearchBar';
 import MainWrapper from '../../UI/MainWrapper/MainWrapper';
 import LocalStorageWrapper from '../../hooks/LocalStorageWrapper';
 
@@ -26,13 +24,7 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
             <LocalStorageWrapper>
                 <html lang={locale}>
                     <body className={nunito.className}>
-                        <MainWrapper>
-                            <Header />
-
-                            <SearchBar />
-
-                            {children}
-                        </MainWrapper>
+                        <MainWrapper>{children}</MainWrapper>
                     </body>
                 </html>
             </LocalStorageWrapper>

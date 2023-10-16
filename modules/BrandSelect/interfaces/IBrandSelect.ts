@@ -1,1 +1,3 @@
-export interface IBrandSelect {}
+export interface IBrandSelect {
+    title: string;
+}

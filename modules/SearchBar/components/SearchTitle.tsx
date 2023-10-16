@@ -1,12 +1,12 @@
+'use client';
+
 import React, { FC } from 'react';
 import { ISearchTitle } from '../interfaces/ISearchTitle';
 import { useFetchProductListQuery } from '../../../redux/services/webSearch';
-import { TLang } from '../../../models/types/TLang';
-import { useCurrentLocale, useI18n } from '../../../locales/client';
+import { useCurrentLocale } from '../../../locales/client';
 
-const SearchTitle: FC<ISearchTitle> = ({ searchStr }) => {
-    const t = useI18n();
-    const lang = useCurrentLocale() as TLang;
+const SearchTitle: FC<ISearchTitle> = ({ searchStr, searchTitle }) => {
+    const lang = useCurrentLocale();
     const { data, isFetching, error } = useFetchProductListQuery({ lang, searchStr });
 
     if (isFetching) {
@@ -19,7 +19,7 @@ const SearchTitle: FC<ISearchTitle> = ({ searchStr }) => {
 
     return (
         <>
-            {t('search')}
+            {searchTitle}
 
             <div>
                 &emsp;&quot;{searchStr}&quot;&emsp;{`(${data?.length})`}

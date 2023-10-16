@@ -1,8 +1,16 @@
+export type TDisplay = 'none' | 'block' | 'flex';
+
 export interface IStylesState {
-    modalDisplay: 'none' | 'block';
-    dropdownDisplay: 'none' | 'block';
-    brandsDisplay: 'none' | 'block';
-    filterDisplay: 'none' | 'block';
-    sortingDisplay: 'none' | 'flex';
-    mobileModalDisplay: 'none' | 'block';
+    modalDisplay: TDisplay;
+    dropdownDisplay: TDisplay;
+    brandsDisplay: TDisplay;
+    cartBrandsDisplay: TDisplay;
+    favoritesBrandsDisplay: TDisplay;
+    filterDisplay: TDisplay;
+    cartFilterDisplay: TDisplay;
+    favoritesFilterDisplay: TDisplay;
+    sortingDisplay: TDisplay;
+    cartSortingDisplay: TDisplay;
+    favoritesSortingDisplay: TDisplay;
+    mobileModalDisplay: TDisplay;
 }

@@ -28,7 +28,7 @@ export default {
     sun: 'P',
     mon: 'E',
     tue: 'T',
-    closed: 'suletud',
+    closed: 'Suletud',
     mainTitle: 'Kõik paatide ja meremeeste jaoks',
     brands: 'Brändi',
     name: 'Name',

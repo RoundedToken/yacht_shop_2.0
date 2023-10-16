@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { IFavoritesState } from '../../models/interfaces/slices/IFavoritesState';
+import { IFavoritesState, TFavorite } from '../../models/interfaces/slices/IFavoritesState';
 
 const initialState: IFavoritesState = {
-    favoritesList: [],
+    favoritesList: {},
     update: false,
 };
 
@@ -12,29 +12,39 @@ export const favoritesSlice = createSlice({
     initialState,
     reducers: {
         setFavoritesListFromStorage(state) {
-            state.favoritesList = JSON.parse(localStorage.favoritesList ?? '[]');
+            state.favoritesList = JSON.parse(localStorage.favoritesList ?? '{}');
             state.update = localStorage.favoritesUpdate === 'true' ? true : false;
         },
+
         setFavoritesUpdateFromStorage(state) {
             state.update = JSON.parse(localStorage.favoritesUpdate ?? 'false');
         },
-        addFavoritesItem(state, action: PayloadAction<number>) {
-            state.favoritesList.push(action.payload);
+
+        addFavoritesItem(state, { payload: { id, favorite } }: PayloadAction<{ id: number; favorite: TFavorite }>) {
+            state.favoritesList[id] = favorite;
+
+            //LOCAL STORAGE SAVE
             localStorage.favoritesList = JSON.stringify(state.favoritesList);
         },
-        removeFavoritesItem(state, action: PayloadAction<number>) {
-            state.favoritesList.splice(
-                state.favoritesList.findIndex((id) => id === action.payload),
-                1,
-            );
+
+        removeFavoritesItem(state, { payload }: PayloadAction<number>) {
+            delete state.favoritesList[payload];
+
+            //LOCAL STORAGE SAVE
             localStorage.favoritesList = JSON.stringify(state.favoritesList);
         },
+
         toTrueTheUpdate(state) {
             state.update = true;
+
+            //LOCAL STORAGE SAVE
             localStorage.favoritesUpdate = state.update;
         },
+
         toFalseTheUpdate(state) {
             state.update = false;
+
+            //LOCAL STORAGE SAVE
             localStorage.favoritesUpdate = state.update;
         },
     },

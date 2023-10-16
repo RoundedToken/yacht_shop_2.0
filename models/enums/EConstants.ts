@@ -10,3 +10,14 @@ export enum routeConstants {
     FAVORITES_ROUTE = '/favorites',
     SEARCH_ROUTE = '/search',
 }
+
+export type TRoutes =
+    | '/category'
+    | '/main'
+    | '/cart'
+    | '/rope_crimping'
+    | '/product_list'
+    | '/product'
+    | '/contacts'
+    | '/favorites'
+    | '/search';

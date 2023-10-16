@@ -1,4 +1,5 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+'use client';
+
 import React, { FC, useEffect } from 'react';
 import { ISearchBreadcrumbs } from '../interfaces/ISearchBreadcrumbs';
 import BreadcrumbsItem from './BreadcrumbsItem';
@@ -15,7 +16,8 @@ const SearchBreadcrumbs: FC<ISearchBreadcrumbs> = ({ styles }) => {
     const id = Number(pathname[3]);
     const { data } = useFetchAllIdQuery(lang);
     const [updateProduct, { data: product }] = useLazyFetchProductQuery();
-    const category = data?.flatTree[`${isProduct ? product?.parentId : id}`];
+    //mark
+    const category = data?.flatTree[isProduct ? product?.parentId ?? 0 : id];
 
     useEffect(() => {
         if (isProduct) {

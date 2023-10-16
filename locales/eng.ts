@@ -28,7 +28,7 @@ export default {
     sun: 'Sun',
     mon: 'Mon',
     tue: 'Tue',
-    closed: 'closed',
+    closed: 'Closed',
     mainTitle: 'All for boats and sailors',
     brands: 'Brands',
     name: 'Name',

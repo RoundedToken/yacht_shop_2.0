@@ -8,7 +8,9 @@ export default async function NotFoundLayout({ children }: { children: ReactNode
 
     return (
         <>
-            <SideBarWrapper offSideBar>{children}</SideBarWrapper>
+            <SideBarWrapper t={t} offSideBar>
+                {children}
+            </SideBarWrapper>
 
             <Footer t={t} />
         </>

@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './Contacts.module.scss';
 import GoogleMap from './components/GoogleMap';
-import shopImage from '../../public/assets/images/shopImage.jpg';
-import locationScreenImg from '../../public/assets/images/locationScreen.jpg';
+import shopImage from '../../public/assets/images/shopImage.webp';
+import locationScreenImg from '../../public/assets/images/locationScreen.webp';
 import contactsImg from '../../public/assets/images/contacts.svg';
 import mailImg from '../../public/assets/images/mail.svg';
 import ringImg from '../../public/assets/images/ring.svg';
-import compassImg from '../../public/assets/images/compass.jpg';
+import compassImg from '../../public/assets/images/compass.webp';
 import Image from 'next/image';
 import { TGetI18n } from '../../locales/server';
 import SwiperWrapper from './components/SwiperWrapper';
@@ -54,23 +54,23 @@ const Contacts = ({ t }: { t: TGetI18n }) => {
                         </div>
 
                         <div className={styles.topContainerRight}>
-                            {t('open')}
+                            <div>{t('open')}</div>
 
-                            {`${t('wednesday')} \u{25CF} ${t('saturday')}`}
+                            <div>{`${t('wednesday')} \u{25CF} ${t('saturday')}`}</div>
 
                             <div>
                                 12<sup>00</sup> &ndash; 20<sup>00</sup>
                             </div>
 
-                            {t('sunday')}
+                            <div>{t('sunday')}</div>
 
                             <div>
                                 12<sup>00</sup> &ndash; 17<sup>00</sup>
                             </div>
 
-                            {t('closed')}
+                            <div>{t('closed')}</div>
 
-                            {`${t('monday')} \u{25CF} ${t('tuesday')}`}
+                            <div>{`${t('monday')} \u{25CF} ${t('tuesday')}`}</div>
                         </div>
                     </div>
 
@@ -107,23 +107,23 @@ const Contacts = ({ t }: { t: TGetI18n }) => {
                     </div>
 
                     <div className={styles.workingMode}>
-                        {t('open')}
+                        <div>{t('open')}</div>
 
-                        {`${t('wednesday')} \u{25CF} ${t('saturday')}`}
+                        <div>{`${t('wednesday')} \u{25CF} ${t('saturday')}`}</div>
 
                         <div>
                             12<sup>00</sup> &ndash; 20<sup>00</sup>
                         </div>
 
-                        {t('sunday')}
+                        <div>{t('sunday')}</div>
 
                         <div>
                             12<sup>00</sup> &ndash; 17<sup>00</sup>
                         </div>
 
-                        {t('closed')}
+                        <div>{t('closed')}</div>
 
-                        {`${t('monday')} \u{25CF} ${t('tuesday')}`}
+                        <div>{`${t('monday')} \u{25CF} ${t('tuesday')}`}</div>
                     </div>
 
                     <div className={styles.contacts}>

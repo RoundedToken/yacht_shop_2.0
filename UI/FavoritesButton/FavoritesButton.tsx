@@ -9,13 +9,13 @@ import { usePathname } from 'next/navigation';
 import { addFavoritesItem, removeFavoritesItem, toTrueTheUpdate } from '../../redux/favoritesSlice/favoritesSlice';
 import Image from 'next/image';
 
-const FavoritesButton: FC<IFavoritesButton> = ({ id }) => {
+const FavoritesButton: FC<IFavoritesButton> = ({ id, favorite }) => {
     const inIsFavorites = useSelector(getIsInFavorites(id));
     const locationPath = usePathname().split('/')[2];
     const dispatch = useDispatch();
 
     const addInFavorites = () => {
-        dispatch(addFavoritesItem(id));
+        dispatch(addFavoritesItem({ id, favorite }));
         if (locationPath !== 'favorites') {
             dispatch(toTrueTheUpdate());
         }
