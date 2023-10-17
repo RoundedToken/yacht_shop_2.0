@@ -16,4 +16,4 @@ export const webCartProductList = createApi({
     }),
 });
 
-export const { useLazyFetchCartProductListQuery } = webCartProductList;
+export const { useLazyFetchCartProductListQuery, useFetchCartProductListQuery } = webCartProductList;

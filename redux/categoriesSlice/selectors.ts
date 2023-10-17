@@ -20,3 +20,6 @@ export const getSearchBrands = createSelector(getSearchProductList, (productList
         return [];
     }
 });
+
+export const getCategoryById = (id: number) =>
+    createSelector(getCategories, (categories) => (categories ? categories[id] : undefined));

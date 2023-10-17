@@ -4,6 +4,8 @@ import React, { ReactNode } from 'react';
 import { Providers } from '../../redux/Providers';
 import MainWrapper from '../../UI/MainWrapper/MainWrapper';
 import LocalStorageWrapper from '../../hooks/LocalStorageWrapper';
+import Modal from '../../modules/Modal/Modal';
+import MobileModal from '../../modules/MobileModal/MobileModal';
 
 const nunito = Nunito({ subsets: ['latin', 'cyrillic'] });
 
@@ -25,6 +27,10 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
                 <html lang={locale}>
                     <body className={nunito.className}>
                         <MainWrapper>{children}</MainWrapper>
+
+                        <Modal />
+
+                        <MobileModal />
                     </body>
                 </html>
             </LocalStorageWrapper>

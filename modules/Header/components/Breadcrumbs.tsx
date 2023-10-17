@@ -19,7 +19,6 @@ const Breadcrumbs: FC<IBreadcrumbs> = ({ styles }) => {
     const { data, isFetching } = useFetchAllIdQuery(lang);
     const dispatch = useDispatch();
     const [updateProduct, { data: product }] = useLazyFetchProductQuery();
-    //mark
     const category = data?.flatTree[isProduct ? product?.parentId ?? 0 : id];
 
     const handleOnClick = () => {

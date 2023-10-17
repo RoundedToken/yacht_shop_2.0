@@ -10,7 +10,7 @@ import Image from 'next/image';
 import MobileModalButton from './MobileModalButton';
 
 const MobileMenu: FC<IMobileMenu> = ({ styles, location, t, searchStr }) => {
-    const breadcrumbsPaths = ['category', 'product_list', 'product'];
+    const breadcrumbsPaths = ['/category', '/product_list', '/product'];
 
     return (
         <div className={styles._mobileMenu}>

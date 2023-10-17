@@ -1,4 +1,13 @@
 export default {
+    language_selection: 'Keele valik',
+    filters: 'Filtrid',
+    navigation: 'Navigeerimine',
+    response_text_1: 'Teie tellimus №{id} on töödeldud',
+    your_order: 'Sinu tellimus',
+    order_text_2: 'Send an order',
+    order_text_1: 'Phone number and comments:',
+    pickup: 'Korja üles',
+    delivery_type: 'kohaletoimetamise tüüp',
     restore_cart: `Taasta\nostukorvi`,
     cart_text_1: 'Teie ostukorv on tühi...',
     products: 'Kaubad',

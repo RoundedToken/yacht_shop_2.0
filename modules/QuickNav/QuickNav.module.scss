@@ -1,0 +1,106 @@
+@import '../../styles/index.scss';
+
+.close {
+    float: right;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(215, 215, 215);
+    color: $yellow;
+    font-size: 38px;
+    line-height: 1;
+    font-weight: 700;
+    vertical-align: middle;
+    text-align: center;
+    z-index: 2;
+    text-shadow: 0 -1px 2px rgb(163, 162, 162);
+    cursor: pointer;
+    @include hoverColor($blue);
+}
+
+.categoryDropdown {
+    color: $blue;
+    font-size: 14px;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 170, 43);
+    z-index: 6;
+    width: 270px;
+    border-radius: 0 10px 10px 10px;
+
+    .nestedDropdown {
+        display: block;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        padding-block: 10px;
+        z-index: 6;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 0 10px 10px 10px;
+
+        .symbol {
+            font-size: 11px;
+        }
+
+        .content {
+            line-height: 1.1;
+        }
+    }
+    .nestedDropdown li {
+        display: flex;
+        gap: 5px;
+        cursor: pointer;
+        width: calc(100% - 15px);
+        // padding-block: 2px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        position: relative;
+        z-index: 6;
+        padding-left: 10px;
+        padding-right: 5px;
+    }
+
+    .nestedDropdown ul {
+        left: calc(100%);
+        padding-block: 10px;
+        padding-left: 10px;
+        position: absolute;
+        top: -10px;
+        background-color: rgb(255, 170, 43);
+        border-radius: 0 10px 10px 10px;
+        display: none;
+        list-style-type: none;
+        margin: 0;
+        width: 250px;
+
+        li {
+            width: calc(100% - 5px);
+            padding-left: 0;
+        }
+
+        .symbol {
+            font-size: 15px;
+            line-height: 0.8;
+        }
+    }
+
+    .nestedDropdown ul ul {
+        left: calc(100%);
+        position: absolute;
+        top: -10px;
+        width: 230px;
+    }
+
+    .nestedDropdown li:hover {
+        background-color: $yellow;
+        > ul {
+            display: block;
+        }
+        ul[hidden] {
+            display: none;
+        }
+    }
+}

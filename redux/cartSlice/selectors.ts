@@ -5,6 +5,8 @@ export const getCartProductList = (state: RootState) => state.cartSliceReducer.p
 export const getCartUpdate = (state: RootState) => state.cartSliceReducer.update;
 export const getCartProductsCount = (state: RootState) => state.cartSliceReducer.productList.length;
 export const getCartCopy = (state: RootState) => state.cartSliceReducer.productListCopy;
+export const getCartResponse = (state: RootState) => state.cartSliceReducer.response;
+export const getCartResponseIsLoading = (state: RootState) => state.cartSliceReducer.responseIsLoading;
 
 export const getCartListBrands = createSelector(getCartProductList, (products) =>
     products.map((product) => product.brand),

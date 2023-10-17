@@ -1,4 +1,13 @@
 export default {
+    language_selection: 'Language selection',
+    filters: 'Filters',
+    navigation: 'Navigation',
+    response_text_1: 'Your order №{id} has been processed',
+    your_order: 'Your order',
+    order_text_2: 'Send an order',
+    order_text_1: 'Phone number and comments:',
+    pickup: 'Pickup',
+    delivery_type: 'delivery type',
     restore_cart: `Restore\ncart`,
     cart_text_1: 'Your cart is empty...',
     products: 'Products',

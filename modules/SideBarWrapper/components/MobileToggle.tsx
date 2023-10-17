@@ -4,13 +4,15 @@ import Image from 'next/image';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import filtersImg from '../../../public/assets/images/filters.png';
+import { setMobileModalType } from '../../../redux/modalSlice/modalSlice';
+import { switchMobileModalDisplay } from '../../../redux/stylesSlice/stylesSlice';
 
 const MobileToggle = ({ styles }: { styles: { readonly [key: string]: string } }) => {
     const dispatch = useDispatch();
 
     const filterOnClick = () => {
-        // dispatch(setMobileModalType('filter'));
-        // dispatch(switchMobileModalDisplay());
+        dispatch(setMobileModalType('filter'));
+        dispatch(switchMobileModalDisplay());
         document.body.style.overflow = 'hidden';
     };
 

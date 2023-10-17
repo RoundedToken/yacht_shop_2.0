@@ -1,4 +1,13 @@
 export default {
+    language_selection: 'Выбор языка',
+    filters: 'Фильтры',
+    navigation: 'Навигация',
+    response_text_1: 'Ваш заказ №{id} принят в обработку',
+    your_order: 'Ваш заказ',
+    order_text_2: 'Send an order',
+    order_text_1: 'Phone number and comments:',
+    pickup: 'Самовывоз',
+    delivery_type: 'тип доставки',
     restore_cart: `Восстановить\nкорзину`,
     cart_text_1: 'Ваша корзина пуста...',
     products: 'Товары',
