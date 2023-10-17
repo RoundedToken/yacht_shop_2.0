@@ -14,7 +14,7 @@ const HeaderWrapper = ({ children, navbar }: { children: ReactNode; navbar: Reac
     const logoRef = useRef<HTMLImageElement>(null);
     const bottomContainerRef = useRef<HTMLDivElement>(null);
     const topContainerRef = useRef<HTMLDivElement>(null);
-    const miniLogoRef = useRef<HTMLImageElement>(null);
+    const miniLogoRef = useRef<HTMLAnchorElement>(null);
 
     useEffect(() => {
         const offset = bottomContainerRef.current?.offsetTop;
@@ -25,9 +25,11 @@ const HeaderWrapper = ({ children, navbar }: { children: ReactNode; navbar: Reac
                 const opacity = (offset - window.pageYOffset) / diff;
 
                 if (window.pageYOffset > offset) {
+                    logoRef.current.style.display = 'none';
                     miniLogoRef.current.style.display = 'block';
                     bottomContainerRef.current.style.backgroundColor = 'rgb(254, 153, 1)';
                 } else {
+                    logoRef.current.style.display = 'block';
                     miniLogoRef.current.classList.remove(styles.miniLogo__after);
                     bottomContainerRef.current.style.backgroundColor = 'white';
                     topContainerRef.current.style.opacity = `${opacity}`;
@@ -53,15 +55,8 @@ const HeaderWrapper = ({ children, navbar }: { children: ReactNode; navbar: Reac
             </div>
 
             <div ref={bottomContainerRef} className={styles.bottomContainer}>
-                <Link href={routeConstants.MAIN_ROUTE}>
-                    <Image
-                        ref={miniLogoRef}
-                        className={styles.miniLogo}
-                        src={miniLogoImg}
-                        alt=""
-                        width={153}
-                        height={120}
-                    />
+                <Link ref={miniLogoRef} className={styles.miniLogo} href={routeConstants.MAIN_ROUTE}>
+                    <Image src={miniLogoImg} alt="" width={153} height={120} />
                 </Link>
 
                 {navbar}

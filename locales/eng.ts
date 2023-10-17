@@ -1,4 +1,9 @@
 export default {
+    restore_cart: `Restore\ncart`,
+    cart_text_1: 'Your cart is empty...',
+    products: 'Products',
+    checkout: 'Checkout',
+    empty_cart: 'Empty cart',
     add_to_cart_crimping: 'Add\nto cart',
     sum: 'Sum',
     total: 'Total',

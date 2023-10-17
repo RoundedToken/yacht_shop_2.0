@@ -51,6 +51,7 @@ export async function GET(req: NextRequest) {
                         WHERE avail<>0
                     )
                 )
+                OR nav.id = 0
             )
             GROUP BY nav.id, nav.parentid, nav.${nameFromLang}, nav.name, goods.brand
             ORDER BY nav.id`,
@@ -59,10 +60,8 @@ export async function GET(req: NextRequest) {
 
     //Grouping by id and uniting together brands and productCount
     const groupedData = groupingByBrands(data);
-
     //Build the hierarchy
     const tree = buildHierarchy(groupedData);
-
     //Formatting brands and sort by name and creating src
     formattingBrands(tree);
 

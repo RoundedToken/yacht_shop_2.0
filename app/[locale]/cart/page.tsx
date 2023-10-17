@@ -6,6 +6,7 @@ import Header from '../../../modules/Header/Header';
 import SearchBar from '../../../modules/SearchBar/SearchBar';
 import SideBarWrapper from '../../../modules/SideBarWrapper/SideBarWrapper';
 import Footer from '../../../modules/Footer/Footer';
+import Cart from '../../../modules/Cart/Cart';
 
 type Props = {
     params: { locale: string };
@@ -35,10 +36,10 @@ export default async function CartPage({ params: { locale } }: Props) {
             <SearchBar t={t} location={location} />
 
             <SideBarWrapper t={t} offListMode>
-                <h1>Cart Page</h1>
+                <Cart />
             </SideBarWrapper>
 
-            <Footer t={t} isEmpty />
+            <Footer t={t} />
         </>
     );
 }

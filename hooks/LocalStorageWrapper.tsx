@@ -2,7 +2,11 @@
 
 import React, { ReactNode, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setProductListFromStorage } from '../redux/cartSlice/cartSlice';
+import {
+    setCartUpdateFromStorage,
+    setProductListCopyFromStorage,
+    setProductListFromStorage,
+} from '../redux/cartSlice/cartSlice';
 import { setFavoritesListFromStorage, setFavoritesUpdateFromStorage } from '../redux/favoritesSlice/favoritesSlice';
 
 const LocalStorageWrapper = ({ children }: { children: ReactNode }) => {
@@ -11,6 +15,8 @@ const LocalStorageWrapper = ({ children }: { children: ReactNode }) => {
     useEffect(() => {
         //CART SLICE
         dispatch(setProductListFromStorage());
+        dispatch(setProductListCopyFromStorage());
+        dispatch(setCartUpdateFromStorage());
 
         //FAVORITES SLICE
         dispatch(setFavoritesListFromStorage());

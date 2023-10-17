@@ -1,4 +1,9 @@
 export default {
+    restore_cart: `Восстановить\nкорзину`,
+    cart_text_1: 'Ваша корзина пуста...',
+    products: 'Товары',
+    checkout: 'Оформить заказ',
+    empty_cart: 'Очистить корзину',
     add_to_cart_crimping: 'Добавить\nв корзину',
     sum: 'Сумма',
     total: 'Итого',

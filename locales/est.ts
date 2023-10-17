@@ -1,4 +1,9 @@
 export default {
+    restore_cart: `Taasta\nostukorvi`,
+    cart_text_1: 'Teie ostukorv on tühi...',
+    products: 'Kaubad',
+    checkout: 'Kassasse',
+    empty_cart: 'Tühi ostukorv',
     add_to_cart_crimping: 'Lisa\nostukorvi',
     sum: 'Summa',
     total: 'Kokku',

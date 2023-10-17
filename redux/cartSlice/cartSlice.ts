@@ -1,14 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ICartProduct, ICartState } from '../../models/interfaces/slices/ICartState';
 import { IWebOrderRes } from '../../models/interfaces/RTKQuery/IWebOrder';
-import { isClient } from '../../utils/isClient';
 
 const initialState: ICartState = {
     productList: [],
-    productListCopy: isClient && localStorage.cartProductListCopy ? JSON.parse(localStorage.cartProductListCopy) : [],
+    productListCopy: [],
     response: undefined,
     responseIsLoading: false,
-    update: isClient && localStorage.cartUpdate ? localStorage.cartUpdate : false,
+    update: false,
 };
 
 export const cartSlice = createSlice({
@@ -18,6 +17,12 @@ export const cartSlice = createSlice({
         setProductListFromStorage(state) {
             state.productList = JSON.parse(localStorage.cartProductList ?? '[]');
             state.update = localStorage.cartUpdate === 'true' ? true : false;
+        },
+        setProductListCopyFromStorage(state) {
+            state.productListCopy = JSON.parse(localStorage.cartProductListCopy ?? '[]');
+        },
+        setCartUpdateFromStorage(state) {
+            state.update = localStorage.cartUpdate ? localStorage.cartUpdate : false;
         },
         addToCart(state, action: PayloadAction<ICartProduct>) {
             const item = action.payload;
@@ -103,6 +108,8 @@ export const {
     toTrueCartUpdate,
     toFalseCartUpdate,
     setProductListFromStorage,
+    setCartUpdateFromStorage,
+    setProductListCopyFromStorage,
 } = cartSlice.actions;
 
 export const cartSliceReducer = cartSlice.reducer;
