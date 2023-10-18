@@ -57,7 +57,7 @@ const Modal = () => {
                 }
             };
         }
-    }, []);
+    }, [dispatch, modalDisplay, router, response]);
 
     useEffect(() => {
         if (modalRef.current) {
@@ -84,7 +84,7 @@ const Modal = () => {
 
     return (
         <I18nProviderClient>
-            <div ref={modalRef} className={styles.modal}>
+            <div id="cont" ref={modalRef} className={styles.modal}>
                 <div
                     style={modalType === 'nav' ? { display: 'none' } : {}}
                     className={modalType === 'order' ? styles.orderModalContainer : styles.modalContentContainer}

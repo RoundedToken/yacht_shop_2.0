@@ -14,6 +14,8 @@ const SearchInput: FC<ISearchInput> = ({ styles, children, placeholder }) => {
     const dispatch = useDispatch();
 
     const navigateOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        console.log('!!');
+
         e.preventDefault();
         //@ts-ignore
         document.activeElement.blur();
@@ -22,6 +24,14 @@ const SearchInput: FC<ISearchInput> = ({ styles, children, placeholder }) => {
     };
     const searchOnFocus = (e: React.FocusEvent<HTMLInputElement>) => {
         e.target.select();
+    };
+
+    const qq = () => {
+        console.log('HERE');
+        console.log(formRef.current);
+
+        formRef.current?.submit();
+        formRef.current?.dispatchEvent(new Event('submit'));
     };
 
     return (
@@ -41,7 +51,6 @@ const SearchInput: FC<ISearchInput> = ({ styles, children, placeholder }) => {
                 }}
                 required
             />
-
             {children}
         </form>
     );

@@ -104,3 +104,38 @@
         }
     }
 }
+
+.content {
+    color: $blue;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: rgb(255, 170, 43);
+    z-index: 6;
+    width: 270px;
+    border-radius: 0 10px 10px 10px;
+    overflow: hidden;
+}
+
+.item {
+    cursor: pointer;
+    width: calc(100% - 15px);
+    padding-top: 3px;
+    padding-bottom: 3px;
+    z-index: 6;
+    padding-left: 10px;
+    padding-right: 5px;
+    line-height: 1.5;
+
+    &:hover {
+        background-color: $yellow;
+    }
+
+    div {
+        display: flex;
+        gap: 5px;
+    }
+}
+
+.item[data-state='open'] {
+    background-color: $yellow;
+}

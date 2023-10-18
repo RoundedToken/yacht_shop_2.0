@@ -12,6 +12,7 @@
     // overflow: hidden; /* Enable scroll if needed */
     background-color: rgb(0, 0, 0); /* Fallback color */
     background-color: rgba(0, 0, 0, 0.722); /* Black w/ opacity */
+
     cursor: auto;
 
     @media (max-width: $breakPointL) {
@@ -382,4 +383,9 @@
             }
         }
     }
+}
+
+.loader {
+    height: 100dvh;
+    background-color: transparent;
 }

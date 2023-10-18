@@ -3,7 +3,6 @@ import SearchInput from './components/SearchInput';
 import PageTitle from './components/PageTitle';
 import SearchBreadcrumbs from './components/SearchBreadcrumbs';
 import styles from './SearchBar.module.scss';
-import Image from 'next/image';
 import lifebuoyImg from '../../public/assets/images/lifebuoy.svg';
 import { TGetI18n } from '../../locales/server';
 
@@ -14,7 +13,7 @@ const SearchBar = ({ location, t, searchStr = '' }: { location: string; t: TGetI
     return (
         <div className={styles.searchBar}>
             <SearchInput styles={styles} placeholder={placeholder}>
-                <Image className={styles.submit} src={lifebuoyImg} alt="" width={50} height={50} />
+                <input type="image" className={styles.submit} src={lifebuoyImg.src} alt="" width={50} height={50} />
             </SearchInput>
 
             {breadcrumbsPaths.includes(location) ? (

@@ -5,6 +5,7 @@ export const getIsDropdownDisplay = (state: RootState) => state.stylesSliceReduc
 export const getModalDisplay = (state: RootState) => state.stylesSliceReducer.modalDisplay;
 export const getDropdownDisplay = (state: RootState) => state.stylesSliceReducer.dropdownDisplay;
 export const getMobileModalDisplay = (state: RootState) => state.stylesSliceReducer.mobileModalDisplay;
+export const getIsModal = (state: RootState) => state.stylesSliceReducer.modalDisplay === 'block';
 
 export const getBrandsDisplay = (location: TRoutes) => (state: RootState) => {
     const stylesSlice = state.stylesSliceReducer;

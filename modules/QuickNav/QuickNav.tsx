@@ -1,23 +1,28 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import DropdownItem from './components/DropdownItem';
 import styles from './QuickNav.module.scss';
-import { useCurrentLocale } from '../../locales/client';
 import { getDropdownDisplay } from '../../redux/stylesSlice/selectors';
 import { useRouter } from 'next/navigation';
-import { useFetchAllIdQuery } from '../../redux/services/navTree';
 import { switchModalDisplay } from '../../redux/stylesSlice/stylesSlice';
 import { clearBrands } from '../../redux/sideBarSlice/sideBarSlice';
 import { routeConstants } from '../../models/enums/EConstants';
 import { useLocation } from '../../hooks/useLocation';
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+import { INavTreeItem } from '../../models/interfaces/RTKQuery/INavTree';
+import { TCategories } from '../../redux/categoriesSlice/categoriesSlice';
 
-const QuickNav = () => {
+const QuickNav = ({
+    data,
+}: {
+    data: {
+        tree: INavTreeItem[];
+        flatTree: TCategories;
+    };
+}) => {
     const location = useLocation();
-    const lang = useCurrentLocale();
-    const dropdownRef = useRef<HTMLUListElement>(null);
     const dropdownDisplay = useSelector(getDropdownDisplay);
     const router = useRouter();
-    const { data } = useFetchAllIdQuery(lang);
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -65,31 +70,100 @@ const QuickNav = () => {
             <div className={styles.close} onClick={closeOnClick}>
                 &times;
             </div>
-            <div className={styles.categoryDropdown}>
-                <ul ref={dropdownRef} className={styles.nestedDropdown}>
-                    {data &&
-                        data.tree[0].children?.map((child1) => (
-                            <DropdownItem styles={styles} treeItem={child1} key={child1.id} level={1}>
-                                {child1.children?.map((child2) => (
-                                    <DropdownItem styles={styles} treeItem={child2} key={child2.id} level={2}>
-                                        {child2.children?.map((child3) => (
-                                            <DropdownItem styles={styles} treeItem={child3} key={child3.id} level={3}>
-                                                {child3.children?.map((child4) => (
-                                                    <DropdownItem
-                                                        styles={styles}
-                                                        treeItem={child4}
-                                                        key={child4.id}
-                                                        level={4}
-                                                    ></DropdownItem>
-                                                ))}
-                                            </DropdownItem>
-                                        ))}
-                                    </DropdownItem>
-                                ))}
-                            </DropdownItem>
-                        ))}
-                </ul>
-            </div>
+            <DropdownMenu.Root open modal={false}>
+                <DropdownMenu.Trigger style={{ display: 'none' }}></DropdownMenu.Trigger>
+                <DropdownMenu.Portal container={document.getElementById('cont')}>
+                    <DropdownMenu.Content className={styles.content}>
+                        {data &&
+                            data.tree[0].children?.map((child1, i) => (
+                                <DropdownMenu.Sub key={i}>
+                                    <DropdownMenu.SubTrigger className={styles.item}>
+                                        <div
+                                            id={
+                                                child1.children
+                                                    ? `navigate_category_${child1.id} `
+                                                    : `navigate_products_${child1.id}`
+                                            }
+                                        >
+                                            <div className={styles.symbol}>&#9658;</div>
+                                            {child1.name}
+                                        </div>
+                                    </DropdownMenu.SubTrigger>
+
+                                    <DropdownMenu.Portal container={document.getElementById('cont')}>
+                                        <DropdownMenu.SubContent className={styles.content}>
+                                            {child1.children?.map((child2) => (
+                                                <DropdownMenu.Sub key={child2.id}>
+                                                    <DropdownMenu.SubTrigger className={styles.item}>
+                                                        <div
+                                                            id={
+                                                                child2.children
+                                                                    ? `navigate_category_${child2.id} `
+                                                                    : `navigate_products_${child2.id}`
+                                                            }
+                                                        >
+                                                            <div className={styles.symbol}>&#9679;</div>
+                                                            {child2.name}
+                                                        </div>
+                                                    </DropdownMenu.SubTrigger>
+
+                                                    <DropdownMenu.Portal container={document.getElementById('cont')}>
+                                                        <DropdownMenu.SubContent className={styles.content}>
+                                                            {child2.children?.map((child3) => (
+                                                                <DropdownMenu.Sub key={child3.id}>
+                                                                    <DropdownMenu.SubTrigger className={styles.item}>
+                                                                        <div
+                                                                            id={
+                                                                                child3.children
+                                                                                    ? `navigate_category_${child3.id} `
+                                                                                    : `navigate_products_${child3.id}`
+                                                                            }
+                                                                        >
+                                                                            <div className={styles.symbol}>&#9679;</div>
+                                                                            {child3.name}
+                                                                        </div>
+                                                                    </DropdownMenu.SubTrigger>
+
+                                                                    <DropdownMenu.Portal
+                                                                        container={document.getElementById('cont')}
+                                                                    >
+                                                                        <DropdownMenu.SubContent
+                                                                            className={styles.content}
+                                                                        >
+                                                                            {child3?.children?.map((child4) => (
+                                                                                <DropdownMenu.Item
+                                                                                    key={child4.id}
+                                                                                    className={styles.item}
+                                                                                >
+                                                                                    <div
+                                                                                        id={
+                                                                                            child4.children
+                                                                                                ? `navigate_category_${child4.id} `
+                                                                                                : `navigate_products_${child4.id}`
+                                                                                        }
+                                                                                    >
+                                                                                        <div className={styles.symbol}>
+                                                                                            &#9679;
+                                                                                        </div>
+                                                                                        {child4.name}
+                                                                                    </div>
+                                                                                </DropdownMenu.Item>
+                                                                            ))}
+                                                                        </DropdownMenu.SubContent>
+                                                                    </DropdownMenu.Portal>
+                                                                </DropdownMenu.Sub>
+                                                            ))}
+                                                        </DropdownMenu.SubContent>
+                                                    </DropdownMenu.Portal>
+                                                </DropdownMenu.Sub>
+                                            ))}
+                                        </DropdownMenu.SubContent>
+                                    </DropdownMenu.Portal>
+                                </DropdownMenu.Sub>
+                            ))}
+                    </DropdownMenu.Content>
+                </DropdownMenu.Portal>
+            </DropdownMenu.Root>
         </>
     );
 };
