@@ -10,6 +10,6 @@ export const sqlConfig = {
     },
     options: {
         encrypt: false,
-        trustServerCertificate: true, // change to true for local dev / self-signed certs
+        trustServerCertificate: true,
     },
 };

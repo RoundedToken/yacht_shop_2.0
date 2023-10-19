@@ -1,3 +1,4 @@
+import { TDisplay } from './../../models/interfaces/slices/IStylesState';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IStylesState } from '../../models/interfaces/slices/IStylesState';
 import { TRoutes } from '../../models/enums/EConstants';
@@ -62,6 +63,9 @@ export const stylesSlice = createSlice({
         switchMobileModalDisplay(state) {
             state.mobileModalDisplay = state.mobileModalDisplay === 'none' ? 'block' : 'none';
         },
+        setModalDisplay(state, { payload }: PayloadAction<TDisplay>) {
+            state.modalDisplay = payload;
+        },
     },
 });
 
@@ -72,6 +76,7 @@ export const {
     switchFilterDisplay,
     switchSortingDisplay,
     switchMobileModalDisplay,
+    setModalDisplay,
 } = stylesSlice.actions;
 
 export const stylesSliceReducer = stylesSlice.reducer;

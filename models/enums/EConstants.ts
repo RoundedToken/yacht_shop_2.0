@@ -9,6 +9,7 @@ export enum routeConstants {
     CONTACTS_ROUTE = '/contacts',
     FAVORITES_ROUTE = '/favorites',
     SEARCH_ROUTE = '/search',
+    NOT_FOUND = '/not_found',
 }
 
 export type TRoutes =

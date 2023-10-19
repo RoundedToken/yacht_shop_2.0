@@ -13,7 +13,7 @@ const ToCatalogButton = ({ t }: { t: TGetI18n }) => {
                 <Image src={catalogImg} alt="" width={60} height={60} />
             </div>
 
-            {t('to_the_goods')}
+            <div>{t('to_the_goods')}</div>
         </Link>
     );
 };

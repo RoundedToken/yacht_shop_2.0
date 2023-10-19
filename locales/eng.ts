@@ -1,4 +1,6 @@
 export default {
+    page_not_found: 'Page not found',
+    not_found: 'Not found',
     language_selection: 'Language selection',
     filters: 'Filters',
     navigation: 'Navigation',

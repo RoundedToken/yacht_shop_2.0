@@ -91,7 +91,7 @@ const QuickNav = ({
                                     </DropdownMenu.SubTrigger>
 
                                     <DropdownMenu.Portal container={document.getElementById('cont')}>
-                                        <DropdownMenu.SubContent className={styles.content}>
+                                        <DropdownMenu.SubContent className={styles.contentSub}>
                                             {child1.children?.map((child2) => (
                                                 <DropdownMenu.Sub key={child2.id}>
                                                     <DropdownMenu.SubTrigger className={styles.item}>
@@ -108,7 +108,7 @@ const QuickNav = ({
                                                     </DropdownMenu.SubTrigger>
 
                                                     <DropdownMenu.Portal container={document.getElementById('cont')}>
-                                                        <DropdownMenu.SubContent className={styles.content}>
+                                                        <DropdownMenu.SubContent className={styles.contentSub}>
                                                             {child2.children?.map((child3) => (
                                                                 <DropdownMenu.Sub key={child3.id}>
                                                                     <DropdownMenu.SubTrigger className={styles.item}>
@@ -128,7 +128,7 @@ const QuickNav = ({
                                                                         container={document.getElementById('cont')}
                                                                     >
                                                                         <DropdownMenu.SubContent
-                                                                            className={styles.content}
+                                                                            className={styles.contentSub}
                                                                         >
                                                                             {child3?.children?.map((child4) => (
                                                                                 <DropdownMenu.Item

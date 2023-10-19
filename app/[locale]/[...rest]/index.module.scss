@@ -1,0 +1,11 @@
+@import '../../../styles/index.scss';
+
+.container {
+    color: $blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    height: 380px;
+}

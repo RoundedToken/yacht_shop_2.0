@@ -1,4 +1,6 @@
 export default {
+    page_not_found: 'Lehte ei leitud',
+    not_found: 'Ei leitud',
     language_selection: 'Keele valik',
     filters: 'Filtrid',
     navigation: 'Navigeerimine',

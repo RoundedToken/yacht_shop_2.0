@@ -12,7 +12,7 @@ import { getModalDisplay } from '../../redux/stylesSlice/selectors';
 import { getCartResponse } from '../../redux/cartSlice/selectors';
 import { useRouter } from 'next/navigation';
 import { deleteResponse } from '../../redux/cartSlice/cartSlice';
-import { switchModalDisplay } from '../../redux/stylesSlice/stylesSlice';
+import { setModalDisplay, switchModalDisplay } from '../../redux/stylesSlice/stylesSlice';
 import { setModalType } from '../../redux/modalSlice/modalSlice';
 import { I18nProviderClient } from '../../locales/client';
 import { isClient } from '../../utils/isClient';
@@ -71,7 +71,7 @@ const Modal = () => {
     useEffect(() => {
         const onResize = () => {
             if ((window.innerWidth <= 1000 || window.innerHeight <= 800) && modalRef.current && modalType === 'nav') {
-                modalRef.current.style.display = 'none';
+                dispatch(setModalDisplay('none'));
             }
         };
 

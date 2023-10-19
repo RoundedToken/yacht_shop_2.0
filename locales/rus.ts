@@ -1,4 +1,6 @@
 export default {
+    page_not_found: 'Страница не найдена',
+    not_found: 'Не найдено',
     language_selection: 'Выбор языка',
     filters: 'Фильтры',
     navigation: 'Навигация',

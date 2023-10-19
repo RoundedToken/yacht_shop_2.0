@@ -156,6 +156,7 @@
                 &:hover {
                     .dropdown {
                         display: flex;
+                        animation: fadeIn 0.25s;
                     }
 
                     + .arrow {
@@ -203,7 +204,6 @@
                 padding-bottom: 5px;
                 padding-right: 10px;
                 padding-left: 10px;
-                transition: display 0.5s;
 
                 @media (max-width: $breakPointL) {
                     width: 186px;
@@ -226,6 +226,15 @@
 
                     &:hover {
                         color: $white;
+                    }
+                }
+
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                    }
+                    to {
+                        opacity: 1;
                     }
                 }
             }
