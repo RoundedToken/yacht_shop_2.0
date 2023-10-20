@@ -8,6 +8,7 @@ import Modal from '../../modules/Modal/Modal';
 import MobileModal from '../../modules/MobileModal/MobileModal';
 import { getLangTag } from '../../locales/getLangTag';
 import { TLang } from '../../models/types/TLang';
+import Analytics from '../../matomo/Analytics';
 
 const nunito = Nunito({ subsets: ['latin', 'cyrillic'] });
 
@@ -16,9 +17,10 @@ type Props = {
     params: { locale: TLang };
 };
 
-export async function generateMetadata() {
+export function metadata() {
     return {
         title: 'Parnu Yacht Shop',
+        visualViewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0',
     };
 }
 
@@ -35,6 +37,8 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
                         <Modal />
 
                         <MobileModal />
+
+                        <Analytics />
                     </body>
                 </html>
             </LocalStorageWrapper>

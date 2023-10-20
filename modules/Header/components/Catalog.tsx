@@ -20,11 +20,13 @@ const Catalog: FC<ICatalog> = ({ styles, location, t }) => {
             location={location}
             switcher={
                 <>
-                    <label style={isTouchDevice ? { display: 'none' } : {}} className={styles.dropdownSwitcher}>
-                        <DropdownSwitch />
+                    {!isTouchDevice && (
+                        <label style={isTouchDevice ? { display: 'none' } : {}} className={styles.dropdownSwitcher}>
+                            <DropdownSwitch />
 
-                        <Image id="switcher" src={arrowImg} alt="" />
-                    </label>
+                            <Image id="switcher" src={arrowImg} alt="" />
+                        </label>
+                    )}
                 </>
             }
         >
