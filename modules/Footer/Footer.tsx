@@ -36,7 +36,7 @@ const Footer = ({ t, isEmpty = false }: { t: TGetI18n; isEmpty?: boolean }) => {
                         <div className={styles.workingMode}>
                             <Image src={shellImg} alt="" width={28} height={28} />
 
-                            {`${t('wed')}\u{2013}${'sat'} \u{25CF} 12\u{2013}20`}
+                            {`${t('wed')}\u{2013}${t('sat')} \u{25CF} 12\u{2013}20`}
                             <br />
                             {`${t('sun')} \u{25CF} 12\u{2013}17`}
 

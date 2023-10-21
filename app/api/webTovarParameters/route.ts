@@ -12,7 +12,17 @@ export async function GET(req: NextRequest) {
 
     const data = (await request.execute('[dbo].[web_tovar_parameters_new]')).recordset;
 
-    const res = data.map((record) => [record['n'], record[''][0]]);
+    let description;
+    const props = data
+        .map((record) => [record['n'], record[''][0]])
+        .filter((v) => {
+            if (v[0].toLowerCase() === 'описание') {
+                description = v[1];
+                return false;
+            }
 
-    return NextResponse.json(res);
+            return true;
+        });
+
+    return NextResponse.json({ description, props });
 }

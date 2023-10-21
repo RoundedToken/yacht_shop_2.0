@@ -2,7 +2,7 @@ import Script from 'next/script';
 
 const Analytics = () => {
     return (
-        <Script id="matomo">
+        <Script id="matomo" async>
             {`var _mtm = window._mtm = window._mtm || [];
             _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
             (function() {

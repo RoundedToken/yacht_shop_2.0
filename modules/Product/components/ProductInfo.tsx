@@ -6,16 +6,16 @@ import { useParams } from 'next/navigation';
 import { useFetchProductInfoQuery } from '../../../redux/services/webProductInfo';
 import { useI18n } from '../../../locales/client';
 
-const ProductInfo: FC<IProductInfo> = ({ styles }) => {
+const ProductInfo: FC<IProductInfo> = ({ styles, title }) => {
     const id = Number(useParams<TId>().id);
-    const { data: productInfo, isFetching, error } = useFetchProductInfoQuery({ id });
+    const { data: productInfo, isFetching } = useFetchProductInfoQuery({ id });
     const t = useI18n();
 
     if (isFetching) {
         return (
             <div className={styles.infoContainer}>
                 <>
-                    <div className={styles.infoTitle}>{t('product_description')}</div>
+                    <div className={styles.infoTitle}>{title}</div>
 
                     <Skeleton style={{ height: '150px' }} containerClassName="skeleton" />
                 </>
@@ -23,32 +23,48 @@ const ProductInfo: FC<IProductInfo> = ({ styles }) => {
         );
     }
 
-    return (
-        <div className={styles.infoContainer}>
-            {error && <h1>Error!</h1>}
-            {productInfo && (
-                <>
-                    <div className={styles.infoTitle}>{t('product_description')}</div>
+    if (productInfo) {
+        return (
+            <div className={styles.infoContainer}>
+                {productInfo.description || productInfo.props.length > 0 ? (
+                    <>
+                        <div className={styles.infoTitle}>{title}</div>
 
-                    {productInfo.map((value, i) => {
-                        return (
-                            <div className={styles.infoItem} key={i}>
-                                <div
-                                    className={styles.infoItemTitle}
-                                    dangerouslySetInnerHTML={{ __html: value[0] }}
-                                ></div>
-
-                                <div
-                                    className={styles.infoItemContent}
-                                    dangerouslySetInnerHTML={{ __html: value[1] }}
-                                ></div>
+                        {productInfo.description && (
+                            <div className={styles.infoItem} style={{ marginBottom: '20px' }}>
+                                <div className={styles.infoItemContent}>{productInfo.description}</div>
                             </div>
-                        );
-                    })}
-                </>
-            )}
-        </div>
-    );
+                        )}
+
+                        {productInfo.props.map((value, i) => {
+                            return (
+                                <div className={styles.infoItem} key={i}>
+                                    <div
+                                        className={styles.infoItemTitle}
+                                        dangerouslySetInnerHTML={{ __html: value[0] }}
+                                    ></div>
+
+                                    <div
+                                        className={styles.infoItemContent}
+                                        dangerouslySetInnerHTML={{ __html: value[1] }}
+                                    ></div>
+                                </div>
+                            );
+                        })}
+                    </>
+                ) : (
+                    <>
+                        <div className={styles.infoTitle}>{title}</div>
+                        <div className={styles.infoItem}>
+                            <div className={styles.infoItemContent}>{t('product_soon')}</div>
+                        </div>
+                    </>
+                )}
+            </div>
+        );
+    }
+
+    return null;
 };
 
 export default ProductInfo;

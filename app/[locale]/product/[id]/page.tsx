@@ -33,6 +33,7 @@ export default async function ProductPage({ params: { locale } }: Props) {
     setStaticParamsLocale(locale);
     const t = await getI18n();
     const location = routeConstants.PRODUCT_ROUTE;
+    const title = t('product_description');
 
     return (
         <>
@@ -41,7 +42,7 @@ export default async function ProductPage({ params: { locale } }: Props) {
             <SearchBar t={t} location={location} />
 
             <SideBarWrapper t={t} offSideBar>
-                <Product />
+                <Product title={title} />
             </SideBarWrapper>
 
             <Footer t={t} />

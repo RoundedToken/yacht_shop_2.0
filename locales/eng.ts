@@ -1,4 +1,5 @@
 export default {
+    product_soon: 'A description of this product will appear here soon',
     page_not_found: 'Page not found',
     not_found: 'Not found',
     language_selection: 'Language selection',

@@ -4,14 +4,12 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import fullScreenImg from '../../../public/assets/images/fullScreen.png';
 import { useDispatch } from 'react-redux';
 import { IProductSwiper } from '../interfaces/IProductSwiper';
 import defaultProductImg from '../../../public/assets/images/defaultProduct.svg';
 import { setModalType, setPicSrc } from '../../../redux/modalSlice/modalSlice';
 import { switchModalDisplay } from '../../../redux/stylesSlice/stylesSlice';
 import { FreeMode, Navigation, Pagination } from 'swiper/modules';
-import Image from 'next/image';
 import OnImgErrorHOC from '../../../hooks/OnImgErrorHOC';
 
 const ProductSwiper: FC<IProductSwiper> = ({ picSrc, styles }) => {
@@ -26,8 +24,6 @@ const ProductSwiper: FC<IProductSwiper> = ({ picSrc, styles }) => {
 
     return (
         <div className={styles.image}>
-            <Image className={styles.fullScreen} src={fullScreenImg} alt="" width={35} height={35} />
-
             <Swiper
                 style={{
                     //@ts-ignore

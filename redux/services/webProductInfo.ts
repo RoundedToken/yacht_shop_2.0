@@ -7,7 +7,7 @@ export const webProductInfoApi = createApi({
         baseUrl: process.env.NEXT_PUBLIC_API_URL,
     }),
     endpoints: (build) => ({
-        fetchProductInfo: build.query<string[][], IWebProductInfoReq>({
+        fetchProductInfo: build.query<{ description?: string; props: string[][] }, IWebProductInfoReq>({
             query: ({ id }) => ({
                 url: '/webTovarParameters',
                 params: { id },

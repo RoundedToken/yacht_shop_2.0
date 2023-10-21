@@ -1,4 +1,5 @@
 export default {
+    product_soon: 'Peagi ilmub siia selle toote kirjeldus',
     page_not_found: 'Lehte ei leitud',
     not_found: 'Ei leitud',
     language_selection: 'Keele valik',

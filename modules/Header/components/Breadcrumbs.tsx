@@ -1,7 +1,7 @@
 'use client';
 
 import React, { FC, useEffect } from 'react';
-import Skeleton from 'react-loading-skeleton';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import { useDispatch } from 'react-redux';
 import { IBreadcrumbs } from '../interfaces/IBreadcrumbs';
 import { setMobileModalType } from '../../../redux/modalSlice/modalSlice';
@@ -36,7 +36,9 @@ const Breadcrumbs: FC<IBreadcrumbs> = ({ styles }) => {
     if (isFetching) {
         return (
             <div className={styles.breadcrumbs}>
-                <Skeleton containerClassName="skeleton" />
+                <SkeletonTheme baseColor="rgb(38, 162, 187)" highlightColor="rgb(39, 172, 198)">
+                    <Skeleton containerClassName="skeleton" width={200} height={20} />
+                </SkeletonTheme>
             </div>
         );
     }

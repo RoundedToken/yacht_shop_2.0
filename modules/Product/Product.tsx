@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { TId } from '../../models/types/TId';
-import ProductNotFound from './components/ProductNotFound';
 import styles from './Product.module.scss';
 import ProductInfo from './components/ProductInfo';
 import RelatedProducts from './components/RelatedProducts';
@@ -15,29 +14,17 @@ import { I18nProviderClient, useCurrentLocale } from '../../locales/client';
 import { useFetchProductQuery } from '../../redux/services/navProductService';
 import OnImgErrorHOC from '../../hooks/OnImgErrorHOC';
 
-const Product = () => {
+const Product = ({ title }: { title: string }) => {
     const id = Number(useParams<TId>().id);
     const lang = useCurrentLocale();
-    const { data: product, isFetching, error } = useFetchProductQuery({ id, lang });
-
-    if (isFetching) {
-        return (
-            <div className={styles.rootContainer}>
-                <I18nProviderClient>
-                    <ProductSkeleton styles={styles} />
-                </I18nProviderClient>
-            </div>
-        );
-    }
+    const { data: product, isFetching } = useFetchProductQuery({ id, lang });
 
     return (
         <div className={styles.rootContainer}>
             <I18nProviderClient>
-                {error && <h1>Error!</h1>}
-                {product &&
-                    !isFetching &&
-                    (product.name ? (
-                        <div className={styles.grid}>
+                <div className={styles.grid}>
+                    {product && (
+                        <>
                             <ProductMenu
                                 isDecimals={product.isDecimals}
                                 styles={styles}
@@ -57,18 +44,19 @@ const Product = () => {
                                     defaultClassName={styles.defaultProductPic}
                                 />
                             </div>
+                        </>
+                    )}
 
-                            <div className={styles.info}>
-                                <ProductInfo styles={styles} />
-                            </div>
+                    {isFetching && <ProductSkeleton styles={styles} />}
 
-                            {product.relatedCount !== 0 && (
-                                <RelatedProducts styles={styles} id={product.id} relatedCount={product.relatedCount} />
-                            )}
-                        </div>
-                    ) : (
-                        <ProductNotFound />
-                    ))}
+                    <div className={styles.info}>
+                        <ProductInfo styles={styles} title={title} />
+                    </div>
+
+                    {product && product.relatedCount !== 0 && (
+                        <RelatedProducts styles={styles} id={product.id} relatedCount={product.relatedCount} />
+                    )}
+                </div>
             </I18nProviderClient>
         </div>
     );

@@ -1,4 +1,5 @@
 export default {
+    product_soon: 'Скоро здесь появится описание этого товара',
     page_not_found: 'Страница не найдена',
     not_found: 'Не найдено',
     language_selection: 'Выбор языка',
