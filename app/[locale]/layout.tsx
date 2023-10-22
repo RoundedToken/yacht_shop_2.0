@@ -9,6 +9,8 @@ import MobileModal from '../../modules/MobileModal/MobileModal';
 import { getLangTag } from '../../locales/getLangTag';
 import { TLang } from '../../models/types/TLang';
 import Analytics from '../../matomo/Analytics';
+import { Metadata } from 'next';
+import { getI18n } from '../../locales/server';
 
 const nunito = Nunito({ subsets: ['latin', 'cyrillic'] });
 
@@ -17,10 +19,20 @@ type Props = {
     params: { locale: TLang };
 };
 
-export function metadata() {
+export async function generateMetadata(): Promise<Metadata> {
+    const t = await getI18n();
+
     return {
         title: 'Parnu Yacht Shop',
         viewport: 'width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0',
+        description: t('site_description_1'),
+        openGraph: {
+            url: process.env.URL,
+            title: t('mainTitle'),
+            type: 'website',
+            siteName: 'Parnu Yacht Shop',
+            description: t('og_description_1'),
+        },
     };
 }
 

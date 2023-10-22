@@ -1,5 +1,5 @@
 import { setStaticParamsLocale } from 'next-international/server';
-import { getI18n, getStaticParams } from '../../../locales/server';
+import { getCurrentLocale, getI18n, getStaticParams } from '../../../locales/server';
 import Main from '../../../modules/Main/Main';
 import SideBarWrapper from '../../../modules/SideBarWrapper/SideBarWrapper';
 import Footer from '../../../modules/Footer/Footer';

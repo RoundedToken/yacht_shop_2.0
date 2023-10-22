@@ -5,7 +5,7 @@ export function formattingBrands(arr: NavNode[]) {
         item.brands = Array.from(new Set(item.brands.flat(Infinity)));
 
         //Create src
-        item.src = `/images/subr/${item.id}.${item.parentId === 0 ? 'gif' : 'jpg'}`;
+        item.src = `/images/subr_webp/${item.id}.webp`;
 
         if (item.children) {
             formattingBrands(item.children); //Recursion

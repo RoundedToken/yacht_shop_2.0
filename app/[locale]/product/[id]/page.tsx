@@ -18,10 +18,18 @@ interface Props {
 
 export async function generateMetadata({ params: { id } }: Props): Promise<Metadata> {
     const lang = getCurrentLocale();
-    const categoryName = await getProductName({ id, lang });
+    const productName = await getProductName({ id, lang });
+    const t = await getI18n();
 
     return {
-        title: categoryName ?? 'Product',
+        title: productName ?? 'Product',
+        openGraph: {
+            url: process.env.URL,
+            title: productName ?? 'Product',
+            type: 'website',
+            siteName: 'Parnu Yacht Shop',
+            description: t('og_description_1'),
+        },
     };
 }
 

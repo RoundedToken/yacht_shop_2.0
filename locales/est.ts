@@ -89,4 +89,8 @@ export default {
     to_the_goods: 'Kauba juurde',
     favorites_text_1: 'Te pole veel ühtegi toodet valinud...',
     favorites_text_2: 'Lisage tooteid oma lemmikute hulka',
+    og_description_1:
+        'Jahtvarustuse pood Eestis pakub laia valikut tooteid jahtidele ja paatidele - purjed, takelaaž, navigatsiooniseadmed, päästevestid, jahtimisriided ja palju muud. Siit leiate kõik, mida mugavaks vaba aja veetmiseks vee peal vaja läheb. Tarnime üle Eesti ja Euroopa. Garanteerime kvaliteeti.',
+    site_description_1:
+        'Veebipood Eestis paadi- ja jahtvarustusega. Meil on esindatud tohutu valik tuntud brändide tooteid jahtidele ja paatidele - purjed, takelaaž, navigatsiooni- ja sideseadmed, päästevarustus, riided, paadikeemia jne. Soodsad hinnad, kiire tarne üle Eesti ja Euroopa, professionaalsed konsultatsioonid. Oleme hoolitsenud juba üle 10 aasta purjetajate mugavuse ja ohutuse eest. Usaldage professionaale ja nautige vaba aega vee peal!',
 } as const;

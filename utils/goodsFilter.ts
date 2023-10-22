@@ -12,8 +12,12 @@ export function goodsFilter(data: TWebCartProductListData[]) {
                 const index = filteredData.findIndex((product) => product.id === item.id);
 
                 if (!item.src.startsWith('http')) {
+                    filteredData[index].og_src.push(
+                        `${process.env.URL}/_next/image?url=%2Fimages%2Fpic%2F${item.brand}%2F${item.src}&w=384&q=75`,
+                    );
                     filteredData[index].src.push(`/images/pic/${item.brand}/${item.src}`);
                 } else {
+                    filteredData[index].og_src = [item.src];
                     filteredData[index].src = [item.src];
                 }
             } else {
@@ -25,8 +29,12 @@ export function goodsFilter(data: TWebCartProductListData[]) {
 
                 //Check src for URL otherwise create URL
                 if (!item.src.startsWith('http')) {
+                    item.og_src = [
+                        `${process.env.URL}/_next/image?url=%2Fimages%2Fpic%2F${item.brand}%2F${item.src}&w=384&q=75`,
+                    ];
                     item.src = [`/images/pic/${item.brand}/${item.src}`];
                 } else {
+                    item.og_src = [item.src];
                     item.src = [item.src];
                 }
 
@@ -64,6 +72,7 @@ export type TWebCartProductListFormattedData = {
     price: number;
     inStockCount: number;
     src: any;
+    og_src: any;
     isDecimals: boolean;
     inStock?: boolean;
     featurename?: string;
@@ -78,6 +87,7 @@ export type TWebCartProductListData = {
     price: number;
     inStockCount: number;
     src: any;
+    og_src: any;
     featurename?: string;
     isDecimals: boolean;
     inStock?: boolean;

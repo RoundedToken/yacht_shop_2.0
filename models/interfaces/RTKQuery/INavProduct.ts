@@ -13,6 +13,7 @@ export interface INavProductRes {
     src: string[];
     relatedCount: number;
     isDecimals: boolean;
+    og_src: string[];
 }
 
 export interface INavProductReq {

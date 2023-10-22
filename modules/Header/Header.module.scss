@@ -272,9 +272,17 @@
         overflow: hidden;
 
         @media (max-width: $breakPointL) {
-            left: 16px;
-            height: 100px;
-            top: 11px;
+            left: 4px;
+            height: 50px;
+            top: 0px;
+            // top: 11px;
+
+            img {
+                filter: $blueFilter;
+                cursor: pointer;
+                user-select: none;
+                height: 100px;
+            }
         }
 
         @media (max-width: $breakPointM) {
