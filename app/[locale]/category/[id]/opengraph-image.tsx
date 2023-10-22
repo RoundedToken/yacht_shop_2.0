@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from 'next/server';
-import { TLang } from '../../../../models/types/TLang';
 import { getCategoryName } from '../../../../services/getCategoryName';
+import { TLang } from '../../../../models/types/TLang';
 
 // Route segment config
-export const runtime = 'edge';
+// export const runtime = 'edge';
 
 // Image metadata
 export const size = {

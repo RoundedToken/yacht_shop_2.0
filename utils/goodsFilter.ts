@@ -50,6 +50,7 @@ export function goodsFilter(data: TWebCartProductListData[]) {
 
                 //Check src for URL otherwise create URL
                 item.src = [];
+                item.og_src = [];
 
                 filteredData.push(item);
             }

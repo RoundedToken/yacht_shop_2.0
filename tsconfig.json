@@ -19,6 +19,14 @@
             }
         ]
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "..1/loading.tsx", "public/script.js"],
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        ".next/types/**/*.ts",
+        "..1/loading.tsx",
+        "public/script.js",
+        "app/[locale]/category/[id]/opengraph-image.tsx"
+    ],
     "exclude": ["node_modules"]
 }

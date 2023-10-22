@@ -13,6 +13,7 @@ export const navTreeApi = createApi({
             query: (lang) => ({
                 url: '/navTree',
                 params: { lang },
+                headers: { 'Accept-Encoding': 'gzip' },
             }),
         }),
     }),
