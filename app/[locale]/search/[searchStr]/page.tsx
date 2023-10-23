@@ -7,6 +7,7 @@ import { routeConstants } from '../../../../models/enums/EConstants';
 import Header from '../../../../modules/Header/Header';
 import SearchBar from '../../../../modules/SearchBar/SearchBar';
 import { setStaticParamsLocale } from 'next-international/server';
+import { getAlternates } from '../../../../locales/getAlternates';
 
 interface Props {
     params: {
@@ -20,6 +21,7 @@ export async function generateMetadata({ params: { searchStr } }: Props): Promis
 
     return {
         title: `${t('search')}: ${decodeURI(searchStr)}`,
+        alternates: getAlternates(`${routeConstants.SEARCH_ROUTE}/${searchStr}`),
     };
 }
 

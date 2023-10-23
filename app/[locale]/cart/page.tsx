@@ -7,6 +7,7 @@ import SearchBar from '../../../modules/SearchBar/SearchBar';
 import SideBarWrapper from '../../../modules/SideBarWrapper/SideBarWrapper';
 import Footer from '../../../modules/Footer/Footer';
 import Cart from '../../../modules/Cart/Cart';
+import { getAlternates } from '../../../locales/getAlternates';
 
 type Props = {
     params: { locale: string };
@@ -17,6 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
     return {
         title: `${t('cart')}`,
+        alternates: getAlternates(routeConstants.CART_ROUTE),
     };
 }
 

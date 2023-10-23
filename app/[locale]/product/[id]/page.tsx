@@ -8,6 +8,7 @@ import { routeConstants } from '../../../../models/enums/EConstants';
 import Header from '../../../../modules/Header/Header';
 import SearchBar from '../../../../modules/SearchBar/SearchBar';
 import { setStaticParamsLocale } from 'next-international/server';
+import { getAlternates } from '../../../../locales/getAlternates';
 
 interface Props {
     params: {
@@ -23,11 +24,12 @@ export async function generateMetadata({ params: { id } }: Props): Promise<Metad
 
     return {
         title: productName ?? 'Product',
+        alternates: getAlternates(`${routeConstants.PRODUCT_ROUTE}/${id}`),
         openGraph: {
             url: process.env.URL,
             title: productName ?? 'Product',
             type: 'website',
-            siteName: 'Parnu Yacht Shop',
+            siteName: 'YachtShop',
             description: t('og_description_1'),
         },
     };

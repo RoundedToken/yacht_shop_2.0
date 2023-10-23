@@ -7,6 +7,7 @@ import Footer from '../../../modules/Footer/Footer';
 import { routeConstants } from '../../../models/enums/EConstants';
 import Header from '../../../modules/Header/Header';
 import SearchBar from '../../../modules/SearchBar/SearchBar';
+import { getAlternates } from '../../../locales/getAlternates';
 
 type Props = {
     params: { locale: string };
@@ -17,6 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
     return {
         title: `${t('favorites')}`,
+        alternates: getAlternates(routeConstants.FAVORITES_ROUTE),
     };
 }
 

@@ -1,4 +1,5 @@
 export default {
+    main_page: 'Main',
     product_soon: 'A description of this product will appear here soon',
     page_not_found: 'Page not found',
     not_found: 'Not found',
@@ -92,4 +93,7 @@ export default {
         'The yacht equipment store in Estonia offers a wide range of products for yachts and boats - sails, rigging, navigation equipment, life jackets, sailing apparel and much more. Here you will find everything you need for a comfortable leisure time on the water. We deliver across Estonia and Europe. We guarantee the quality.',
     site_description_1:
         'Online store of yacht gear and equipment in Estonia. We offer a vast range of products from renowned brands for yachts and boats – sails, rigging, navigation and communication, safety equipment, apparel, boat chemicals and much more. Beneficial prices, swift delivery across Estonia and Europe, professional consulting. We have been taking care of yachtsmen’s comfort and safety for over 10 years already. Rely on professionals and enjoy your leisure time on the water!',
+    site_keywords:
+        'yacht equipment, yacht gear, equipment for yachts, gear for yachts, yacht equipment store, yacht equipment online store, yacht store, store for yachtsmen, sails, sails for yachts, rigging, rigging for yachts, navigation for yachts, yacht navigation equipment, yacht safety equipment, sailing apparel, boat chemicals, yacht goods, goods for yachts, yachts, boats, Estonia, Pärnu, yacht equipment delivery, yacht equipment in Estonia',
+    yacht_equipment: 'yacht equipment',
 } as const;

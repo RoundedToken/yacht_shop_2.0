@@ -8,6 +8,7 @@ import Header from '../../../modules/Header/Header';
 import SearchBar from '../../../modules/SearchBar/SearchBar';
 import { routeConstants } from '../../../models/enums/EConstants';
 import styles from './index.module.scss';
+import { getAlternates } from '../../../locales/getAlternates';
 
 type Props = {
     params: { locale: string };
@@ -18,6 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
     return {
         title: `${t('not_found')}`,
+        alternates: getAlternates(routeConstants.NOT_FOUND),
     };
 }
 

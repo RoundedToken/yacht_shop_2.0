@@ -8,6 +8,7 @@ import SearchBar from '../../../../modules/SearchBar/SearchBar';
 import SideBarWrapper from '../../../../modules/SideBarWrapper/SideBarWrapper';
 import Footer from '../../../../modules/Footer/Footer';
 import { setStaticParamsLocale } from 'next-international/server';
+import { getAlternates } from '../../../../locales/getAlternates';
 
 interface Props {
     params: {
@@ -23,11 +24,12 @@ export async function generateMetadata({ params: { id } }: Props): Promise<Metad
 
     return {
         title: categoryName ?? 'Catalog',
+        alternates: getAlternates(`${routeConstants.CATEGORIES_ROUTE}/${id}`),
         openGraph: {
             url: process.env.URL,
             title: categoryName ?? 'Catalog',
             type: 'website',
-            siteName: 'Parnu Yacht Shop',
+            siteName: 'YachtShop',
             description: t('og_description_1'),
         },
     };

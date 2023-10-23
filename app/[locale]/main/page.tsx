@@ -1,15 +1,26 @@
 import { setStaticParamsLocale } from 'next-international/server';
-import { getCurrentLocale, getI18n, getStaticParams } from '../../../locales/server';
+import { getI18n, getStaticParams } from '../../../locales/server';
 import Main from '../../../modules/Main/Main';
 import SideBarWrapper from '../../../modules/SideBarWrapper/SideBarWrapper';
 import Footer from '../../../modules/Footer/Footer';
 import { routeConstants } from '../../../models/enums/EConstants';
 import Header from '../../../modules/Header/Header';
 import SearchBar from '../../../modules/SearchBar/SearchBar';
+import { Metadata } from 'next';
+import { getAlternates } from '../../../locales/getAlternates';
 
 type Props = {
     params: { locale: string };
 };
+
+export async function generateMetadata(): Promise<Metadata> {
+    const t = await getI18n();
+
+    return {
+        title: t('main_page'),
+        alternates: getAlternates(routeConstants.MAIN_ROUTE),
+    };
+}
 
 export function generateStaticParams() {
     return getStaticParams();
