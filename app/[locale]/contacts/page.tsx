@@ -19,6 +19,14 @@ export async function generateMetadata(): Promise<Metadata> {
     return {
         title: `${t('contacts')}`,
         alternates: getAlternates(routeConstants.CONTACTS_ROUTE),
+        description: t('contacts_description'),
+        openGraph: {
+            url: routeConstants.CONTACTS_ROUTE,
+            title: t('contacts'),
+            type: 'website',
+            siteName: 'YachtShop',
+            description: t('contacts_description'),
+        },
     };
 }
 

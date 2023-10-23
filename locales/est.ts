@@ -61,7 +61,7 @@ export default {
     yes: 'Jah',
     quantity_in_stock: 'Kogus laos',
     crimping_text_1: `Otsikute pressimine trossidele labimooduga 2.5 kuni 8 mm.
-    Kaupluses on valikus roostevabast terasest trossid paksusega 2,5 kuni 8 mm ja otstega\u{00A0}— Aas, Kahvel, Kahvel toggle, T-terminaal, Parempoolne niit, Vasak niit, Talrep, Talrep-toggle.
+    Kaupluses on valikus roostevabast terasest trossid paksusega 2,5 kuni 8 mm ja otstega — Aas, Kahvel, Kahvel toggle, T-terminaal, Parempoolne niit, Vasak niit, Talrep, Talrep-toggle.
     Samuti pressime kasutades kliendi materjale.
     Vajadusel soidame kliendi juurde, sellel juhul lisandub transporditeenuse maksumus:
     \u{2003}\u{2022} Parnumaa al. 20€;
@@ -93,8 +93,11 @@ export default {
     og_description_1:
         'Jahtvarustuse pood Eestis pakub laia valikut tooteid jahtidele ja paatidele - purjed, takelaaž, navigatsiooniseadmed, päästevestid, jahtimisriided ja palju muud. Siit leiate kõik, mida mugavaks vaba aja veetmiseks vee peal vaja läheb. Tarnime üle Eesti ja Euroopa. Garanteerime kvaliteeti.',
     site_description_1:
-        'Veebipood Eestis paadi- ja jahtvarustusega. Meil on esindatud tohutu valik tuntud brändide tooteid jahtidele ja paatidele - purjed, takelaaž, navigatsiooni- ja sideseadmed, päästevarustus, riided, paadikeemia jne. Soodsad hinnad, kiire tarne üle Eesti ja Euroopa, professionaalsed konsultatsioonid. Oleme hoolitsenud juba üle 10 aasta purjetajate mugavuse ja ohutuse eest. Usaldage professionaale ja nautige vaba aega vee peal!',
+        'Veebipood Eestis paadi-ja jahtvarustusega. Meil on esindatud tohutu valik tuntud brändide tooteid jahtidele ja paatidele - purjed, takelaaž, navigatsiooni- ja sideseadmed, päästevarustus, riided, paadikeemia jne. Soodsad hinnad, kiire tarne üle Eesti ja Euroopa, professionaalsed konsultatsioonid. Oleme hoolitsenud juba üle 10 aasta purjetajate mugavuse ja ohutuse eest. Usaldage professionaale ja nautige vaba aega vee peal!',
     site_keywords:
         'jahtvarustus, jahtimisvarustus, varustus jahtidele, jahtide varustus, jahtvarustuse pood, internetipood jahtvarustusega, jahtide pood, pood jahtimishuvilistele, purjed, purjed jahtidele, takelaaž, takelaaž jahtidele, navigatsioon jahtidele, päästevarustus jahtidele, riided jahtimiseks, paadi keemia, jahtimiskaubad, kaubad jahtidele, jaht, paat, Eesti, Pärnu, jahtvarustuse tarne, jahtvarustus Eestis',
     yacht_equipment: 'jahtvarustus',
+    crimping_description:
+        'Otsikute pressimine trossidele labimooduga 2.5 kuni 8 mm. Kaupluses on valikus roostevabast terasest trossid paksusega 2,5 kuni 8 mm ja otstega — Aas, Kahvel, Kahvel toggle, T-terminaal, Parempoolne niit, Vasak niit, Talrep, Talrep-toggle. Samuti pressime kasutades kliendi materjale.',
+    contacts_description: `Meie aadress: Pärnu JahtKlubi Lootsi tn 6 Pärnu ● telefon: +372 589 450 74 ● WhatsApp: +7 985 454 94 70 ● email: shop@yachtshop.ee. Veebipood Eestis paadi-ja jahtvarustusega.`,
 } as const;

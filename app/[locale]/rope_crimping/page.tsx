@@ -18,7 +18,15 @@ export async function generateMetadata(): Promise<Metadata> {
 
     return {
         title: `${t('rope_crimping')}`,
+        description: t('crimping_description'),
         alternates: getAlternates(routeConstants.CRIMPING_ROUTE),
+        openGraph: {
+            url: routeConstants.CRIMPING_ROUTE,
+            title: t('rope_crimping'),
+            type: 'website',
+            siteName: 'YachtShop',
+            description: t('crimping_description'),
+        },
     };
 }
 

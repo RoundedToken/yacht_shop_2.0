@@ -16,7 +16,8 @@ export async function GET(req: NextRequest) {
     const props = data
         .map((record) => [record['n'], record[''][0]])
         .filter((v) => {
-            if (v[0].toLowerCase() === 'описание') {
+            const par = v[0].toLowerCase();
+            if (par === 'описание' || par.trim() === '') {
                 description = v[1];
                 return false;
             }

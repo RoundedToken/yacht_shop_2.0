@@ -4,7 +4,7 @@ import { getCategoryName } from '../../../../services/getCategoryName';
 import { TLang } from '../../../../models/types/TLang';
 
 // Route segment config
-// export const runtime = 'edge';
+export const runtime = 'edge';
 
 // Image metadata
 export const size = {
@@ -49,17 +49,29 @@ export default async function Image({ params: { id, locale } }: { params: { id: 
                 />
 
                 <div style={{ display: 'flex', gap: 40 }}>
-                    <img
+                    <div
                         style={{
                             borderRadius: '100%',
                             boxShadow: '5px 5px 5px 5px rgba(163, 185, 188, 0.659)',
-                            backgroundImage: `url("${process.env.URL}/_next/image?url=%2Fassets%2Fimages%2FcategoryDefault.webp&w=256&q=75")`,
+                            width: 400,
+                            height: 400,
+                            overflow: 'hidden',
+                            display: 'flex',
                         }}
-                        src={`${process.env.URL}/_next/image?url=%2Fimages%2Fsubr_webp%2F${id}.webp&w=256&q=75`}
-                        alt=""
-                        width={400}
-                        height={400}
-                    />
+                    >
+                        <img
+                            style={{
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'contain',
+                                backgroundImage: `url("${process.env.URL}/assets/images/categoryDefaultOG.png")`,
+                            }}
+                            src={`${process.env.URL}/_next/image?url=%2Fimages%2Fsubr_webp%2F${id}.webp&w=256&q=75`}
+                            alt=""
+                            width={400}
+                            height={400}
+                        />
+                    </div>
                     <div style={{ maxWidth: 680, textShadow: '2px 2px 2px rgba(2, 40, 163, 0.782)' }}>{name}</div>
                 </div>
             </div>

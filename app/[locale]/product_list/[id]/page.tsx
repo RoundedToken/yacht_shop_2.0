@@ -26,7 +26,7 @@ export async function generateMetadata({ params: { id } }: Props): Promise<Metad
         title: categoryName ?? 'Product List',
         alternates: getAlternates(`${routeConstants.PRODUCT_LIST_ROUTE}/${id}`),
         openGraph: {
-            url: process.env.URL,
+            url: `${routeConstants.PRODUCT_LIST_ROUTE}/${id}`,
             title: categoryName ?? 'Product List',
             type: 'website',
             siteName: 'YachtShop',

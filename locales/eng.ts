@@ -60,7 +60,7 @@ export default {
     no: 'No',
     yes: 'Yes',
     quantity_in_stock: 'Quantity in stock',
-    crimping_text_1: `We provide services for cable crimping, manufacturing of shrouds, handrails and similar products. The store offers a selection of stainless steel cables with a thickness of 2.5 to 8 mm and tips\u{00A0}— Eye, Fork, Toggle, T-terminal, Thread right, Thread left, Turnbuckle, Turnbuckle-toggle.
+    crimping_text_1: `We provide services for cable crimping, manufacturing of shrouds, handrails and similar products. The store offers a selection of stainless steel cables with a thickness of 2.5 to 8 mm and tips — Eye, Fork, Toggle, T-terminal, Thread right, Thread left, Turnbuckle, Turnbuckle-toggle.
     It is possible to use customer's materials.
     If it is necessary to deliver the order, the cost of transport services will be added:
     \u{2003}\u{2022} Pärnus County from 20€;
@@ -96,4 +96,7 @@ export default {
     site_keywords:
         'yacht equipment, yacht gear, equipment for yachts, gear for yachts, yacht equipment store, yacht equipment online store, yacht store, store for yachtsmen, sails, sails for yachts, rigging, rigging for yachts, navigation for yachts, yacht navigation equipment, yacht safety equipment, sailing apparel, boat chemicals, yacht goods, goods for yachts, yachts, boats, Estonia, Pärnu, yacht equipment delivery, yacht equipment in Estonia',
     yacht_equipment: 'yacht equipment',
+    crimping_description:
+        "We provide services for cable crimping, manufacturing of shrouds, handrails and similar products. The store offers a selection of stainless steel cables with a thickness of 2.5 to 8 mm and tips — Eye, Fork, Toggle, T-terminal, Thread right, Thread left, Turnbuckle, Turnbuckle-toggle. It is possible to use customer's materials.",
+    contacts_description: `Our address: Pärnu JahtKlubi Lootsi tn 6 Pärnu ● phone: +372 589 450 74 ● WhatsApp: +7 985 454 94 70 ● email: shop@yachtshop.ee. Online store of yacht gear and equipment in Estonia.`,
 } as const;

@@ -23,9 +23,10 @@ type Props = {
 
 export async function generateMetadata(): Promise<Metadata> {
     const t = await getI18n();
+    const locale = getCurrentLocale();
 
     return {
-        metadataBase: new URL(`${process.env.URL}`),
+        metadataBase: new URL(`${process.env.URL}/${locale}`),
         alternates: getAlternates('/'),
         referrer: 'origin',
         generator: 'Next.js',
@@ -36,6 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
         creator: 'Stepan Mikhalev',
         publisher: 'Stepan Mikhalev',
         category: t('yacht_equipment'),
+        manifest: `${process.env.URL}/manifest.json`,
         title: {
             template: '%s | Parnu Yacht Shop',
             default: 'Parnu Yacht Shop',

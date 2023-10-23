@@ -9,6 +9,7 @@ import Header from '../../../../modules/Header/Header';
 import SearchBar from '../../../../modules/SearchBar/SearchBar';
 import { setStaticParamsLocale } from 'next-international/server';
 import { getAlternates } from '../../../../locales/getAlternates';
+import { getProductInfo } from '../../../../services/getProductInfo';
 
 interface Props {
     params: {
@@ -20,17 +21,19 @@ interface Props {
 export async function generateMetadata({ params: { id } }: Props): Promise<Metadata> {
     const lang = getCurrentLocale();
     const productName = await getProductName({ id, lang });
+    const { description } = await getProductInfo({ id });
     const t = await getI18n();
 
     return {
         title: productName ?? 'Product',
         alternates: getAlternates(`${routeConstants.PRODUCT_ROUTE}/${id}`),
+        description: description ?? t('site_description_1'),
         openGraph: {
-            url: process.env.URL,
+            url: `${routeConstants.PRODUCT_ROUTE}/${id}`,
             title: productName ?? 'Product',
             type: 'website',
             siteName: 'YachtShop',
-            description: t('og_description_1'),
+            description: description ?? t('og_description_1'),
         },
     };
 }
