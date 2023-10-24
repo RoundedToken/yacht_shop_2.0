@@ -1,4 +1,4 @@
-# YachtShop 2.0
+# [YachtShop 2.0](https://uus.yachtshop.ee/)
 
 ## Description
 
