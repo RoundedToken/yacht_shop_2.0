@@ -8,12 +8,13 @@ import SearchBar from '../../../modules/SearchBar/SearchBar';
 import Header from '../../../modules/Header/Header';
 import { routeConstants } from '../../../models/enums/EConstants';
 import { getAlternates } from '../../../locales/getAlternates';
+import { TLang } from '../../../models/types/TLang';
 
 type Props = {
-    params: { locale: string };
+    params: { locale: TLang };
 };
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params: { locale } }: Props): Promise<Metadata> {
     const t = await getI18n();
 
     return {
@@ -21,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
         alternates: getAlternates(routeConstants.CONTACTS_ROUTE),
         description: t('contacts_description'),
         openGraph: {
-            url: routeConstants.CONTACTS_ROUTE,
+            url: `${locale}/${routeConstants.CONTACTS_ROUTE}`,
             title: t('contacts'),
             type: 'website',
             siteName: 'YachtShop',

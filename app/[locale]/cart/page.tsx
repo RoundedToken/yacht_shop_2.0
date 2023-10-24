@@ -8,9 +8,10 @@ import SideBarWrapper from '../../../modules/SideBarWrapper/SideBarWrapper';
 import Footer from '../../../modules/Footer/Footer';
 import Cart from '../../../modules/Cart/Cart';
 import { getAlternates } from '../../../locales/getAlternates';
+import { TLang } from '../../../models/types/TLang';
 
 type Props = {
-    params: { locale: string };
+    params: { locale: TLang };
 };
 
 export async function generateMetadata(): Promise<Metadata> {

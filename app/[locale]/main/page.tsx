@@ -8,9 +8,10 @@ import Header from '../../../modules/Header/Header';
 import SearchBar from '../../../modules/SearchBar/SearchBar';
 import { Metadata } from 'next';
 import { getAlternates } from '../../../locales/getAlternates';
+import { TLang } from '../../../models/types/TLang';
 
 type Props = {
-    params: { locale: string };
+    params: { locale: TLang };
 };
 
 export async function generateMetadata(): Promise<Metadata> {

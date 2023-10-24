@@ -9,9 +9,10 @@ import SearchBar from '../../../modules/SearchBar/SearchBar';
 import { routeConstants } from '../../../models/enums/EConstants';
 import styles from './index.module.scss';
 import { getAlternates } from '../../../locales/getAlternates';
+import { TLang } from '../../../models/types/TLang';
 
 type Props = {
-    params: { locale: string };
+    params: { locale: TLang };
 };
 
 export async function generateMetadata(): Promise<Metadata> {

@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { getCurrentLocale, getI18n, getStaticParams } from '../../../../locales/server';
+import { getI18n, getStaticParams } from '../../../../locales/server';
 import Product from '../../../../modules/Product/Product';
 import { getProductName } from '../../../../services/getProductName';
 import SideBarWrapper from '../../../../modules/SideBarWrapper/SideBarWrapper';
@@ -10,17 +10,17 @@ import SearchBar from '../../../../modules/SearchBar/SearchBar';
 import { setStaticParamsLocale } from 'next-international/server';
 import { getAlternates } from '../../../../locales/getAlternates';
 import { getProductInfo } from '../../../../services/getProductInfo';
+import { TLang } from '../../../../models/types/TLang';
 
 interface Props {
     params: {
         id: number;
-        locale: string;
+        locale: TLang;
     };
 }
 
-export async function generateMetadata({ params: { id } }: Props): Promise<Metadata> {
-    const lang = getCurrentLocale();
-    const productName = await getProductName({ id, lang });
+export async function generateMetadata({ params: { id, locale } }: Props): Promise<Metadata> {
+    const productName = await getProductName({ id, lang: locale });
     const { description } = await getProductInfo({ id });
     const t = await getI18n();
 
@@ -29,7 +29,7 @@ export async function generateMetadata({ params: { id } }: Props): Promise<Metad
         alternates: getAlternates(`${routeConstants.PRODUCT_ROUTE}/${id}`),
         description: description ?? t('site_description_1'),
         openGraph: {
-            url: `${routeConstants.PRODUCT_ROUTE}/${id}`,
+            url: `${locale}/${routeConstants.PRODUCT_ROUTE}/${id}`,
             title: productName ?? 'Product',
             type: 'website',
             siteName: 'YachtShop',

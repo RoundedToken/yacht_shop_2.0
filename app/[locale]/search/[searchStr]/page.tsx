@@ -8,11 +8,12 @@ import Header from '../../../../modules/Header/Header';
 import SearchBar from '../../../../modules/SearchBar/SearchBar';
 import { setStaticParamsLocale } from 'next-international/server';
 import { getAlternates } from '../../../../locales/getAlternates';
+import { TLang } from '../../../../models/types/TLang';
 
 interface Props {
     params: {
         searchStr: string;
-        locale: string;
+        locale: TLang;
     };
 }
 

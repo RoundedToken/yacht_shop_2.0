@@ -9,15 +9,16 @@ import SideBarWrapper from '../../../../modules/SideBarWrapper/SideBarWrapper';
 import Footer from '../../../../modules/Footer/Footer';
 import { setStaticParamsLocale } from 'next-international/server';
 import { getAlternates } from '../../../../locales/getAlternates';
+import { TLang } from '../../../../models/types/TLang';
 
 interface Props {
     params: {
         id: number;
-        locale: string;
+        locale: TLang;
     };
 }
 
-export async function generateMetadata({ params: { id } }: Props): Promise<Metadata> {
+export async function generateMetadata({ params: { id, locale } }: Props): Promise<Metadata> {
     const lang = getCurrentLocale();
     const categoryName = await getCategoryName({ id, lang });
     const t = await getI18n();
@@ -26,7 +27,7 @@ export async function generateMetadata({ params: { id } }: Props): Promise<Metad
         title: categoryName ?? 'Catalog',
         alternates: getAlternates(`${routeConstants.CATEGORIES_ROUTE}/${id}`),
         openGraph: {
-            url: `${routeConstants.CATEGORIES_ROUTE}/${id}`,
+            url: `${locale}/${routeConstants.CATEGORIES_ROUTE}/${id}`,
             title: categoryName ?? 'Catalog',
             type: 'website',
             siteName: 'YachtShop',

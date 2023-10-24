@@ -2,13 +2,12 @@ import { getCurrentLocale } from './server';
 
 export const getAlternates = (route?: string) => {
     const locale = getCurrentLocale();
-    const baseURL = process.env.URL;
 
     const languages = {
-        rus: { en: `${baseURL}/eng${route}`, et: `${baseURL}/est${route}` },
-        eng: { ru: `${baseURL}/rus${route}`, et: `${baseURL}/est${route}` },
-        est: { en: `${baseURL}/eng${route}`, ru: `${baseURL}/rus${route}` },
+        rus: { en: `/eng${route}`, et: `/est${route}` },
+        eng: { ru: `/rus${route}`, et: `/est${route}` },
+        est: { en: `/eng${route}`, ru: `/rus${route}` },
     } as const;
 
-    return { canonical: `${baseURL}/${locale}${route}`, languages: languages[locale] };
+    return { canonical: `/${locale}${route}`, languages: languages[locale] };
 };

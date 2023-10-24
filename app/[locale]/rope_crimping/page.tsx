@@ -8,12 +8,13 @@ import Header from '../../../modules/Header/Header';
 import SearchBar from '../../../modules/SearchBar/SearchBar';
 import { routeConstants } from '../../../models/enums/EConstants';
 import { getAlternates } from '../../../locales/getAlternates';
+import { TLang } from '../../../models/types/TLang';
 
 type Props = {
-    params: { locale: string };
+    params: { locale: TLang };
 };
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params: { locale } }: Props): Promise<Metadata> {
     const t = await getI18n();
 
     return {
@@ -21,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
         description: t('crimping_description'),
         alternates: getAlternates(routeConstants.CRIMPING_ROUTE),
         openGraph: {
-            url: routeConstants.CRIMPING_ROUTE,
+            url: `${locale}/${routeConstants.CRIMPING_ROUTE}`,
             title: t('rope_crimping'),
             type: 'website',
             siteName: 'YachtShop',
