@@ -7,13 +7,14 @@
     top: 29px;
     left: $_header_paddingDouble;
     height: $_header_heightImg;
-    width: auto;
+    width: 154px;
 
     @media (max-width: $breakPointL) {
         top: $_header_paddingL;
         left: $_header_paddingDoubleL;
         height: $_header_heightImgL;
         top: 24px;
+        width: 128px;
     }
 
     @media (max-width: $breakPointM) {
