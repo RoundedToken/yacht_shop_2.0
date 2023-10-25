@@ -6,6 +6,7 @@ import { query } from 'mssql';
 import { groupingByBrands } from '../../../utils/groupingByBrands';
 import { NavNode, buildHierarchy } from '../../../utils/buildHierarchy';
 import { formattingBrands } from '../../../utils/formattingBrands';
+import { createRedisInstance } from '../../../redis/redis';
 
 export type TNavTreeData = {
     id: number;
@@ -25,6 +26,16 @@ export type TGroupedNavTreeData = {
 }[];
 
 export async function GET(req: NextRequest) {
+    const redis = createRedisInstance();
+    const cache = await redis.get('navTree');
+    const MAX_AGE = 60_000 * 60 * 24; // 24 hours
+    const EXPIRY_MS = `PX`; // milliseconds
+
+    if (cache) {
+        await redis.quit();
+        return NextResponse.json(JSON.parse(cache));
+    }
+
     await connectDB();
     const params = req.nextUrl.searchParams;
     const lang = params.get('lang') as TLang;
@@ -76,6 +87,9 @@ export async function GET(req: NextRequest) {
             }
         }
     })(tree[0]);
+
+    await redis.set('navTree', JSON.stringify({ tree, flatTree }), EXPIRY_MS, MAX_AGE);
+    await redis.quit();
 
     return NextResponse.json({ tree, flatTree });
 }

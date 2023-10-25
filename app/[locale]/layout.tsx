@@ -32,6 +32,7 @@ export async function generateMetadata({ params: { locale } }: Props): Promise<M
         keywords: t('site_keywords'),
         themeColor: '#ffffff',
         colorScheme: 'only light',
+        applicationName: 'YachtShop',
         creator: 'Stepan Mikhalev',
         publisher: 'Stepan Mikhalev',
         category: t('yacht_equipment'),
