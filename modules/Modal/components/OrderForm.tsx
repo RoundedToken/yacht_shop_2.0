@@ -9,6 +9,8 @@ import { useCurrentLocale, useI18n } from '../../../locales/client';
 import { copyCart, emptyCart, setResponse, switchResponseIsLoading } from '../../../redux/cartSlice/cartSlice';
 import Loader from '../../../UI/Loader/Loader';
 import Image from 'next/image';
+import * as Select from '@radix-ui/react-select';
+import arrowImg from '../../../public/assets/images/arrow.png';
 
 const OrderForm: FC<IOrderForm> = ({ styles }) => {
     const [sendProductList, { data, isLoading, error }] = useFetchOrderMutation();
@@ -56,17 +58,32 @@ const OrderForm: FC<IOrderForm> = ({ styles }) => {
     return (
         <form className={styles.orderForm} onSubmit={(e) => formOnSubmit(e)}>
             <div className={styles.formName}>
-                <label htmlFor="name">{t('name')}:</label>
+                <label htmlFor="name">{t('order_name')}:</label>
 
                 <input ref={nameRef} type="text" name="name" minLength={3} maxLength={25} required />
             </div>
 
             <div className={styles.delivery}>
-                <select ref={deliveryRef} required>
-                    <option value="">{t('delivery_type')}</option>
-                    <option value="pickUp">{t('pickup')}</option>
-                    <option value="post">Omnivia</option>
-                </select>
+                <Select.Root onValueChange={(e) => console.log(e)}>
+                    <Select.Trigger className={styles.selectTrigger}>
+                        <Select.Value placeholder={t('delivery_type')} />
+                        <Select.Icon>
+                            <Image src={arrowImg} width={25} height={25} alt="" />
+                        </Select.Icon>
+                    </Select.Trigger>
+
+                    <Select.Content sideOffset={10} position="popper" className={styles.selectContent}>
+                        <Select.Group>
+                            <Select.Label className={styles.selectLabel}>{t('delivery_type')}</Select.Label>
+                            <Select.Item className={styles.selectItem} value="pickUp">
+                                <Select.ItemText>{t('pickup')}</Select.ItemText>
+                            </Select.Item>
+                            <Select.Item className={styles.selectItem} value="post">
+                                <Select.ItemText>Omnivia</Select.ItemText>
+                            </Select.Item>
+                        </Select.Group>
+                    </Select.Content>
+                </Select.Root>
             </div>
 
             <div className={styles.formEmail}>
@@ -85,7 +102,7 @@ const OrderForm: FC<IOrderForm> = ({ styles }) => {
                 <button type="submit">
                     <Image src={sentImg} alt="" width={65} height={65} />
                 </button>
-                {t('order_text_2')}
+                <div>{t('order_text_2')}</div>
             </div>
         </form>
     );

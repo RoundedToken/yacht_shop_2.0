@@ -1,4 +1,5 @@
 export default {
+    order_name: 'Nimi',
     main_page: 'Koduleht',
     product_soon: 'Peagi ilmub siia selle toote kirjeldus',
     page_not_found: 'Lehte ei leitud',
@@ -8,8 +9,8 @@ export default {
     navigation: 'Navigeerimine',
     response_text_1: 'Teie tellimus №{id} on töödeldud',
     your_order: 'Sinu tellimus',
-    order_text_2: 'Send an order',
-    order_text_1: 'Phone number and comments:',
+    order_text_2: 'Saada tellimus',
+    order_text_1: 'Telefoninumber ja kommentaarid:',
     pickup: 'Korja üles',
     delivery_type: 'kohaletoimetamise tüüp',
     restore_cart: `Taasta\nostukorvi`,

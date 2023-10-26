@@ -1,4 +1,5 @@
 export default {
+    order_name: 'Имя',
     main_page: 'Главная',
     product_soon: 'Скоро здесь появится описание этого товара',
     page_not_found: 'Страница не найдена',
@@ -8,8 +9,8 @@ export default {
     navigation: 'Навигация',
     response_text_1: 'Ваш заказ №{id} принят в обработку',
     your_order: 'Ваш заказ',
-    order_text_2: 'Send an order',
-    order_text_1: 'Phone number and comments:',
+    order_text_2: 'Отправить заказ',
+    order_text_1: 'Телефон и комментарии:',
     pickup: 'Самовывоз',
     delivery_type: 'тип доставки',
     restore_cart: `Восстановить\nкорзину`,

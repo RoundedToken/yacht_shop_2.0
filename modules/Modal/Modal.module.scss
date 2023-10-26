@@ -210,6 +210,12 @@
             gap: 28px;
             position: relative;
 
+            table {
+                width: 100%;
+                padding-right: 25px;
+                padding-left: 18px;
+            }
+
             img {
                 max-width: 70%;
                 max-height: 70%;
@@ -244,12 +250,14 @@
             }
 
             .orderForm {
+                width: calc(100% - 50px);
                 display: grid;
-                grid-template-columns: 250px 200px;
+                grid-template-columns: 1fr 200px;
                 column-gap: 30px;
                 grid-template-rows: 40px 40px 40px 40px 40px 40px;
                 row-gap: 0;
                 color: $blue;
+                padding-inline: 25px;
 
                 @media (max-width: $breakPointS) {
                     display: flex;
@@ -282,39 +290,6 @@
                     }
                 }
 
-                .formName {
-                    input {
-                        width: 176px;
-                        margin-left: auto;
-                        justify-self: flex-end;
-                    }
-                }
-
-                .delivery {
-                    border: 2px solid $gray;
-                    border-radius: 20px;
-
-                    @media (max-width: $breakPointS) {
-                        position: absolute;
-                        top: 0;
-                        width: 100%;
-                    }
-
-                    select {
-                        width: calc(100% - 15px - 5px);
-                        height: 36px;
-                        border-radius: 20px;
-                        color: $blue;
-                        text-align: center;
-                        font-size: 18px;
-                        padding-left: 17px;
-                        margin-left: 5px;
-                        border: 0;
-                        outline: 0;
-                        cursor: pointer;
-                    }
-                }
-
                 .formComments {
                     width: 100%;
                     height: 100%;
@@ -327,7 +302,7 @@
                     margin-top: 5px;
 
                     textarea {
-                        width: calc(100% - 8px - 2px);
+                        width: calc(100% - 8px - 4px);
                         height: 92px;
                         padding: 3px;
                         padding-left: 5px;
@@ -388,4 +363,66 @@
 .loader {
     height: 100dvh;
     background-color: transparent;
+}
+
+.selectTrigger {
+    all: unset;
+    box-sizing: border-box;
+    width: 100%;
+    border: 2px solid $gray;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 15px;
+    font-size: 18px;
+    line-height: 1;
+    height: 35px;
+    gap: 5px;
+    color: $blue;
+    cursor: pointer;
+
+    img {
+        width: 25px !important;
+        height: 25px !important;
+        max-width: 25px !important;
+        max-height: 25px !important;
+        filter: $blueFilter;
+        transform: rotate(90deg);
+    }
+
+    &[data-state='open'] img {
+        transform: rotate(270deg);
+    }
+
+    &[data-placeholder] {
+        color: $gray;
+    }
+}
+
+.selectContent {
+    z-index: 10000;
+    border: 2px solid $gray;
+    border-radius: 6px;
+    background-color: white;
+    width: var(--radix-select-trigger-width);
+    font-size: 18px;
+    padding: 0 15px;
+}
+
+.selectLabel {
+    color: $gray;
+}
+
+.selectItem {
+    cursor: pointer;
+}
+
+.selectItem:hover {
+    color: $yellow;
+}
+
+.selectItem[data-highlighted] {
+    outline: none;
 }

@@ -1,4 +1,5 @@
 export default {
+    order_name: 'Name',
     main_page: 'Main',
     product_soon: 'A description of this product will appear here soon',
     page_not_found: 'Page not found',
