@@ -5,16 +5,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const NavBarItem: FC<INavBarItem> = ({ location, className, src, route, children, switcher, styles }) => {
-    console.log('L', location);
-    console.log('R', route);
-
     const newRoute =
         location === routeConstants.CATEGORIES_ROUTE ||
         location === routeConstants.PRODUCT_LIST_ROUTE ||
         location === routeConstants.PRODUCT_ROUTE
             ? routeConstants.CATEGORIES_ROUTE
             : location;
-    const isActive = newRoute === route;
+    const isActive = newRoute === '/' + route.split('/')[1];
 
     return (
         <div className={`${className} ${isActive ? styles.activeRoute : ''}`}>

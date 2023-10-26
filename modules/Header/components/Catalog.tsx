@@ -14,7 +14,7 @@ const Catalog: FC<ICatalog> = ({ styles, location, t }) => {
     return (
         <NavBarItem
             styles={styles}
-            route={routeConstants.CATEGORIES_ROUTE}
+            route={routeConstants.CATEGORIES_ROUTE + '/0'}
             src={catalogImg}
             className={`${styles.navBar__item} ${styles.catalog}`}
             location={location}
