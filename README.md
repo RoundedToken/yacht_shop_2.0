@@ -15,13 +15,13 @@ The goal of the project is to migrate the [YachtShop](https://github.com/Rounded
 &emsp;
 <img background-color='#ECD53F' width='64' src='https://user-images.githubusercontent.com/117864556/231853059-42dbeb92-46e5-464c-96fb-1f96c318f2b3.svg'/>
 &emsp;
+<img background-color='#ECD53F' width='64' src='https://github.com/RoundedToken/yacht_shop_2.0/assets/117864556/7757e5e0-9d25-44f5-b8ff-c1e604393592'/>
+&emsp;
 <img background-color='#ECD53F' width='64' src='https://user-images.githubusercontent.com/117864556/231822337-e7f5ac40-8640-4be1-b23a-d43fd642262c.svg'/>
 &emsp;
 <img background-color='#ECD53F' width='64' src='https://user-images.githubusercontent.com/117864556/231822633-2a95fe34-3182-4ab9-8025-2c78027190a8.svg'/>
 &emsp;
 <img background-color='#ECD53F' width='64' src='https://user-images.githubusercontent.com/117864556/231823330-a690159b-92b3-4127-a6f2-52ef8356371e.svg'/>
-
-
 
 ### DevOps stack
 <p>
@@ -46,6 +46,7 @@ Deployed `self-hosted Matomo Analytics` on own server and configured all necessa
 - **Assets**: applied `Next.js <Image/> component` and `next-gen .webp image format` for image optimization, Next.js also optimizes fonts
 - **Bundles**: Next.js splits large bundles into smaller chunks to reduce unused code on the page and diminishes resources blocking input
 - **Components**: refactored to move maximum content rendering to the server side to leverage maximum benefits of `Next.js server components`, as well as maximize usage of `SSG for in build time generation`
+- **Caching**: integrated `Redis` for caching the central recursive request with heavy computations
 
 ### i18n
 Refactored `custom internationalization` using the `next-international library` with full typing support for better scalability and configurability of the project, as well as to enable `internationalization in SEO`
