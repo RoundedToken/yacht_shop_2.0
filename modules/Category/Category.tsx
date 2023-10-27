@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import { TId } from '../../models/types/TId';
 import CategoryList from './components/CategoryList';
-import { useParams } from 'next/navigation';
+import { redirect, useParams } from 'next/navigation';
 import { useFetchAllIdQuery } from '../../redux/services/navTree';
 import { useCurrentLocale } from '../../locales/client';
 import styles from './Category.module.scss';
@@ -21,8 +21,12 @@ const Category = () => {
     useEffect(() => {
         if (data) {
             dispatch(setCategories(data.flatTree));
+
+            if (!data.flatTree[`${id}`].children) {
+                redirect(`/product_list/${id}`);
+            }
         }
-    }, [data, dispatch]);
+    }, [data, dispatch, id]);
 
     if (isLoading) {
         return <CategoryListSkeleton />;

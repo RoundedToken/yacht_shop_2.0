@@ -13,7 +13,7 @@ const PageTitle: FC<IPageTitle> = ({ styles, location, searchStr, t }) => {
             {location === routeConstants.CONTACTS_ROUTE && t('contacts')}
             {location === routeConstants.CART_ROUTE && t('cart')}
             {location === routeConstants.FAVORITES_ROUTE && t('favorites')}
-            {location === routeConstants.SEARCH_ROUTE && (
+            {location === routeConstants.SEARCH_ROUTE && searchStr.length > 3 && (
                 <SearchTitle searchStr={decodeURI(searchStr)} searchTitle={searchTitle} />
             )}
         </div>

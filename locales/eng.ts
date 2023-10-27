@@ -100,4 +100,6 @@ export default {
     crimping_description:
         "We provide services for cable crimping, manufacturing of shrouds, handrails and similar products. The store offers a selection of stainless steel cables with a thickness of 2.5 to 8 mm and tips — Eye, Fork, Toggle, T-terminal, Thread right, Thread left, Turnbuckle, Turnbuckle-toggle. It is possible to use customer's materials.",
     contacts_description: `Our address: Pärnu JahtKlubi Lootsi tn 6 Pärnu ● phone: +372 589 450 74 ● WhatsApp: +7 985 454 94 70 ● email: shop@yachtshop.ee. Online store of yacht gear and equipment in Estonia.`,
+    search_text_1: 'Unfortunately, nothing was found according to your request. Please try again!',
+    search_text_2: 'Your request must be at least 3 characters long. Please try again!',
 } as const;

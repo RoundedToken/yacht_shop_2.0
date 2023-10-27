@@ -10,7 +10,7 @@ import { usePathname } from 'next/navigation';
 import { I18nProviderClient, useCurrentLocale } from '../../locales/client';
 import { getSelectedBrands } from '../../redux/sideBarSlice/selectors';
 
-const ProductList = () => {
+const ProductList = ({ searchStr }: { searchStr?: string }) => {
     const location = '/' + usePathname().split('/')[2];
     const lang = useCurrentLocale();
     const brands = useSelector(getSelectedBrands);
@@ -22,7 +22,7 @@ const ProductList = () => {
                     <CategoryProductList styles={styles} brands={brands} lang={lang} />
                 )}
                 {location === routeConstants.SEARCH_ROUTE && (
-                    <SearchProductList styles={styles} brands={brands} lang={lang} />
+                    <SearchProductList styles={styles} brands={brands} lang={lang} searchStr={searchStr} />
                 )}
             </I18nProviderClient>
         </div>

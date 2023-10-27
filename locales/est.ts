@@ -101,4 +101,6 @@ export default {
     crimping_description:
         'Otsikute pressimine trossidele labimooduga 2.5 kuni 8 mm. Kaupluses on valikus roostevabast terasest trossid paksusega 2,5 kuni 8 mm ja otstega — Aas, Kahvel, Kahvel toggle, T-terminaal, Parempoolne niit, Vasak niit, Talrep, Talrep-toggle. Samuti pressime kasutades kliendi materjale.',
     contacts_description: `Meie aadress: Pärnu JahtKlubi Lootsi tn 6 Pärnu ● telefon: +372 589 450 74 ● WhatsApp: +7 985 454 94 70 ● email: shop@yachtshop.ee. Veebipood Eestis paadi-ja jahtvarustusega.`,
+    search_text_1: 'Kahjuks ei leitud teie soovi kohaselt midagi. Palun proovi uuesti!',
+    search_text_2: 'Teie taotlus peab olema vähemalt 3 tähemärki pikk. Palun proovi uuesti!',
 } as const;

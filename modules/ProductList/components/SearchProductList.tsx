@@ -1,19 +1,18 @@
 import React, { FC, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { TSearchQuery } from '../../../models/types/TSearchQuery';
 import ProductCardSkeleton from '../../ProductCard/ProductCardSkeleton';
 import { ISearchProductList } from '../interfaces/ISearchProductList';
 import CardProductList from './CardProductList';
 import TableProductList from './TableProductList';
-import { useParams } from 'next/navigation';
 import { getListMode } from '../../../redux/sideBarSlice/selectors';
 import { useFetchProductListQuery } from '../../../redux/services/webSearch';
 import { setSearchProductList } from '../../../redux/categoriesSlice/categoriesSlice';
+import { useI18n } from '../../../locales/client';
 
-const SearchProductList: FC<ISearchProductList> = ({ styles, brands, lang }) => {
-    const searchStr = useParams<TSearchQuery>().searchStr || '';
+const SearchProductList: FC<ISearchProductList> = ({ styles, brands, lang, searchStr = '' }) => {
     const listMode = useSelector(getListMode);
     const dispatch = useDispatch();
+    const t = useI18n();
     const {
         data: productList,
         isFetching,
@@ -25,6 +24,14 @@ const SearchProductList: FC<ISearchProductList> = ({ styles, brands, lang }) => 
             dispatch(setSearchProductList(productList));
         }
     }, [productList, dispatch]);
+
+    if (searchStr.length < 4) {
+        return (
+            <div style={{ height: '300px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <h1 style={{ textAlign: 'center' }}>{t('search_text_2')}</h1>
+            </div>
+        );
+    }
 
     return (
         <>
@@ -41,7 +48,9 @@ const SearchProductList: FC<ISearchProductList> = ({ styles, brands, lang }) => 
             {!isFetching &&
                 productList &&
                 (productList.length === 0 ? (
-                    <h1>ProductList Not Found</h1>
+                    <div style={{ height: '300px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <h1 style={{ textAlign: 'center' }}>{t('search_text_1')}</h1>
+                    </div>
                 ) : listMode === 'table' ? (
                     <TableProductList styles={styles} brands={brands} productList={productList} />
                 ) : (

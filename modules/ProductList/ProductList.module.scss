@@ -3,6 +3,7 @@
 .productListContainer {
     @include flexCenterCenter;
     width: 100%;
+    color: $blue;
 
     .productListGrid {
         width: 100%;

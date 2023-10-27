@@ -14,28 +14,18 @@ const SearchInput: FC<ISearchInput> = ({ styles, children, placeholder }) => {
     const dispatch = useDispatch();
 
     const navigateOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        console.log('!!');
-
         e.preventDefault();
         //@ts-ignore
         document.activeElement.blur();
-        router.push(routeConstants.SEARCH_ROUTE + `/${searchValue}`);
+        router.push(routeConstants.SEARCH_ROUTE + `?q=${searchValue}`);
         dispatch(clearBrands('/search'));
     };
     const searchOnFocus = (e: React.FocusEvent<HTMLInputElement>) => {
         e.target.select();
     };
 
-    const qq = () => {
-        console.log('HERE');
-        console.log(formRef.current);
-
-        formRef.current?.submit();
-        formRef.current?.dispatchEvent(new Event('submit'));
-    };
-
     return (
-        <form ref={formRef} className={styles.searchContainer} onSubmit={(e) => navigateOnSubmit(e)}>
+        <form id="search" ref={formRef} className={styles.searchContainer} onSubmit={(e) => navigateOnSubmit(e)}>
             <input
                 placeholder={placeholder}
                 name="search"

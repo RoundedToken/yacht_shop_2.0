@@ -20,7 +20,7 @@ const SearchModal: FC<ISearchModal> = ({ styles }) => {
         //@ts-ignore
         document.activeElement.blur();
         e.preventDefault();
-        router.push(routeConstants.SEARCH_ROUTE + `/${searchValue}`);
+        router.push(routeConstants.SEARCH_ROUTE + `?q=${searchValue}`);
         setSearchValue('');
         document.body.style.overflow = 'auto';
         dispatch(switchMobileModalDisplay());

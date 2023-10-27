@@ -6,4 +6,5 @@ export interface ISearchProductList {
     };
     brands: string[];
     lang: TLang;
+    searchStr?: string;
 }

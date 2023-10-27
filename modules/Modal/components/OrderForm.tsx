@@ -56,7 +56,7 @@ const OrderForm: FC<IOrderForm> = ({ styles }) => {
     }
 
     return (
-        <form className={styles.orderForm} onSubmit={(e) => formOnSubmit(e)}>
+        <form id="order" className={styles.orderForm} onSubmit={(e) => formOnSubmit(e)}>
             <div className={styles.formName}>
                 <label htmlFor="name">{t('order_name')}:</label>
 

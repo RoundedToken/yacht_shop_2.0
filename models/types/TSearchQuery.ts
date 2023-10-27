@@ -1,3 +1,3 @@
 export type TSearchQuery = {
-    searchStr: string;
+    q: string;
 };
