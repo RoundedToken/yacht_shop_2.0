@@ -26,8 +26,11 @@ export type TGroupedNavTreeData = {
 }[];
 
 export async function GET(req: NextRequest) {
+    const params = req.nextUrl.searchParams;
+    const lang = params.get('lang') as TLang;
+    const nameFromLang = getNameFromLang(lang);
     const redis = createRedisInstance();
-    const cache = await redis.get('navTree');
+    const cache = await redis.get(`navTree_${lang}`);
     const MAX_AGE = 60_000 * 60 * 24; // 24 hours
     const EXPIRY_MS = `PX`; // milliseconds
 
@@ -37,9 +40,6 @@ export async function GET(req: NextRequest) {
     }
 
     await connectDB();
-    const params = req.nextUrl.searchParams;
-    const lang = params.get('lang') as TLang;
-    const nameFromLang = getNameFromLang(lang);
 
     let data = (
         await query(
@@ -88,7 +88,7 @@ export async function GET(req: NextRequest) {
         }
     })(tree[0]);
 
-    await redis.set('navTree', JSON.stringify({ tree, flatTree }), EXPIRY_MS, MAX_AGE);
+    await redis.set(`navTree_${lang}`, JSON.stringify({ tree, flatTree }), EXPIRY_MS, MAX_AGE);
     await redis.quit();
 
     return NextResponse.json({ tree, flatTree });

@@ -12,7 +12,7 @@ export default {
     order_text_2: 'Saada tellimus',
     order_text_1: 'Telefoninumber ja kommentaarid:',
     pickup: 'Korja üles',
-    delivery_type: 'kohaletoimetamise tüüp',
+    delivery_type: 'tarne tüüp',
     restore_cart: `Taasta\nostukorvi`,
     cart_text_1: 'Teie ostukorv on tühi...',
     products: 'Kaubad',

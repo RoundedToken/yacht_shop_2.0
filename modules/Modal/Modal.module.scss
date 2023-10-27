@@ -426,3 +426,9 @@
 .selectItem[data-highlighted] {
     outline: none;
 }
+
+.delivery {
+    @include flexCenterCenter;
+    grid-row: 1/2;
+    grid-column: 2/3;
+}

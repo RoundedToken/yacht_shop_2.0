@@ -63,6 +63,12 @@ const OrderForm: FC<IOrderForm> = ({ styles }) => {
                 <input ref={nameRef} type="text" name="name" minLength={3} maxLength={25} required />
             </div>
 
+            <div className={styles.formEmail}>
+                <label htmlFor="email">Email:</label>
+
+                <input ref={emailRef} type="email" name="email" required />
+            </div>
+
             <div className={styles.delivery}>
                 <Select.Root onValueChange={(e) => console.log(e)}>
                     <Select.Trigger className={styles.selectTrigger}>
@@ -84,12 +90,6 @@ const OrderForm: FC<IOrderForm> = ({ styles }) => {
                         </Select.Group>
                     </Select.Content>
                 </Select.Root>
-            </div>
-
-            <div className={styles.formEmail}>
-                <label htmlFor="email">Email:</label>
-
-                <input ref={emailRef} type="email" name="email" required />
             </div>
 
             <div className={styles.formComments}>
