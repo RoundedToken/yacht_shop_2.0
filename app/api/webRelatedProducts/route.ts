@@ -8,7 +8,7 @@ import { goodsFilter } from '../../../utils/goodsFilter';
 export async function GET(req: NextRequest) {
     await connectDB();
     const params = req.nextUrl.searchParams;
-    const id = params.get('id');
+    const id = Number(params.get('id'));
     const lang = params.get('lang') as TLang;
     const nameFromLang = getNameFromLang(lang);
 

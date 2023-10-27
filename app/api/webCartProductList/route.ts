@@ -8,9 +8,15 @@ import { TWebCartProductListData, goodsFilter } from '../../../utils/goodsFilter
 export async function GET(req: NextRequest) {
     await connectDB();
     const params = req.nextUrl.searchParams;
-    const idList = params.get('idList');
+    const idList = params
+        .get('idList')
+        ?.split(',')
+        .map((id) => +id)
+        .join(',');
     const lang = params.get('lang') as TLang;
     const nameFromLang = getNameFromLang(lang);
+
+    console.log(idList);
 
     if (!idList) {
         return NextResponse.json([]);
