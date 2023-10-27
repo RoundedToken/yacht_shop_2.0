@@ -13,6 +13,14 @@ const LocalStorageWrapper = ({ children }: { children: ReactNode }) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        //new version compatibility
+        const version = localStorage.getItem('version');
+
+        if (version !== '2.0.0') {
+            localStorage.clear();
+            localStorage.setItem('version', '2.0.0');
+        }
+
         //CART SLICE
         dispatch(setProductListFromStorage());
         dispatch(setProductListCopyFromStorage());

@@ -65,8 +65,8 @@ export default {
     Kaupluses on valikus roostevabast terasest trossid paksusega 2,5 kuni 8 mm ja otstega — Aas, Kahvel, Kahvel toggle, T-terminaal, Parempoolne niit, Vasak niit, Talrep, Talrep-toggle.
     Samuti pressime kasutades kliendi materjale.
     Vajadusel soidame kliendi juurde, sellel juhul lisandub transporditeenuse maksumus:
-    \u{2003}\u{2022} Parnumaa al. 20€;
-    \u{2003}\u{2022} Eestis al. 30€.`,
+    \u{2003}\u{2022} Parnumaa al 20€;
+    \u{2003}\u{2022} Eestis al 30€.`,
     crimping_text_2: 'Pressimine toimub WireTekhniku ​​masinal (Rootsi).',
     crimping_text_3: 'Trossi kokkupressimise kalkulaator',
     crimping_text_4: 'Valige trossi läbimõõt ja pikkus',
