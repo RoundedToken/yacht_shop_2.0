@@ -51,4 +51,7 @@ Deployed `self-hosted Matomo Analytics` on own server and configured all necessa
 ### i18n
 Refactored `custom internationalization` using the `next-international library` with full typing support for better scalability and configurability of the project, as well as to enable `internationalization in SEO`
 
+## Routes and Lighthouse reports
+<img src="https://github.com/RoundedToken/yacht_shop_2.0/assets/117864556/4f6f598f-bad2-4dee-94f3-99f50cb2b389" />
+
 
