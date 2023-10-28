@@ -18,7 +18,7 @@ const Breadcrumbs: FC<IBreadcrumbs> = ({ styles }) => {
     const id = Number(pathname[3]);
     const { data, isFetching } = useFetchAllIdQuery(lang);
     const dispatch = useDispatch();
-    const [updateProduct, { data: product }] = useLazyFetchProductQuery();
+    const [updateProduct, { data: product, isFetching: isProductFetching }] = useLazyFetchProductQuery();
     const category = data?.flatTree[isProduct ? product?.parentId ?? 0 : id];
 
     const handleOnClick = () => {
@@ -33,7 +33,7 @@ const Breadcrumbs: FC<IBreadcrumbs> = ({ styles }) => {
         }
     }, [id, lang, updateProduct, isProduct]);
 
-    if (isFetching) {
+    if (isFetching || isProductFetching) {
         return (
             <div className={styles.breadcrumbs}>
                 <SkeletonTheme baseColor="rgb(38, 162, 187)" highlightColor="rgb(39, 172, 198)">

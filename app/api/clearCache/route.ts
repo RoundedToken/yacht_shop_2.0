@@ -8,8 +8,11 @@ export async function GET(req: NextRequest) {
 
     if (password === process.env.REDIS_DELETE_PASSWORD) {
         await redis.flushall();
+        await redis.quit();
+
         return NextResponse.json('Кэш очищен!');
     }
 
+    await redis.quit();
     return NextResponse.json('Неверный пароль!');
 }

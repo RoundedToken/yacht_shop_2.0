@@ -35,12 +35,12 @@ export async function generateMetadata({ params: { id, locale } }: Props): Promi
     };
 }
 
-export function generateStaticParams() {
-    return getStaticParams();
-}
+// export function generateStaticParams() {
+//     return getStaticParams();
+// }
 
 export default async function ProductListPage({ params: { locale } }: Props) {
-    setStaticParamsLocale(locale);
+    // setStaticParamsLocale(locale);
     const t = await getI18n();
     const location = routeConstants.PRODUCT_LIST_ROUTE;
 

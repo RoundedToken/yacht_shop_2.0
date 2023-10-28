@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getIsDropdownDisplay } from '../../../redux/stylesSlice/selectors';
 import { setModalType } from '../../../redux/modalSlice/modalSlice';
 import { switchModalDisplay } from '../../../redux/stylesSlice/stylesSlice';
+import styles from '../Header.module.scss';
 
 const DropdownSwitch = () => {
     const isDropdownDisplay = useSelector(getIsDropdownDisplay);
@@ -16,7 +17,15 @@ const DropdownSwitch = () => {
         document.body.style.overflow = 'hidden';
     };
 
-    return <input id="switcher" type="checkbox" checked={isDropdownDisplay} onChange={() => switchOnClick()} />;
+    return (
+        <input
+            className={styles.switcher}
+            id="switcher"
+            type="checkbox"
+            checked={isDropdownDisplay}
+            onChange={() => switchOnClick()}
+        />
+    );
 };
 
 export default DropdownSwitch;

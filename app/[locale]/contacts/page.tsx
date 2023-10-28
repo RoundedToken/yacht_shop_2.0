@@ -47,7 +47,7 @@ export default async function ContactsPage({ params: { locale } }: Props) {
             <SearchBar t={t} location={location} />
 
             <SideBarWrapper t={t} offSideBar>
-                <Contacts t={t} />;
+                <Contacts t={t} />
             </SideBarWrapper>
 
             <Footer t={t} isEmpty />

@@ -23,7 +23,7 @@ const Product = ({ title }: { title: string }) => {
         <div className={styles.rootContainer}>
             <I18nProviderClient>
                 <div className={styles.grid}>
-                    {product && (
+                    {product && !isFetching && (
                         <>
                             <ProductMenu
                                 isDecimals={product.isDecimals}

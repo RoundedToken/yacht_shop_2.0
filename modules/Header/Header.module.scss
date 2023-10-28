@@ -74,11 +74,6 @@
             position: relative;
             width: 100%;
             height: 100%;
-            // padding-left: 70%;
-        }
-
-        @media (max-width: $breakPointS) {
-            // padding-left: 60%;
         }
 
         .pageTitle {
@@ -423,17 +418,14 @@
 
         .activeRoute {
             a {
-                // color: $yellow;
                 font-weight: 900;
-
-                img {
-                    // filter: $yellowFilter;
-                }
-
-                .cartCounter {
-                    // background-color: $yellow;
-                }
             }
         }
+    }
+}
+
+@media (max-width: 1000px) {
+    .switcher {
+        display: none;
     }
 }

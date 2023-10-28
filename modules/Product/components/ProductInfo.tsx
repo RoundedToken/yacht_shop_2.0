@@ -32,7 +32,10 @@ const ProductInfo: FC<IProductInfo> = ({ styles, title }) => {
 
                         {productInfo.description && (
                             <div className={styles.infoItem} style={{ marginBottom: '20px' }}>
-                                <div className={styles.infoItemContent}>{productInfo.description}</div>
+                                <div
+                                    className={styles.infoItemContent}
+                                    dangerouslySetInnerHTML={{ __html: productInfo.description }}
+                                />
                             </div>
                         )}
 
@@ -42,7 +45,7 @@ const ProductInfo: FC<IProductInfo> = ({ styles, title }) => {
                                     <div
                                         className={styles.infoItemTitle}
                                         dangerouslySetInnerHTML={{ __html: value[0] }}
-                                    ></div>
+                                    />
 
                                     <div
                                         className={styles.infoItemContent}
