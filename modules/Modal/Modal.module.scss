@@ -238,6 +238,7 @@
                 border-radius: 0 40px 40px 0;
                 background-color: $yellow;
                 box-shadow: 0 1px 5px rgb(100, 100, 100);
+                z-index: 1000000;
 
                 @media (max-width: $breakPointM) {
                     margin-inline: 70px;
@@ -295,7 +296,7 @@
                     height: 100%;
                     grid-column: 1/2;
                     grid-row: 3/7;
-                    font-size: 15px;
+                    font-size: 16px;
                     line-height: 25px;
                     font-weight: 600;
                     color: $gray;
@@ -348,7 +349,7 @@
 
                     div {
                         text-align: center;
-                        color: $darkAqua;
+                        color: $darkDarkAqua;
                         font-size: 18px;
                         font-weight: 700;
                         line-height: 1;
@@ -402,7 +403,6 @@
 }
 
 .selectContent {
-    z-index: 10000;
     border: 2px solid $gray;
     border-radius: 6px;
     background-color: white;
@@ -416,11 +416,7 @@
 }
 
 .selectItem {
-    cursor: pointer;
-}
-
-.selectItem:hover {
-    color: $yellow;
+    @include hoverColor($yellow);
 }
 
 .selectItem[data-highlighted] {

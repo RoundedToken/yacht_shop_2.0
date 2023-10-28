@@ -19,8 +19,9 @@ const DropdownSwitch = () => {
 
     return (
         <input
+            aria-label="quick nav"
+            id="switcher_input"
             className={styles.switcher}
-            id="switcher"
             type="checkbox"
             checked={isDropdownDisplay}
             onChange={() => switchOnClick()}

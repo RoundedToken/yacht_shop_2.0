@@ -45,6 +45,7 @@ const ProductSwiper: FC<IProductSwiper> = ({ picSrc, styles }) => {
                             onClick={fullScreenOnClick}
                             width={323}
                             height={257}
+                            priority
                         />
                     </SwiperSlide>
                 ))}

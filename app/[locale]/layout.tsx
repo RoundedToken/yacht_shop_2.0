@@ -41,7 +41,7 @@ export async function generateMetadata({ params: { locale } }: Props): Promise<M
             template: '%s | Parnu Yacht Shop',
             default: 'Parnu Yacht Shop',
         },
-        viewport: 'width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0',
+        viewport: 'width=device-width,initial-scale=1,maximum-scale=5',
         description: t('site_description_1'),
         openGraph: {
             url: `${locale}`,

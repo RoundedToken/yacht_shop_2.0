@@ -13,7 +13,14 @@ const SearchBar = ({ location, t, searchStr = '' }: { location: string; t: TGetI
     return (
         <div className={styles.searchBar}>
             <SearchInput styles={styles} placeholder={placeholder}>
-                <input type="image" className={styles.submit} src={lifebuoyImg.src} alt="" width={50} height={50} />
+                <input
+                    type="image"
+                    className={styles.submit}
+                    src={lifebuoyImg.src}
+                    alt="submit search"
+                    width={50}
+                    height={50}
+                />
             </SearchInput>
 
             {breadcrumbsPaths.includes(location) ? (

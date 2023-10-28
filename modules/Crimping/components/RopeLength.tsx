@@ -33,6 +33,7 @@ const RopeLength = () => {
             <div>{t('rope_length')}</div>
 
             <input
+                aria-label="meters"
                 value={meters}
                 onChange={(e) => metersOnChange(e)}
                 onFocus={(e) => inputOnFocus(e)}
@@ -43,6 +44,7 @@ const RopeLength = () => {
             <label htmlFor="meters">{t('m')}</label>
 
             <input
+                aria-label="centimeters"
                 value={centimeters}
                 onChange={(e) => centimetersOnChange(e)}
                 onFocus={(e) => inputOnFocus(e)}

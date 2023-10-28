@@ -16,7 +16,7 @@ const NavBarItem: FC<INavBarItem> = ({ location, className, src, route, children
     return (
         <div className={`${className} ${isActive ? styles.activeRoute : ''}`}>
             <Link href={route}>
-                <Image src={src} alt="" width={50} height={50} />
+                <Image src={src} alt={route} width={50} height={50} />
             </Link>
 
             <Link href={route}>{children}</Link>

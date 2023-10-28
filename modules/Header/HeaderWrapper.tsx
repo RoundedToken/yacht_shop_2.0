@@ -43,7 +43,7 @@ const HeaderWrapper = ({ children, navbar }: { children: ReactNode; navbar: Reac
     return (
         <>
             <Link href={routeConstants.MAIN_ROUTE} className={styles.logo}>
-                <Image ref={logoRef} src={logo2Img} height={120} alt="" />
+                <Image ref={logoRef} src={logo2Img} height={120} alt="main logo" />
             </Link>
 
             <div ref={topContainerRef} className={styles.topContainer}>

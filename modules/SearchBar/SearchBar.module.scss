@@ -170,7 +170,7 @@
             &Link {
                 @include hoverColor($yellow);
                 @include activeColor($blue);
-                color: $lightBlue;
+                color: rgb(7, 30, 106);
                 font-size: 13px;
                 font-weight: 700;
                 line-height: 14px;

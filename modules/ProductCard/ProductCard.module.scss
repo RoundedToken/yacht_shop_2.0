@@ -17,20 +17,10 @@
     max-width: $_card_widthCardMax;
     gap: $_card_paddingDouble;
     width: calc(100% - $_card_padding - $_card_paddingDouble);
-    // height: $_card_heightCard;
     height: max-content;
     padding-left: $_card_padding;
     padding-right: $_card_paddingDouble;
     padding-block: $_card_paddingDouble;
-
-    // @container card (max-width: 540px) {
-    //     gap: $_card_paddingDoubleS;
-    //     width: calc(100% - $_card_paddingDoubleS * 2);
-    //     height: $_card_heightCardS;
-    //     padding-inline: $_card_paddingDoubleS;
-    //     padding-top: $_card_paddingDoubleS;
-    //     padding-bottom: $_card_paddingS;
-    // }
 
     @media (max-width: $breakPointS) {
         gap: $_card_paddingDoubleS;
@@ -136,7 +126,7 @@
                 }
 
                 &__single {
-                    @include fontDesktopS(gray);
+                    @include fontDesktopS(rgb(110, 110, 110));
                     width: 100%;
                     text-align: end;
                 }
@@ -237,7 +227,7 @@
                 }
 
                 &__single {
-                    @include fontDesktopS(gray);
+                    @include fontDesktopS(rgb(110, 110, 110));
                     text-align: center;
                 }
             }

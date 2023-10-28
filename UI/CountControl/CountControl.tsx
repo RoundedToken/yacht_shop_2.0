@@ -52,7 +52,9 @@ const CountControl: FC<ICountControl> = ({ id, isDecimals }) => {
         }
     };
 
-    if (!count) return null;
+    if (!count) {
+        return null;
+    }
 
     if (!isDecimals) {
         return (
@@ -62,7 +64,14 @@ const CountControl: FC<ICountControl> = ({ id, isDecimals }) => {
                 </div>
 
                 <div className={styles.item}>
-                    <input value={count} type="tel" maxLength={3} minLength={1} onChange={(e) => countOnChange(e)} />
+                    <input
+                        aria-label="count"
+                        value={count}
+                        type="tel"
+                        maxLength={3}
+                        minLength={1}
+                        onChange={(e) => countOnChange(e)}
+                    />
                 </div>
 
                 <div className={styles.button} onClick={incrementOnClick}>

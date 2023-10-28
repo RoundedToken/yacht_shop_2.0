@@ -108,7 +108,7 @@
                 }
 
                 div {
-                    color: $gray;
+                    color: rgb(111, 110, 110);
                     font-size: 16px;
                     text-align: center;
                     line-height: 0.9;
@@ -145,7 +145,7 @@
                     line-clamp: 2;
                     white-space: pre;
                     text-align: center;
-                    color: $darkAqua;
+                    color: $darkDarkAqua;
                     font-size: 20px;
                     line-height: 1;
                 }
@@ -295,7 +295,7 @@
                 }
 
                 div:last-child {
-                    color: $gray;
+                    color: rgb(111, 110, 110);
                     font-size: 16px;
                     text-align: center;
                     line-height: 0.9;
@@ -403,7 +403,7 @@
                     line-clamp: 2;
                     white-space: pre;
                     text-align: center;
-                    color: $darkAqua;
+                    color: $darkDarkAqua;
                     font-size: 18px;
                     line-height: 1;
                 }

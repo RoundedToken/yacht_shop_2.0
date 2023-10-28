@@ -10,6 +10,7 @@ const OnImgErrorHOC = ({
     className,
     defaultClassName,
     onClick,
+    priority = false,
 }: {
     width: number;
     height: number;
@@ -18,6 +19,7 @@ const OnImgErrorHOC = ({
     className?: string;
     defaultClassName?: string;
     onClick?: () => void;
+    priority?: boolean;
 }) => {
     const [isImgError, setIsImgError] = useState(false);
 
@@ -32,6 +34,7 @@ const OnImgErrorHOC = ({
                     width={width}
                     height={height}
                     onClick={onClick}
+                    priority={priority}
                 />
             )}
 
