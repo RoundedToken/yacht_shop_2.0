@@ -415,6 +415,7 @@
     width: var(--radix-select-trigger-width);
     font-size: 18px;
     padding: 0 15px;
+    user-select: none;
 }
 
 .selectLabel {
