@@ -1,4 +1,4 @@
-import { getAllCategoriesId } from './../../../services/getAllCategoriesId';
+import { getAllCategoriesId } from '../../services/getAllCategoriesId';
 import { ISitemapField, getServerSideSitemap } from 'next-sitemap';
 
 export async function GET() {

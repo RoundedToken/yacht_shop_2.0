@@ -13,7 +13,6 @@ import { getListMode } from '../../../redux/sideBarSlice/selectors';
 const ListModeSwitch: FC<IListModeSwitch> = ({ styles }) => {
     const listMode = useSelector(getListMode);
     const dispatch = useDispatch();
-    console.log(listMode);
     const listModeSwitchOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(setListMode(e.target.value as TListMode));
     };

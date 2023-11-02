@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { getI18n, getStaticParams } from '../../../../locales/server';
+import { getI18n } from '../../../../locales/server';
 import { getCategoryName } from '../../../../services/getCategoryName';
 import ProductList from '../../../../modules/ProductList/ProductList';
 import SideBarWrapper from '../../../../modules/SideBarWrapper/SideBarWrapper';
@@ -7,7 +7,6 @@ import Footer from '../../../../modules/Footer/Footer';
 import Header from '../../../../modules/Header/Header';
 import SearchBar from '../../../../modules/SearchBar/SearchBar';
 import { routeConstants } from '../../../../models/enums/EConstants';
-import { setStaticParamsLocale } from 'next-international/server';
 import { getAlternates } from '../../../../locales/getAlternates';
 import { TLang } from '../../../../models/types/TLang';
 
@@ -35,12 +34,7 @@ export async function generateMetadata({ params: { id, locale } }: Props): Promi
     };
 }
 
-// export function generateStaticParams() {
-//     return getStaticParams();
-// }
-
-export default async function ProductListPage({ params: { locale } }: Props) {
-    // setStaticParamsLocale(locale);
+export default async function ProductListPage() {
     const t = await getI18n();
     const location = routeConstants.PRODUCT_LIST_ROUTE;
 

@@ -97,6 +97,10 @@
             padding-left: 20px;
             display: flex;
 
+            @media (max-width: $breakPointL) {
+                padding-left: 10px;
+            }
+
             @media (max-width: $breakPointM) {
                 grid-row: 1/2;
                 padding-left: 5px;
@@ -117,7 +121,16 @@
                 position: relative;
                 background-color: $white;
 
+                @media (max-width: $breakPointL) {
+                    width: 280px;
+                    min-width: 280px;
+                    height: 235px;
+                }
+
                 @media (max-width: $breakPointM) {
+                    width: 340px;
+                    min-width: 340px;
+                    height: 285px;
                     margin-top: 0;
                     margin-inline: auto;
                 }

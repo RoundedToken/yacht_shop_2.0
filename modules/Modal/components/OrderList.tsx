@@ -16,7 +16,11 @@ const OrderList = () => {
     });
 
     if (isFetching) {
-        return <Loader />;
+        return (
+            <div style={{ marginBlock: 'auto' }}>
+                <Loader />
+            </div>
+        );
     }
     if (error) {
         return <h1>Error!</h1>;

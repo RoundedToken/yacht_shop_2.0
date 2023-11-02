@@ -1,5 +1,5 @@
-import { getAllProductsId } from '../../../services/getAllProductsId';
 import { ISitemapField, getServerSideSitemap } from 'next-sitemap';
+import { getAllProductsId } from '../../services/getAllProductsId';
 
 export async function GET() {
     const ids = await getAllProductsId();

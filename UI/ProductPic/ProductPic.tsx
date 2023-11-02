@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { IProductPic } from './IProductPic';
 import defaultProductImg from '../../public/assets/images/defaultProduct.svg';

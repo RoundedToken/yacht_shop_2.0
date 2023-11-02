@@ -50,6 +50,9 @@ export async function generateMetadata({ params: { locale } }: Props): Promise<M
             siteName: 'YachtShop',
             description: t('og_description_1'),
         },
+        other: {
+            'google-site-verification': 'K07G4LxPDzsW8ys2hpF7pEn2ohHaaQrl5ovxiFPAags',
+        },
     };
 }
 
