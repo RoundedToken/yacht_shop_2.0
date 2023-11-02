@@ -42,7 +42,7 @@
 ### Analytics
 Deployed `self-hosted Matomo Analytics` on own server and configured all necessary tracking events in the app
 
-### Perfomance optimization
+### Performance optimization
 - **Ngnix**: enabled `HTTP/2`, `gzip compression`, and `static file caching support`.
 - **Assets**: applied `Next.js <Image/> component` and `next-gen .webp image format` for image optimization, Next.js also optimizes fonts
 - **Bundles**: Next.js splits large bundles into smaller chunks to reduce unused code on the page and diminishes resources blocking input
