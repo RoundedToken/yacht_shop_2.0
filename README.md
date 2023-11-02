@@ -37,6 +37,7 @@
 - **Metadata**: added all required meta fields using `Next.js metadata API`: title template, description, icons, themeColor, manifest, viewport, alternates (i18n), category, and basic fields (generator, applicationName, referrer, keywords, authors, colorScheme, creator, publisher)
 - **Social**: implemented `OpenGraph` and Twitter metadata with `ImageResponse API` (considering i18n)
 - **Robots**: `robots.txt`, `static sitemap`, `dynamic sitemap` (considering i18n)
+- **Tools**: integrated `Google Search Console`
 
 ### Analytics
 Deployed `self-hosted Matomo Analytics` on own server and configured all necessary tracking events in the app
