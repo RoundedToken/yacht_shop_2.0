@@ -2,7 +2,7 @@
 
 ## Description
 
-The goal of the project is to migrate the [YachtShop](https://github.com/RoundedToken/yacht_shop) project to the Next production framework with maximum from Next API's to improve performance, SEO, and also integrate analytics
+[YachtShop](https://yachtshop.ee) is a delivery order website for a yacht equipment store in Estonia based on an existing large database of more than 40 thousand products
 
 ## Technologies
 
@@ -23,7 +23,7 @@ The goal of the project is to migrate the [YachtShop](https://github.com/Rounded
 &emsp;
 <img background-color='#ECD53F' width='64' src='https://user-images.githubusercontent.com/117864556/231823330-a690159b-92b3-4127-a6f2-52ef8356371e.svg'/>
 
-### DevOps stack
+### CI/CD stack
 <p>
 <img background-color='#ECD53F' width='64' src='https://github.com/RoundedToken/yacht_shop/assets/117864556/9d33c06d-9eec-402f-b901-df0678630a27'/>
 &emsp;
