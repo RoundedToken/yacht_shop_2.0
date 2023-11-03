@@ -12,10 +12,11 @@ export async function GET(req: NextRequest) {
     const searchStr = params.get('searchStr');
     const nameFromLang = getNameFromLang(lang);
 
-    const condition = searchStr
-        ?.split(' ')
-        .map((str) => `goods.${nameFromLang} LIKE '%${str}%'`)
-        .join(' AND ');
+    const conditionArr = searchStr?.split(' ') || [];
+
+    const condition = conditionArr?.map((str) => `goods.${nameFromLang} LIKE '%${str}%'`).join(' AND ');
+
+    const codeCondition = `REPLACE (goods.marka, ' ', '') LIKE '%${conditionArr[0]}%'`;
 
     const data = (
         await query(`
@@ -32,7 +33,7 @@ export async function GET(req: NextRequest) {
         FROM goods LEFT JOIN par ON goods.tovar = par.tovar
         WHERE goods.subr IS NOT NULL
         AND goods.avail<>0
-        AND ${condition}
+        AND (${condition} OR ${codeCondition})
         ORDER BY par.featurename`)
     ).recordset;
 
