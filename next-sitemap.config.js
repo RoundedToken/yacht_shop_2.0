@@ -2,7 +2,7 @@
 const config = {
     siteUrl: process.env.URL || '',
     generateRobotsTxt: true,
-    exclude: ['/server-sitemap-categories.xml', '/server-sitemap-products.xml'],
+    exclude: ['/server-sitemap-categories.xml', '/server-sitemap-products.xml', `${process.env.URL}/`],
     robotsTxtOptions: {
         additionalSitemaps: [
             `${process.env.URL}/server-sitemap-categories.xml`,

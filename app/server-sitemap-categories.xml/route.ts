@@ -19,7 +19,7 @@ export async function GET() {
         ...locales.flatMap((locale) =>
             productLists.map((id): ISitemapField => {
                 return {
-                    loc: `${process.env.URL}/${locale}/productList/${id}`,
+                    loc: `${process.env.URL}/${locale}/product_list/${id}`,
                     lastmod: new Date().toISOString(),
                     changefreq: 'daily',
                     priority: 0.7,
